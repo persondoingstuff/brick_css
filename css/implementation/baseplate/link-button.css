@@ -69,15 +69,15 @@ Depends on:
 button background/color hierarchy
 
 - fallback
-	- Normal: primary, pico-color-content-contrast
+	- Normal: primary, brick-color-content-contrast
 	- Active: primary-bold, normal color
 - default
 	- Follows pref, falls back to fallback
 - surface [not 1,2,3]
-	- Normal: surface, pico-color-content-contrast
+	- Normal: surface, brick-color-content-contrast
 	- Active: surface alt, normal color
 - surface [1,2,3]
-	- Normal: surface, pico-color-content
+	- Normal: surface, brick-color-content
 	- Active: surface alt, normal color
 - surface [outline]
 	- Normal: transparent, surface (also border)
@@ -176,7 +176,7 @@ button background/color hierarchy
 
     &[disabled],
     :where(fieldset[disabled]) & {
-        opacity: var(--brick-pico-opacity-semi);
+        opacity: var(--brick-opacity-semi);
         pointer-events: none;
     }
 }
