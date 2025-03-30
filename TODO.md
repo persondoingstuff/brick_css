@@ -1,0 +1,4 @@
+- Add missing colors
+- Add simple shadows
+- Add setting for form element shadows
+- Choose between 'init' and 'reset' instead of having both
