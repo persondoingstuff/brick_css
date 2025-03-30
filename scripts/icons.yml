@@ -1,0 +1,67 @@
+config:
+  source_dir: C:\Users\admin\Code\THIRD_PARTY\tabler-icons\svg\outline
+  source_file_template: "$name.svg"
+  output_dir: .
+  output_file_template: "icons_$group.css"
+
+groups:
+  essentials:
+      check: check
+      minus: minus
+      plus: plus
+      chevron: chevron-right
+      date: calendar
+      time: clock
+      search: search
+      close: x
+      loading: loader-2
+      menu: menu-2
+      error: exclamation-circle
+
+  general:
+      info: info-hexagon
+      menu-tool: dots
+      filter: filter
+      sort-ascending: sort-ascending
+      sort-descending: sort-descending
+      order: triangle
+      quote: quote
+      divider-slash: slash
+      divider-bar: minus-vertical
+      divider-point: point
+      first: chevron-left-pipe
+      maximize: arrows-diagonal
+      mail: mail
+      share: share
+      star: star
+      link: link
+      home: home
+
+  social:
+      facebook: brand-facebook
+      instagram: brand-instagram
+      tiktok: brand-tiktok
+      twitter-x: brand-x
+      linkedin: brand-linkedin
+      reddit: brand-reddit
+      youtube: brand-youtube
+      snapchat: brand-snapchat
+      whatsapp: brand-whatsapp
+
+  application:
+      edit: edit
+      delete: trash
+      confirm: question-mark
+      save: device-floppy
+      warning: alert-triangle
+      settings: settings
+      login: login-2
+      logout: logout
+      user: user
+      reload: reload
+      message: message
+      notifications: bell
+      help: help
+      download: download
+      upload: upload
+      history: history
