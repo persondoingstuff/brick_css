@@ -1,0 +1,67 @@
+/* Depends on:
+** theme - sizes, colors, effects
+** fundamentals - sizes, colors
+*/
+
+:where(:root, [data-theme], [data-surface]) {
+    --brick-form-block-spacing: var(--brick-block-spacing);
+    --brick-form-block-spacing-small: var(--brick-block-spacing-very-tight);
+    --brick-form-padding-inline: var(--brick-size-rel-sm);
+    --brick-form-padding-block: var(--brick-size-rel-xs);
+
+    --brick-form-content-color: var(--brick-color-content);
+    --brick-form-content-color-active: var(--brick-color-content-active); /* Not used ?!! */
+    --brick-form-background-color: var(--brick-color-shaded);
+    --brick-form-background-color-active: var(--brick-color-background);
+    --brick-form-background-color-disabled: var(--brick-color-surface-3);
+    --brick-form-background-color-highlight: var(--brick-color-neutral-light-0);
+    --brick-form-accent-color: var(--brick-color-primary-accent);
+    --brick-form-accent-color-subtle: var(--brick-color-primary-surface-3); /* Not used ?!! */
+    --brick-form-accent-color-bold: var(--brick-color-primary-content-3);
+
+    --brick-form-color-disabled: var(--brick-color-accent);
+    --brick-form-color-disabled-alt: var(--brick-color-accent-subtle);
+    --brick-form-color-valid: var(--brick-color-success);
+    --brick-form-color-valid-alt: var(--brick-color-success-content);
+    --brick-form-color-invalid: var(--brick-color-danger);
+    --brick-form-color-invalid-alt: var(--brick-color-danger-content);
+
+    --brick-form-border-rounding: var(--brick-border-rounding-less);
+    --brick-form-border-width: var(--brick-border-width-thin);
+    --brick-form-border-color: var(--brick-color-accent-subtle);
+    --brick-form-border-color-valid: var(--brick-form-color-valid);
+    --brick-form-border-color-valid-active: var(--brick-form-color-valid-alt);
+    --brick-form-border-color-invalid: var(--brick-form-color-invalid);
+    --brick-form-border-color-invalid-active: var(--brick-form-color-invalid-alt);
+
+    --brick-form-disabled-opacity: var(--brick-opacity-semi);
+    --brick-form-element-width: var(--brick-line-length-full);
+    --brick-form-multiselect-max-height: 20ch;
+
+    --brick-form-control-size: var(--brick-size-rel-lg);
+    --brick-form-control-border-width: var(--brick-size-rel-xxxs);
+    --brick-form-checkbox-rounding: var(--brick-size-rel-xxs);
+    --brick-form-switch-distance: var(--brick-size-rel-md);
+    --brick-form-range-track-color: var(--brick-form-accent-color);
+    --brick-form-range-thumb-color: var(--brick-form-accent-color-bold);
+    --brick-form-range-thumb-shadow: none;
+    --brick-form-range-thumb-border-color: var(--brick-form-background-color);
+
+    --brick-form-label-content-color: var(--brick-form-content-color);
+    --brick-form-label-font-weight: var(--brick-font-weight);
+    --brick-form-label-font-size: var(--brick-font-size);
+    --brick-form-label-text-transform: none;
+
+    --brick-form-legend-content-color: var(--brick-form-content-color);
+    --brick-form-legend-font-weight: var(--brick-font-weight-bold);
+    --brick-form-legend-font-size: var(--brick-size-rel-md-lg);
+    --brick-form-legend-text-transform: none;
+
+    --brick-form-placeholder-color: var(--brick-color-content-active);
+    --brick-form-placeholder-font-weight: var(--brick-font-weight);
+    --brick-form-placeholder-font-size: var(--brick-font-size);
+    --brick-form-placeholder-opacity-active: var(--brick-opacity-mostly);
+    --brick-form-placeholder-opacity-inactive: var(--brick-opacity-more);
+
+    /* !! Add transition */
+}

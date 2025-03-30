@@ -1,0 +1,50 @@
+:root, [data-size] {
+    --brick-size-xxxs: .125rem;
+    --brick-size-xxs: .25rem;
+    --brick-size-xs: .5rem;
+    --brick-size-sm: .75rem;
+    --brick-size-md-sm: .9rem;
+    --brick-size-md: 1rem;
+    --brick-size-md-lg: 1.1rem;
+    --brick-size-lg: 1.25rem;
+    --brick-size-xl: 1.5rem;
+    --brick-size-xxl: 2rem;
+    --brick-size-xxxl: 4rem;
+
+    --brick-size-rel-xxxs: .125em;
+    --brick-size-rel-xxs: .25em;
+    --brick-size-rel-xs: .5em;
+    --brick-size-rel-sm: .75em;
+    --brick-size-rel-md-sm: .9em;
+    --brick-size-rel-md: 1em;
+    --brick-size-rel-md-lg: 1.1em;
+    --brick-size-rel-lg: 1.25em;
+    --brick-size-rel-xl: 1.5em;
+    --brick-size-rel-xxl: 2em;
+    --brick-size-rel-xxxl: 4em;
+
+    --brick-size-fluid-sm: clamp(var(--brick-size-rel-sm), 2vw, var(--brick-size-rel-md));
+    --brick-size-fluid-md: clamp(var(--brick-size-rel-md), 4vw, var(--brick-size-rel-lg));
+    --brick-size-fluid-lg: clamp(var(--brick-size-rel-lg), 6vw, var(--brick-size-rel-xl));
+    --brick-size-fluid-xl: clamp(var(--brick-size-xl), 8vw, var(--brick-size-rel-xxl));
+    --brick-size-fluid-xxl: clamp(var(--brick-size-rel-xxl), 12vw, var(--brick-size-rel-xxxl));
+    --brick-size-fluid: clamp(var(--brick-size-rel-sm), 5vw, var(--brick-size-rel-xl));
+
+    --brick-line-length-very-short: 35ch;
+    --brick-line-length-short: 70ch;
+    --brick-line-length-regular: 90ch;
+    --brick-line-length-long: 110ch;
+    --brick-line-length-very-long: 140ch;
+    --brick-line-length-fit: fit-content;
+    --brick-line-length-full: 100%;
+
+    --brick-line-length-fluid-very-short: clamp(var(--brick-line-length-very-short), 20%, var(--brick-line-length-short));
+    --brick-line-length-fluid-short: clamp(var(--brick-line-length-short), 30%, var(--brick-line-length-regular));
+    --brick-line-length-fluid-regular: clamp(var(--brick-line-length-regular), 40%, var(--brick-line-length-long));
+    --brick-line-length-fluid-long: clamp(var(--brick-line-length-long), 60%, var(--brick-line-length-very-long));
+
+    --brick-block-spacing-very-tight: var(--brick-size-rel-xxs);
+    --brick-block-spacing-tight: var(--brick-size-rel-sm);
+    --brick-block-spacing-regular: var(--brick-size-rel-md);
+    --brick-block-spacing-loose: var(--brick-size-rel-lg);
+}

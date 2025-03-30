@@ -1,0 +1,125 @@
+/**
+Set up the page basics
+
+Depends on:
+fundamentals and theme - typography, colors, sizes
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+::before,
+::after {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+:root {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: var(--brick-color-background);
+    color: var(--brick-color-content);
+    font-size: var(--brick-root-size);
+    font-weight: var(--brick-font-weight);
+    line-height: var(--brick-line-height);
+    font-family: var(--brick-font-main);
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    tab-size: 4;
+}
+
+/* !!TODO: Test if this is needed. Might be performance expensive */
+/* :where(*) {
+     font-size: 1em;
+ } */
+
+body {
+    width: 100%;
+    margin: 0;
+    /* overflow-x: hidden; */ /* !!TODO: Consider... */
+
+    & > :where(header, main, footer) {
+        padding-block: var(--brick-block-spacing);
+    }
+}
+
+:where(main) {
+    display: block;
+}
+
+:where(section, aside) {
+    margin-block-end: var(--brick-block-spacing);
+}
+
+::selection {
+    background-color: var(--brick-color-text-selection);
+}
+
+.hidden,
+[hidden],
+[type="hidden"],
+template {
+    display: none !important;
+}
+
+/**
+Accessibility & User interaction
+
+!!TODO:
+Determine if all these are needed, and if any more are.
+Are they the best version they can be?
+*/
+[aria-controls] {
+    cursor: pointer;
+}
+
+[aria-disabled="true"],
+[disabled] {
+    cursor: not-allowed;
+}
+
+[aria-hidden="false"][hidden] {
+    display: initial;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+:where(a, area, button, input, label, select, summary, textarea, [tabindex]) {
+    touch-action: manipulation;
+}
+
+[dir="rtl"] {
+    direction: rtl;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *:not([aria-busy="true"]),
+    :not([aria-busy="true"])::before,
+    :not([aria-busy="true"])::after {
+        background-attachment: initial !important;
+        animation-duration: 1ms !important;
+        animation-delay: -1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0s !important;
+        transition-duration: 0s !important;
+    }
+}
+
+.screenreader-only {
+    block-size: 1px;
+    clip-path: inset(50%);
+    inline-size: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}

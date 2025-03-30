@@ -1,0 +1,224 @@
+/**
+** Typography
+** - Modify styling using the [data-text] attribute
+** - Modify color using the [data-text-color] attribute
+** Requires:
+** - Theme defaults: typography, color
+** - Constants: typography, color, sizes
+*/
+
+
+/* Font family */
+[data-text="init"],
+[data-text="reset"],
+[data-text~="main"] {
+    font-family: var(--brick-font-main);
+}
+
+[data-text~="alt"] {
+    font-family: var(--brick-font-alt);
+}
+
+[data-text~="mono"] {
+    font-family: var(--brick-font-family-monospace);
+}
+
+/* Alignment */
+[data-text~="center"] {
+    text-align: center;
+}
+
+[data-text~="start"] {
+    text-align: left;
+    text-align: start;
+}
+
+[data-text~="end"] {
+    text-align: right;
+    text-align: end;
+}
+
+/* Override line length limit*/
+[data-text~="center"],
+[data-text~="full"] {
+    max-inline-size: 100%;
+}
+
+/* Casing */
+[data-text~="uppercase"] {
+    text-transform: uppercase;
+}
+
+[data-text~="lowercase"] {
+    text-transform: lowercase;
+}
+
+[data-text~="title"] {
+    text-transform: capitalize;
+}
+
+/* Sizes */
+[data-text~="xs"] {
+    font-size: var(--brick-size-xs);
+}
+
+[data-text~="sm"] {
+    font-size: var(--brick-size-sm);
+}
+
+[data-text~="md-"] {
+    font-size: var(--brick-size-md-sm);
+}
+
+[data-text=init], [data-text=reset],
+[data-text~="md"] {
+    font-size: var(--brick-size-md);
+}
+
+[data-text~="md+"] {
+    font-size: var(--brick-size-md-lg);
+}
+
+[data-text~="lg"] {
+    font-size: var(--brick-size-lg);
+}
+
+[data-text~="xl"] {
+    font-size: var(--brick-size-xl);
+}
+
+[data-text~="xxl"] {
+    font-size: var(--brick-size-xxl);
+}
+
+/* Weight */
+[data-text~="thin"] {
+    font-weight: var(--brick-font-weight-thin);
+}
+
+[data-text~="light"] {
+    font-weight: var(--brick-font-weight-light);
+}
+
+[data-text="init"],
+[data-text="reset"],
+:where([data-text~="regular"]) {
+    font-weight: var(--brick-font-weight-regular);
+    letter-spacing: var(--brick-letter-spacing-regular);
+    font-style: normal;
+    text-transform: unset;
+}
+
+[data-text~="strong"],
+[data-text~="bold"] {
+    font-weight: var(--brick-font-weight-bold);
+}
+
+[data-text~="heavy"] {
+    font-weight: var(--brick-font-weight-heavy);
+}
+
+[data-text~="italic"] {
+    font-style: italic;
+}
+
+
+/* Letter spacing. "regular" is coupled with font weight */
+[data-text~="very-tight"] {
+    letter-spacing: var(--brick-letter-spacing-very-tight);
+}
+
+[data-text~="tight"] {
+    letter-spacing: var(--brick-letter-spacing-tight);
+}
+
+[data-text~="loose"] {
+    letter-spacing: var(--brick-letter-spacing-loose);
+}
+
+[data-text~="very-loose"] {
+    letter-spacing: var(--brick-letter-spacing-very-loose);
+}
+
+/*
+** TEXT COLOR
+*/
+
+/* Set text to regular text colors */
+
+[data-text-color~="1"] {
+    color: var(--brick-color-content-1);
+
+    &[data-text-color~="primary"] {
+        color: var(--brick-color-primary-content-1);
+    }
+
+    &[data-text-color~="secondary"] {
+        color: var(--brick-color-secondary-content-1);
+    }
+}
+
+[data-text-color~="2"] {
+    color: var(--brick-color-content-2);
+
+    &[data-text-color~="primary"] {
+        color: var(--brick-color-primary-content-2);
+    }
+
+    &[data-text-color~="secondary"] {
+        color: var(--brick-color-secondary-content-2);
+    }
+}
+
+[data-text-color~="3"] {
+    color: var(--brick-color-content-3);
+
+    &[data-text-color~="primary"] {
+        color: var(--brick-color-primary-content-3);
+    }
+
+    &[data-text-color~="secondary"] {
+        color: var(--brick-color-secondary-content-3);
+    }
+}
+
+/* Set text to accent colors */
+
+[data-text-color~="primary"] {
+    color: var(--brick-color-primary);
+
+    &[data-text-color~="bold"] {
+        color: var(--brick-color-primary-bold);
+    }
+
+    &[data-text-color~="subtle"] {
+        color: var(--brick-color-primary-subtle);
+    }
+}
+
+[data-text-color~="secondary"] {
+    color: var(--brick-color-secondary);
+
+    &[data-text-color~="bold"] {
+        color: var(--brick-color-secondary-bold);
+    }
+
+    &[data-text-color~="subtle"] {
+        color: var(--brick-color-secondary-subtle);
+    }
+}
+
+[data-text-color~="neutral"] {
+    color: var(--brick-color-neutral);
+
+    &[data-text-color~="bold"] {
+        color: var(--brick-color-neutral-bold);
+    }
+
+    &[data-text-color~="subtle"] {
+        color: var(--brick-color-neutral-subtle);
+    }
+}
+
+
+/* !! Add settings for contrast colors? */

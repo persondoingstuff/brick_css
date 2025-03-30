@@ -1,0 +1,81 @@
+/* Control positioning
+- setting elements sticky, handling overflow and scrolling, z-index layers
+
+Depends on:
+sizes, effects
+*/
+
+/* Control overflow and scrolling */
+[data-scroll="auto"] {
+    overflow: auto;
+}
+
+/* !!TODO Add scrollbar gutter, hidden, etc. */
+
+/* Make elements sticky */
+[data-sticky] {
+    position: sticky;
+    height: fit-content;
+    --_distance: 0;
+    --_distance-inline: var(--brick-sticky-spacing-inline, var(--_distance));
+    --_distance-block: var(--brick-sticky-spacing-block, var(--_distance));
+}
+
+[data-sticky~="fixed"] {
+    position: fixed;
+}
+
+[data-sticky~="spaced"] {
+    --_distance-inline: var(--brick-size-md);
+    --_distance-block: var(--brick-size-sm);
+}
+
+[data-sticky~="top"] {
+    top: var(--_distance-block);
+}
+
+[data-sticky~="bottom"] {
+    bottom: var(--_distance-block);
+}
+
+[data-sticky~="left"] {
+    left: var(--_distance-inline);
+}
+
+[data-sticky~="right"] {
+    right: var(--_distance-inline);
+}
+
+[data-sticky~="middle"] {
+    left: var(--_distance-inline);
+    right: var(--_distance-inline);
+    margin-inline: auto;
+    width: fit-content;
+}
+
+@media (max-width: 768px) {
+    [data-sticky~="widescreen"] {
+        position: inherit;
+    }
+}
+
+/* Control z-index layer stacking order */
+[data-layer="behind"] {
+    z-index: var(--brick-layer-behind);
+}
+
+[data-layer="1"] {
+    z-index: var(--brick-layer-1);
+}
+
+[data-layer="2"] {
+    z-index: var(--brick-layer-2);
+}
+
+[data-layer="3"] {
+    z-index: var(--brick-layer-3);
+}
+
+[data-layer="front"] {
+    z-index: var(--brick-layer-front);
+}

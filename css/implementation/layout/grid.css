@@ -1,0 +1,59 @@
+/**
+** Layout - grid
+** Display child in a grid, with various size
+** Depends on: sizes (constants and defaults)
+
+Set to size xs, sm, md, lg or xl.
+Set 'expand' to auto-fit, and 'keep' to auto-fill.
+
+Adjust gap size with data-layout
+
+Configurable properties:
+--brick-grid-min-size - defaults to 18em
+--brick-grid-min-pct - defaults to 20%
+--brick-grid-mode - defaults to auto-fill
+--brick-grid-spacing - defaults to --brick-block-spacing
+*/
+
+[data-grid] {
+    --_grid-min-size: calc(var(--brick-grid-min-size, 18) * 1em);
+    --_grid-min-pct: calc(var(--brick-grid-min-pct, 20) * 1%);
+    --_grid-max: max(var(--_grid-min-size), var(--_grid-min-pct));
+    --_grid-mode: var(--brick-grid-mode, auto-fill);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--_grid-max)), 1fr));
+    gap: var(--brick-grid-spacing, var(--brick-block-spacing));
+}
+
+[data-grid~="xs"] {
+    --brick-grid-min-size: 12;
+    --brick-grid-min-pct: 15;
+}
+
+[data-grid~="sm"] {
+    --brick-grid-min-size: 15;
+    --brick-grid-min-pct: 18;
+}
+
+[data-grid~="md"] {
+    --brick-grid-min-size: 18;
+    --brick-grid-min-pct: 20;
+}
+
+[data-grid~="lg"] {
+    --brick-grid-min-size: 24;
+    --brick-grid-min-pct: 25;
+}
+
+[data-grid~="xl"] {
+    --brick-grid-min-size: 30;
+    --brick-grid-min-pct: 33;
+}
+
+[data-grid~="expand"] {
+    --_grid-mode: auto-fit;
+}
+
+[data-grid~="keep"] {
+    --_grid-mode: auto-fill;
+}

@@ -1,0 +1,185 @@
+/* Links and buttons
+Most properties use default values, with undefined custom properties for overriding defaults
+
+Depends on:
+!!TODO
+*/
+
+/* LINK */
+:where(a:not([role="button"])),
+[role="link"] {
+    --_link-decoration: var(--brick-link-decoration, underline);
+    --_link-decoration-offset: var(--brick-text-underline-offset, var(--brick-size-rel-xxs));
+    --_link-decoration-thickness: var(--brick-link-decoration-thickness, from-font);
+    --_link-background-color: var(--brick-link-background-color, transparent);
+    --_link-background-color-active: var(--brick-link-background-color-active, var(--_link-background-color));
+    --_link-text-color: var(--brick-link-color);
+    --_link-text-color-active: var(--brick-link-color-active);
+    --_link-decoration-color: var(--brick-link-decoration-color, var(--brick-link-color));
+    --_link-decoration-color-active: var(--brick-link-decoration-color-active, var(--brick-link-color-active));
+
+    background-color: var(--_link-background-color);
+    color: var(--_link-text-color);
+    font-weight: var(--brick-link-font-weight, var(--brick-font-weight));
+    text-decoration-style: solid;
+    text-decoration-line: var(--_link-decoration);
+    text-decoration-color: var(--_link-decoration-color);
+    text-underline-offset: var(--_link-decoration-offset);
+    text-decoration-thickness: var(--_link-decoration-thickness);
+    
+    outline: none;
+    transition: none var(--brick-link-transition-duration, 0) var(--brick-link-transition-mode, linear);
+    transition-property: var(--brick-link-transition-properties, none);
+
+    /* [data-surface]:not([data-surface=""], [data-surface="init"]) & {
+        --_link-text-color: var(--brick-color-primary-content-2);
+        --_link-text-color-active: var(--brick-color-primary-content-3);
+    } */
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        color: var(--_link-text-color-active);
+        background-color: var(--_link-background-color-active);
+        text-decoration-color: var(--_link-decoration-color-active);
+        text-decoration: var(--brick-link-decoration-active, var(--_link-decoration));
+        text-underline-offset: var(--brick-link-decoration-offset-active, var(--_link-decoration-offset));
+        text-decoration-thickness: var(--brick-link-decoration-thickness-active, var(--_link-decoration-thickness));
+    }
+    
+    &:is(:focus-visible, :focus) {
+        border-radius: var(--brick-border-rounding-barely);
+        box-shadow: var(--brick-focus-shadow);
+    }
+
+    nav &:not([data-style~="link"]),
+    &[data-style~="nav"] {
+        --_link-decoration-color: transparent;
+        --_link-text-color-active: var(--_link-text-color);
+        --_link-decoration-thickness: var(--brick-border-width-regular);
+        --_link-decoration-offset: var(--brick-size-rel-xs);
+        --brick-link-font-weight: var(--brick-font-weight-bold);
+        padding-inline: var(--brick-size-rel-xxs);
+    }
+
+}
+
+
+
+/* BUTTON
+
+button background/color hierarchy
+
+- fallback
+	- Normal: primary, pico-color-content-contrast
+	- Active: primary-bold, normal color
+- default
+	- Follows pref, falls back to fallback
+- surface [not 1,2,3]
+	- Normal: surface, pico-color-content-contrast
+	- Active: surface alt, normal color
+- surface [1,2,3]
+	- Normal: surface, pico-color-content
+	- Active: surface alt, normal color
+- surface [outline]
+	- Normal: transparent, surface (also border)
+	- Active: transparent, surface alt (also border)
+
+*/
+
+:where(a[role="button"]) {
+    display: inline-block;
+}
+
+:where(button,
+       [type="submit"],
+       [type="reset"],
+       [type="button"],
+       [type="file"]::file-selector-button,
+       [role="button"]) {
+    --_shadow: var(--brick-button-box-shadow, var(--brick-shadow-none));
+    --_shadow-active: var(--brick-button-box-shadow-active, var(--_shadow));
+    --_radius: var(--brick-button-border-rounding, var(--brick-border-rounding));
+    
+    --_button-color: var(--brick-button-text-color, var(--brick-color-content-contrast));
+    --_button-color-active: var(--brick-button-text-color-active, var(--_button-color));
+    --_button-background: var(--brick-button-background-color, var(--brick-color-primary-accent));
+    --_button-background-alt: var(--brick-button-background-color-active, var(--brick-color-primary-accent-bold));
+    --_border-color: var(--brick-button-border-color, var(--_button-background));
+    --_border-color-active: var(--brick-button-border-color-active, var(--_button-background-alt));
+    --_button-padding-inline: var(--brick-button-padding-inline, var(--brick-control-spacing-inline));
+    --_button-padding-block: var(--brick-button-padding-block, var(--brick-control-spacing-block));
+    color: var(--_button-color);
+    background-color: var(--_button-background);
+    border: var(--brick-button-border-width, var(--brick-border-width)) solid var(--_border-color);
+    padding: var(--_button-padding-block) var(--_button-padding-inline);
+    min-width: var(--brick-button-width-min, 10ch);
+    width: var(--brick-button-width, fit-content);
+    border-radius: var(--_radius);
+    box-shadow: var(--_shadow);
+    line-height: var(--brick-line-height-tight);
+    font-size: var(--brick-font-size);
+    font-weight: var(--brick-button-text-weight, var(--brick-font-weight-regular));
+    transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+    transition-property: var(--brick-control-transition-properties, none);
+    appearance: button;
+    margin: 0;
+    overflow: visible;
+    font-family: inherit;
+    text-transform: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+
+    /* Background and content color is set by data-surface.
+    ** Else if use the defined button colors
+    ** Else use defaults
+    */
+    &[data-surface]:not([data-surface=""]) {
+        --_button-color: var(--brick-color-content);
+        --_button-color-active: var(--brick-color-content);
+        --_button-background: var(--brick-color-background);
+        --_button-background-alt: var(--brick-color-background-active);
+        --_border-color: var(--_button-background);
+        --_border-color-active: var(--_button-background-alt);
+    }
+
+    &[data-icon] {
+        justify-content: center;
+        min-width: auto;
+    }
+
+    /* &[data-surface~="outline"] {
+        color: var(--_button-background);
+        border-color: var(--_button-background);
+        background-color: transparent;
+    } */
+
+    /* button hover, focus, active state*/
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        color: var(--_button-color-active);
+        background-color: var(--brick-active-style-surface, var(--_button-background-alt));
+        border-color: var(--_border-color-active);
+        border-radius: var(--brick-button-border-rounding-active, var(--_radius));
+        box-shadow: var(--_shadow-active);
+
+        &[data-style~="outline"] {
+            color: var(--_button-background-alt);
+            background-color: transparent;
+        }
+    }
+
+    &:is([aria-current]:not([aria-current="false"]), :active, :focus) {
+        box-shadow: var(--_shadow-active), var(--brick-focus-shadow);
+    }
+
+    &[disabled],
+    :where(fieldset[disabled]) & {
+        opacity: var(--brick-pico-opacity-semi);
+        pointer-events: none;
+    }
+}
+
+
+

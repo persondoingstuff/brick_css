@@ -1,0 +1,318 @@
+/* Based on
+** https://github.com/argyleink/open-props/blob/main/src/props.colors-hsl.css
+** https://yeun.github.io/open-color/
+** https://github.com/fchristant/colar
+** - with some additional steps added 
+**
+** Should be changed to oklch in the future
+*/
+
+:root {
+    --brick-color-palette-white: 0, 0%, 100%;
+    --brick-color-palette-black: 0, 0%, 0%;
+
+    /* Gray */
+    --brick-color-palette-gray-0: 210 17% 98%;
+    --brick-color-palette-gray-1: 210 17% 95%;
+    --brick-color-palette-gray-2: 210 16% 93%;
+    --brick-color-palette-gray-3: 210 14% 89%;
+    --brick-color-palette-gray-4: 210 14% 83%;
+    --brick-color-palette-gray-5: 210 11% 71%;
+    --brick-color-palette-gray-6: 210 7% 56%;
+    --brick-color-palette-gray-7: 210 9% 31%;
+    --brick-color-palette-gray-8: 210 10% 23%;
+    --brick-color-palette-gray-9: 210 11% 15%;
+    --brick-color-palette-gray-10: 214 14% 10%;
+    --brick-color-palette-gray-11: 216 16% 6%;
+    --brick-color-palette-gray-12: 210 40% 2%;
+    /* --brick-color-palette-gray-13: ; */
+
+    /* Stone */
+    --brick-color-palette-stone-0: 200 27% 98%;
+    --brick-color-palette-stone-1: 210 18% 96%;
+    --brick-color-palette-stone-2: 210 11% 93%;
+    --brick-color-palette-stone-3: 192 9% 89%;
+    --brick-color-palette-stone-4: 197 8% 83%;
+    --brick-color-palette-stone-5: 202 5% 71%;
+    --brick-color-palette-stone-6: 200 3% 60%;
+    --brick-color-palette-stone-7: 180 2% 50%;
+    --brick-color-palette-stone-8: 160 1% 41%;
+    --brick-color-palette-stone-9: 90 1% 31%;
+    --brick-color-palette-stone-10: 60 3% 22%;
+    --brick-color-palette-stone-11: 60 6% 14%;
+    --brick-color-palette-stone-12: 60 6% 7%;
+    /* --brick-color-palette-stone-13: ; */
+
+    /* Red */
+    --brick-color-palette-red-0: 0 100% 98%;
+    --brick-color-palette-red-1: 0 100% 95%;
+    --brick-color-palette-red-2: 0 100% 89%;
+    --brick-color-palette-red-3: 0 100% 83%;
+    --brick-color-palette-red-4: 0 100% 76%;
+    --brick-color-palette-red-5: 0 100% 71%;
+    --brick-color-palette-red-6: 0 94% 65%;
+    --brick-color-palette-red-7: 0 86% 59%;
+    --brick-color-palette-red-8: 0 74% 54%;
+    --brick-color-palette-red-9: 0 65% 48%;
+    --brick-color-palette-red-10: 0 65% 42%;
+    --brick-color-palette-red-11: 0 65% 36%;
+    --brick-color-palette-red-12: 0 66% 30%;
+    /* --brick-color-palette-red-13: ; */
+
+    /* Pink */
+    --brick-color-palette-pink-0: 336 100% 97%;
+    --brick-color-palette-pink-1: 336 100% 94%;
+    --brick-color-palette-pink-2: 338 91% 87%;
+    --brick-color-palette-pink-3: 339 90% 81%;
+    --brick-color-palette-pink-4: 339 88% 74%;
+    --brick-color-palette-pink-5: 339 82% 67%;
+    --brick-color-palette-pink-6: 339 76% 59%;
+    --brick-color-palette-pink-7: 339 67% 52%;
+    --brick-color-palette-pink-8: 339 68% 45%;
+    --brick-color-palette-pink-9: 339 69% 38%;
+    --brick-color-palette-pink-10: 339 70% 32%;
+    --brick-color-palette-pink-11: 339 69% 27%;
+    --brick-color-palette-pink-12: 339 70% 21%;
+    /* --brick-color-palette-pink-13: ; */
+
+    /* Purple */
+    --brick-color-palette-purple-0: 280 67% 96%;
+    --brick-color-palette-purple-1: 287 77% 92%;
+    --brick-color-palette-purple-2: 288 86% 86%;
+    --brick-color-palette-purple-3: 289 85% 78%;
+    --brick-color-palette-purple-4: 288 83% 71%;
+    --brick-color-palette-purple-5: 288 75% 64%;
+    --brick-color-palette-purple-6: 288 67% 58%;
+    --brick-color-palette-purple-7: 288 56% 52%;
+    --brick-color-palette-purple-8: 288 54% 46%;
+    --brick-color-palette-purple-9: 288 54% 40%;
+    --brick-color-palette-purple-10: 288 55% 33%;
+    --brick-color-palette-purple-11: 288 56% 26%;
+    --brick-color-palette-purple-12: 288 55% 20%;
+    --brick-color-palette-purple-13: 288 40% 9%;
+    /* --brick-color-palette-purple-13: ; */
+
+    /* Violet */
+    --brick-color-palette-violet-0: 252 100% 97%;
+    --brick-color-palette-violet-1: 257 100% 93%;
+    --brick-color-palette-violet-2: 256 100% 87%;
+    --brick-color-palette-violet-3: 255 94% 79%;
+    --brick-color-palette-violet-4: 255 93% 72%;
+    --brick-color-palette-violet-5: 255 91% 67%;
+    --brick-color-palette-violet-6: 255 86% 63%;
+    --brick-color-palette-violet-7: 255 78% 60%;
+    --brick-color-palette-violet-8: 255 67% 55%;
+    --brick-color-palette-violet-9: 255 53% 50%;
+    --brick-color-palette-violet-10: 255 53% 44%;
+    --brick-color-palette-violet-11: 255 53% 37%;
+    --brick-color-palette-violet-12: 255 53% 31%;
+    /* --brick-color-palette-violet-13: ; */
+
+    /* Indigo */
+    --brick-color-palette-indigo-0: 223 100% 96%;
+    --brick-color-palette-indigo-1: 225 100% 93%;
+    --brick-color-palette-indigo-2: 228 100% 86%;
+    --brick-color-palette-indigo-3: 228 100% 78%;
+    --brick-color-palette-indigo-4: 228 96% 72%;
+    --brick-color-palette-indigo-5: 228 94% 67%;
+    --brick-color-palette-indigo-6: 228 89% 63%;
+    --brick-color-palette-indigo-7: 228 81% 59%;
+    --brick-color-palette-indigo-8: 228 69% 55%;
+    --brick-color-palette-indigo-9: 230 57% 50%;
+    --brick-color-palette-indigo-10: 230 57% 43%;
+    --brick-color-palette-indigo-11: 230 57% 37%;
+    --brick-color-palette-indigo-12: 230 57% 30%;
+    /* --brick-color-palette-indigo-13: ; */
+
+    /* Blue */
+    --brick-color-palette-blue-0: 205 100% 95%;
+    --brick-color-palette-blue-1: 206 100% 91%;
+    --brick-color-palette-blue-2: 206 100% 82%;
+    --brick-color-palette-blue-3: 206 96% 72%;
+    --brick-color-palette-blue-4: 207 91% 64%;
+    --brick-color-palette-blue-5: 207 86% 57%;
+    --brick-color-palette-blue-6: 208 80% 52%;
+    --brick-color-palette-blue-7: 208 77% 47%;
+    --brick-color-palette-blue-8: 209 77% 43%;
+    --brick-color-palette-blue-9: 209 75% 38%;
+    --brick-color-palette-blue-10: 209 76% 32%;
+    --brick-color-palette-blue-11: 209 75% 27%;
+    --brick-color-palette-blue-12: 209 76% 21%;
+    /* --brick-color-palette-blue-13: ; */
+
+    /* Cyan */
+    --brick-color-palette-cyan-0: 185 81% 94%;
+    --brick-color-palette-cyan-1: 185 84% 88%;
+    --brick-color-palette-cyan-2: 186 77% 77%;
+    --brick-color-palette-cyan-3: 187 74% 65%;
+    --brick-color-palette-cyan-4: 187 69% 55%;
+    --brick-color-palette-cyan-5: 188 72% 47%;
+    --brick-color-palette-cyan-6: 187 80% 42%;
+    --brick-color-palette-cyan-7: 188 83% 37%;
+    --brick-color-palette-cyan-8: 189 85% 32%;
+    --brick-color-palette-cyan-9: 189 85% 28%;
+    --brick-color-palette-cyan-10: 189 84% 23%;
+    --brick-color-palette-cyan-11: 190 84% 17%;
+    --brick-color-palette-cyan-12: 189 84% 12%;
+    /* --brick-color-palette-cyan-13: ; */
+
+    /* Teal */
+    --brick-color-palette-teal-0: 161 79% 95%;
+    --brick-color-palette-teal-1: 160 85% 87%;
+    --brick-color-palette-teal-2: 162 78% 77%;
+    --brick-color-palette-teal-3: 162 72% 65%;
+    --brick-color-palette-teal-4: 162 68% 54%;
+    --brick-color-palette-teal-5: 162 73% 46%;
+    --brick-color-palette-teal-6: 162 82% 40%;
+    --brick-color-palette-teal-7: 162 87% 35%;
+    --brick-color-palette-teal-8: 162 88% 30%;
+    --brick-color-palette-teal-9: 162 88% 26%;
+    --brick-color-palette-teal-10: 162 89% 21%;
+    --brick-color-palette-teal-11: 162 88% 16%;
+    --brick-color-palette-teal-12: 163 89% 11%;
+    /* --brick-color-palette-teal-13: ; */
+
+    /* Green */
+    --brick-color-palette-green-0: 131 67% 95%;
+    --brick-color-palette-green-1: 128 76% 90%;
+    --brick-color-palette-green-2: 128 71% 82%;
+    --brick-color-palette-green-3: 129 68% 73%;
+    --brick-color-palette-green-4: 130 61% 64%;
+    --brick-color-palette-green-5: 130 57% 56%;
+    --brick-color-palette-green-6: 131 50% 50%;
+    --brick-color-palette-green-7: 131 53% 46%;
+    --brick-color-palette-green-8: 131 54% 40%;
+    --brick-color-palette-green-9: 132 52% 35%;
+    --brick-color-palette-green-10: 132 52% 29%;
+    --brick-color-palette-green-11: 132 53% 22%;
+    --brick-color-palette-green-12: 131 53% 16%;
+    --brick-color-palette-green-13: 131 40% 9%;
+
+    /* Lime */
+    --brick-color-palette-lime-0: 79 81% 94%;
+    --brick-color-palette-lime-1: 80 83% 88%;
+    --brick-color-palette-lime-2: 81 81% 80%;
+    --brick-color-palette-lime-3: 82 75% 69%;
+    --brick-color-palette-lime-4: 83 73% 59%;
+    --brick-color-palette-lime-5: 84 69% 51%;
+    --brick-color-palette-lime-6: 85 74% 45%;
+    --brick-color-palette-lime-7: 85 79% 40%;
+    --brick-color-palette-lime-8: 86 84% 36%;
+    --brick-color-palette-lime-9: 85 84% 32%;
+    --brick-color-palette-lime-10: 85 83% 26%;
+    --brick-color-palette-lime-11: 85 83% 21%;
+    --brick-color-palette-lime-12: 85 84% 15%;
+    /* --brick-color-palette-lime-13: ; */
+
+    /* Yellow */
+    --brick-color-palette-yellow-0: 50 100% 93%;
+    --brick-color-palette-yellow-1: 49 100% 87%;
+    --brick-color-palette-yellow-2: 49 100% 80%;
+    --brick-color-palette-yellow-3: 48 100% 70%;
+    --brick-color-palette-yellow-4: 47 100% 62%;
+    --brick-color-palette-yellow-5: 45 97% 54%;
+    --brick-color-palette-yellow-6: 42 96% 50%;
+    --brick-color-palette-yellow-7: 39 100% 48%;
+    --brick-color-palette-yellow-8: 35 100% 47%;
+    --brick-color-palette-yellow-9: 31 100% 45%;
+    --brick-color-palette-yellow-10: 31 100% 35%;
+    --brick-color-palette-yellow-11: 31 100% 25%;
+    --brick-color-palette-yellow-12: 31 100% 20%;
+    /* --brick-color-palette-yellow-13: ; */
+
+    /* Orange */
+    --brick-color-palette-orange-0: 34 100% 95%;
+    --brick-color-palette-orange-1: 33 100% 90%;
+    --brick-color-palette-orange-2: 33 100% 83%;
+    --brick-color-palette-orange-3: 32 100% 74%;
+    --brick-color-palette-orange-4: 31 100% 65%;
+    --brick-color-palette-orange-5: 29 100% 58%;
+    --brick-color-palette-orange-6: 27 98% 54%;
+    --brick-color-palette-orange-7: 24 94% 50%;
+    --brick-color-palette-orange-8: 21 90% 48%;
+    --brick-color-palette-orange-9: 17 87% 45%;
+    --brick-color-palette-orange-10: 17 87% 40%;
+    --brick-color-palette-orange-11: 17 87% 32%;
+    --brick-color-palette-orange-12: 17 87% 27%;
+    /* --brick-color-palette-orange-13: ; */
+
+    /* Choco */
+    --brick-color-palette-choco-0: 48 100% 93%;
+    --brick-color-palette-choco-1: 35 91% 86%;
+    --brick-color-palette-choco-2: 30 85% 79%;
+    --brick-color-palette-choco-3: 27 80% 72%;
+    --brick-color-palette-choco-4: 25 75% 65%;
+    --brick-color-palette-choco-5: 25 71% 57%;
+    --brick-color-palette-choco-6: 25 70% 49%;
+    --brick-color-palette-choco-7: 25 75% 42%;
+    --brick-color-palette-choco-8: 25 75% 37%;
+    --brick-color-palette-choco-9: 25 76% 31%;
+    --brick-color-palette-choco-10: 25 71% 26%;
+    --brick-color-palette-choco-11: 25 66% 21%;
+    --brick-color-palette-choco-12: 25 65% 15%;
+    /* --brick-color-palette-choco-13: ; */
+
+    /* Brown */
+    --brick-color-palette-brown-0: 36 60% 95%;
+    --brick-color-palette-brown-1: 32 44% 87%;
+    --brick-color-palette-brown-2: 28 40% 80%;
+    --brick-color-palette-brown-3: 28 38% 72%;
+    --brick-color-palette-brown-4: 27 36% 65%;
+    --brick-color-palette-brown-5: 28 34% 57%;
+    --brick-color-palette-brown-6: 28 32% 50%;
+    --brick-color-palette-brown-7: 28 35% 43%;
+    --brick-color-palette-brown-8: 28 38% 37%;
+    --brick-color-palette-brown-9: 27 42% 31%;
+    --brick-color-palette-brown-10: 25 48% 25%;
+    --brick-color-palette-brown-11: 23 58% 19%;
+    --brick-color-palette-brown-12: 22 57% 16%;
+    /* --brick-color-palette-brown-13: ; */
+
+    /* Sand */
+    --brick-color-palette-sand-0: 200 27% 98%;
+    --brick-color-palette-sand-1: 48 17% 88%;
+    --brick-color-palette-sand-2: 45 22% 79%;
+    --brick-color-palette-sand-3: 44 22% 69%;
+    --brick-color-palette-sand-4: 44 17% 62%;
+    --brick-color-palette-sand-5: 44 14% 54%;
+    --brick-color-palette-sand-6: 42 14% 46%;
+    --brick-color-palette-sand-7: 43 16% 39%;
+    --brick-color-palette-sand-8: 41 15% 32%;
+    --brick-color-palette-sand-9: 43 14% 26%;
+    --brick-color-palette-sand-10: 44 11% 20%;
+    --brick-color-palette-sand-11: 60 6% 14%;
+    --brick-color-palette-sand-12: 60 6% 7%;
+    /* --brick-color-palette-sand-13: ; */
+
+    /* Camo */
+    --brick-color-palette-camo-0: 66 71% 95%;
+    --brick-color-palette-camo-1: 64 69% 77%;
+    --brick-color-palette-camo-2: 65 69% 59%;
+    --brick-color-palette-camo-3: 65 61% 51%;
+    --brick-color-palette-camo-4: 63 61% 46%;
+    --brick-color-palette-camo-5: 60 62% 41%;
+    --brick-color-palette-camo-6: 59 65% 36%;
+    --brick-color-palette-camo-7: 56 67% 33%;
+    --brick-color-palette-camo-8: 54 70% 29%;
+    --brick-color-palette-camo-9: 54 69% 25%;
+    --brick-color-palette-camo-10: 53 69% 22%;
+    --brick-color-palette-camo-11: 53 69% 18%;
+    --brick-color-palette-camo-12: 52 69% 13%;
+    /* --brick-color-palette-camo-13: ; */
+
+    /* Jungle */
+    --brick-color-palette-jungle-0: 74 98% 84%;
+    --brick-color-palette-jungle-1: 74 79% 78%;
+    --brick-color-palette-jungle-2: 74 68% 71%;
+    --brick-color-palette-jungle-3: 75 62% 65%;
+    --brick-color-palette-jungle-4: 74 56% 59%;
+    --brick-color-palette-jungle-5: 74 53% 53%;
+    --brick-color-palette-jungle-6: 74 55% 47%;
+    --brick-color-palette-jungle-7: 74 66% 42%;
+    --brick-color-palette-jungle-8: 74 79% 36%;
+    --brick-color-palette-jungle-9: 73 90% 32%;
+    --brick-color-palette-jungle-10: 73 91% 26%;
+    --brick-color-palette-jungle-11: 73 91% 21%;
+    --brick-color-palette-jungle-12: 73 90% 16%;
+    /* --brick-color-palette-jungle-13: ; */
+  }

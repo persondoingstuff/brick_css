@@ -1,0 +1,38 @@
+/**
+** Layout - block
+** Set margin between blocks on the page
+** Depends on: sizes (constants and defaults)
+
+data-block adds spacing after an element.
+data-blocks adds spacing after each child element.
+*/
+
+[data-blocks],
+[data-block] {
+    --_block-spacing: var(--brick-block-spacing);
+    margin-block-end: var(--_block-spacing);
+}
+
+[data-blocks] > * {
+    margin-block-end: var(--_block-spacing);
+}
+
+[data-blocks="very-tight"],
+[data-block="very-tight"] {
+    --_block-spacing: var(--brick-block-spacing-very-tight);
+}
+
+[data-blocks="tight"],
+[data-block="tight"] {
+    --_block-spacing: var(--brick-block-spacing-tight);
+}
+
+[data-blocks="loose"],
+[data-block="loose"] {
+    --_block-spacing: var(--brick-block-spacing-loose);
+}
+
+[data-blocks="very-loose"],
+[data-block="very-loose"] {
+    --_block-spacing: var(--brick-block-spacing-very-loose);
+}

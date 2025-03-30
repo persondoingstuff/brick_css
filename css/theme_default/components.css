@@ -1,0 +1,100 @@
+/*
+
+# Optional properties
+
+Link:
+--brick-link-font-weight - defaults to --brick-font-weight
+--brick-link-decoration - defaults to underline 
+--brick-link-decoration-active - defaults to same as --brick-link-decoration
+--brick-link-decoration-offset - defaults to --brick-size-rel-xxs
+--brick-link-decoration-offset-active - defaults to same as --brick-link-decoration-offset
+--brick-link-decoration-thickness - defaults to from-font
+--brick-link-decoration-thickness-active - defaults to same as --brick-link-decoration-thickness
+--brick-link-decoration-color - defaults to --brick-link-color
+--brick-link-decoration-color-active - defaults to --brick-link-color-active
+--brick-link-background-color - defaults to transparent
+--brick-link-background-color-active - defaults to --brick-link-background-color
+
+Button:
+--brick-button-box-shadow - defaults to --brick-shadow-xs
+--brick-button-box-shadow-active - defaults to --brick-button-box-shadow
+--brick-button-border-width - defaults to --brick-border-width
+--brick-button-border-width-active - defaults to --brick-button-border-width
+--brick-button-border-rounding - defaults to --brick-border-rounding
+--brick-button-border-rounding-active - defaults to --brick-button-border-rounding
+--brick-button-text-weight - defaults to --brick-font-weight-regular
+--brick-button-width - defaults to fit-content - could be set to eg. 100%
+--brick-button-width-min - defaults to 10ch
+!! Add something for default padding?
+
+Card
+--brick-card-background-color - defaults to --brick-color-surface-2
+--brick-card-background-color-alt -- defaults to --brick-card-background-color
+--brick-card-border-color - defaults to --brick-card-background-color
+--brick-card-border-width - defaults to --brick-border-width
+--brick-card-border-rounding - defaults to --brick-border-rounding
+--brick-card-divider-color - defaults to --brick-card-border-color
+--brick-card-divider-width - defaults to --brick-card-border-width
+--brick-card-box-shadow - defaults to --brick-shadow-none
+!! Add something for default padding, gap?
+
+Table
+--brick-table-background-color - defaults to --brick-color-background
+--brick-table-background-color-alt - defaults to --brick-table-background-color or --brick-color-background-active when striped
+--brick-table-content-color - defaults to --brick-color-content-2
+--brick-table-divider-color - defaults to --brick-color-surface-3 or transparent when striped
+--brick-table-divider-width - defaults to --brick-border-width
+
+
+--brick-accordion-content-color
+--brick-accordion-background-color
+--brick-accordion-summary-color
+--brick-accordion-summary-background
+--brick-accordion-divider-color - defaults to --brick-accordion-border-color
+--brick-accordion-divider-width - defaults to --brick-accordion-border-width
+
+Form
+--brick-form-border-rounding --brick-border-rounding
+--brick-form-border-width --brick-border-width
+--brick-form-border-color --brick-color-border
+--brick-form-background-color --brick-color-background
+--brick-form-background-color-active --brick-color-background-active
+--brick-form-content-color --brick-color-content
+--brick-form-label-font-weight --brick-font-weight
+--brick-form-label-content-color --brick-form-content-color
+--brick-form-placeholder-color --brick-color-accent
+--brick-form-border-color-valid - 
+--brick-form-border-color-valid-active - 
+--brick-form-border-color-invalid - 
+--brick-form-border-color-invalid-active - 
+*/
+
+/* Depends on:
+** fundamentals - effects, sizes, colors
+** theme - colors
+*/
+
+:root, [data-theme], [data-surface] {
+    /* Link */
+    --brick-link-transition-properties: border-color, color;
+    --brick-link-transition-duration: var(--brick-transition-duration-very-fast);
+    --brick-link-transition-mode: var(--brick-transition-pull);
+    
+    /* Button */
+    --brick-button-border-rounding: var(--brick-border-rounding-less);
+    --brick-control-transition-properties: background-color, border-color, color, box-shadow, border-width;
+    --brick-control-transition-duration: var(--brick-transition-duration-very-fast);
+    --brick-control-transition-mode: var(--brick-transition-pull);
+    
+    --brick-icon-top-offset: var(--brick-size-rel-xxxs);
+    --brick-icon-size: var(--brick-size-rel-md);
+    --brick-icon-color: var(--brick-color-content-active);
+    --brick-icon-transition-properties: background-color, transform, opacity;
+    --brick-icon-transition-duration: var(--brick-transition-duration-mid);
+    --brick-icon-transition-mode: var(--brick-transition-switch);
+
+
+    /* --brick-button-box-shadow: var(--brick-shadow-md);
+    --brick-card-box-shadow: var(--brick-shadow-xl);
+    --brick-card-background-color: var(--brick-color-surface-1); */
+}

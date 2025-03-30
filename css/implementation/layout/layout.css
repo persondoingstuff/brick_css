@@ -1,0 +1,106 @@
+
+/*
+** MAGIC BASIC LAYOUT
+*/
+:where([data-layout]) {
+    display: flex;
+    flex-direction: row;
+    gap: var(--brick-size);
+    flex-wrap: wrap;
+
+    :where(&:not([data-layout~="content"]) > *:not([data-layout])) {
+        display: block;
+        margin: 0;
+    }
+
+    &:is(ul) {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+}
+
+[data-layout~="expanded"] {
+    width: 100%;
+}
+
+:where([data-layout~="content"]),
+[data-layout~="stack"] {
+    flex-direction: column;
+}
+
+[data-layout~="start"] {
+    justify-content: flex-start;
+}
+
+
+[data-layout~="stack"][data-layout~="start"] {
+    align-items: flex-start;
+}
+
+[data-layout~="center"] {
+    justify-content: center;
+}
+
+[data-layout~="stack"][data-layout~="center"],
+:where([data-layout]:not([data-layout~="stack"], [data-layout~="content"])) {
+    align-items: center;
+}
+
+[data-layout~="end"] {
+    justify-content: flex-end;
+}
+
+[data-layout~="stack"][data-layout~="end"] {
+    align-items: flex-end;
+}
+
+[data-layout~="spread"] {
+    justify-content: space-between;
+}
+
+[data-layout~="top"] {
+    align-items: start;
+}
+
+[data-layout~="middle"] {
+    align-items: center;
+}
+
+[data-layout~="bottom"] {
+    align-items: end;
+}
+
+[data-layout~="inline"] {
+    flex-wrap: nowrap;
+}
+
+/* Gap sizes */
+
+:where([data-layout~="content"]) {
+    gap: var(--brick-typography-block-spacing);
+}
+
+[data-layout~="very-tight"] {
+    gap: var(--brick-size-xs);
+}
+
+[data-layout~="tight"] {
+    gap: var(--brick-size-sm);
+}
+
+[data-layout~="comfy"] {
+    gap: var(--brick-size-md);
+}
+
+[data-layout~="loose"] {
+    gap: var(--brick-size-lg);
+}
+
+[data-layout~="very-loose"] {
+    gap: var(--brick-size-xl);
+}
+
+[data-layout~="gapless"] {
+    gap: 0;
+}

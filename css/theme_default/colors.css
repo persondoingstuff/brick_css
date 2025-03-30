@@ -1,0 +1,142 @@
+/* Depends on:
+** fundamentals - colors
+*/
+
+/* Select the colors and shades for neutral, primary and secondary
+** from the options defined in the constants
+*/
+:root {
+    --brick-color-neutral-light-0: hsl(var(--brick-color-palette-white));
+    --brick-color-neutral-light-1: hsl(var(--brick-color-palette-gray-0));
+    --brick-color-neutral-light-2: hsl(var(--brick-color-palette-gray-1));
+    --brick-color-neutral-light-3: hsl(var(--brick-color-palette-gray-2));
+    --brick-color-neutral-mid-1: hsl(var(--brick-color-palette-gray-6));
+    --brick-color-neutral-mid-2: hsl(var(--brick-color-palette-gray-7));
+    --brick-color-neutral-mid-3: hsl(var(--brick-color-palette-gray-8));
+    --brick-color-neutral-dark-3: hsl(var(--brick-color-palette-gray-9));
+    --brick-color-neutral-dark-2: hsl(var(--brick-color-palette-gray-10));
+    --brick-color-neutral-dark-1: hsl(var(--brick-color-palette-gray-11));
+    --brick-color-neutral-dark-0: hsl(var(--brick-color-palette-gray-12));
+
+    /* Color scheme: teal + orange*/
+    /* --brick-color-primary-light-0: hsl(var(--brick-color-palette-teal-0));
+    --brick-color-primary-light-1: hsl(var(--brick-color-palette-teal-1));
+    --brick-color-primary-light-2: hsl(var(--brick-color-palette-teal-2));
+    --brick-color-primary-light-3: hsl(var(--brick-color-palette-teal-3));
+    --brick-color-primary-mid-1: hsl(var(--brick-color-palette-teal-7));
+    --brick-color-primary-mid-2: hsl(var(--brick-color-palette-teal-8));
+    --brick-color-primary-mid-3: hsl(var(--brick-color-palette-teal-9));
+    --brick-color-primary-dark-3: hsl(var(--brick-color-palette-teal-10));
+    --brick-color-primary-dark-2: hsl(var(--brick-color-palette-teal-11));
+    --brick-color-primary-dark-1: hsl(var(--brick-color-palette-teal-12));
+    --brick-color-primary-dark-0: hsl(var(--brick-color-palette-teal-13));
+
+    --brick-color-secondary-light-0: hsl(var(--brick-color-palette-orange-0));
+    --brick-color-secondary-light-1: hsl(var(--brick-color-palette-orange-1));
+    --brick-color-secondary-light-2: hsl(var(--brick-color-palette-orange-2));
+    --brick-color-secondary-light-3: hsl(var(--brick-color-palette-orange-3));
+    --brick-color-secondary-mid-1: hsl(var(--brick-color-palette-orange-7));
+    --brick-color-secondary-mid-2: hsl(var(--brick-color-palette-orange-8));
+    --brick-color-secondary-mid-3: hsl(var(--brick-color-palette-orange-9));
+    --brick-color-secondary-dark-3: hsl(var(--brick-color-palette-orange-10));
+    --brick-color-secondary-dark-2: hsl(var(--brick-color-palette-orange-11));
+    --brick-color-secondary-dark-1: hsl(var(--brick-color-palette-orange-12));
+    --brick-color-secondary-dark-0: hsl(var(--brick-color-palette-orange-13)); */
+
+    /* Color scheme: blue + pink*/
+    --brick-color-primary-light-0: hsl(var(--brick-color-palette-blue-0));
+    --brick-color-primary-light-1: hsl(var(--brick-color-palette-blue-1));
+    --brick-color-primary-light-2: hsl(var(--brick-color-palette-blue-2));
+    --brick-color-primary-light-3: hsl(var(--brick-color-palette-blue-3));
+    --brick-color-primary-mid-1: hsl(var(--brick-color-palette-blue-7));
+    --brick-color-primary-mid-2: hsl(var(--brick-color-palette-blue-8));
+    --brick-color-primary-mid-3: hsl(var(--brick-color-palette-blue-9));
+    --brick-color-primary-dark-3: hsl(var(--brick-color-palette-blue-10));
+    --brick-color-primary-dark-2: hsl(var(--brick-color-palette-blue-11));
+    --brick-color-primary-dark-1: hsl(var(--brick-color-palette-blue-12));
+    --brick-color-primary-dark-0: hsl(var(--brick-color-palette-blue-13));
+
+    --brick-color-secondary-light-0: hsl(var(--brick-color-palette-pink-0));
+    --brick-color-secondary-light-1: hsl(var(--brick-color-palette-pink-1));
+    --brick-color-secondary-light-2: hsl(var(--brick-color-palette-pink-2));
+    --brick-color-secondary-light-3: hsl(var(--brick-color-palette-pink-3));
+    --brick-color-secondary-mid-1: hsl(var(--brick-color-palette-pink-7));
+    --brick-color-secondary-mid-2: hsl(var(--brick-color-palette-pink-8));
+    --brick-color-secondary-mid-3: hsl(var(--brick-color-palette-pink-9));
+    --brick-color-secondary-dark-3: hsl(var(--brick-color-palette-pink-10));
+    --brick-color-secondary-dark-2: hsl(var(--brick-color-palette-pink-11));
+    --brick-color-secondary-dark-1: hsl(var(--brick-color-palette-pink-12));
+    --brick-color-secondary-dark-0: hsl(var(--brick-color-palette-pink-13));
+
+    /* Color scheme: green + purple */
+    /* --brick-color-primary-light-0: hsl(var(--brick-color-palette-green-0));
+    --brick-color-primary-light-1: hsl(var(--brick-color-palette-green-1));
+    --brick-color-primary-light-2: hsl(var(--brick-color-palette-green-2));
+    --brick-color-primary-light-3: hsl(var(--brick-color-palette-green-3));
+    --brick-color-primary-mid-1: hsl(var(--brick-color-palette-green-7));
+    --brick-color-primary-mid-2: hsl(var(--brick-color-palette-green-8));
+    --brick-color-primary-mid-3: hsl(var(--brick-color-palette-green-9));
+    --brick-color-primary-dark-3: hsl(var(--brick-color-palette-green-10));
+    --brick-color-primary-dark-2: hsl(var(--brick-color-palette-green-11));
+    --brick-color-primary-dark-1: hsl(var(--brick-color-palette-green-12));
+    --brick-color-primary-dark-0: hsl(var(--brick-color-palette-green-13));
+
+    --brick-color-secondary-light-0: hsl(var(--brick-color-palette-purple-0));
+    --brick-color-secondary-light-1: hsl(var(--brick-color-palette-purple-1));
+    --brick-color-secondary-light-2: hsl(var(--brick-color-palette-purple-2));
+    --brick-color-secondary-light-3: hsl(var(--brick-color-palette-purple-3));
+    --brick-color-secondary-mid-1: hsl(var(--brick-color-palette-purple-7));
+    --brick-color-secondary-mid-2: hsl(var(--brick-color-palette-purple-8));
+    --brick-color-secondary-mid-3: hsl(var(--brick-color-palette-purple-9));
+    --brick-color-secondary-dark-3: hsl(var(--brick-color-palette-purple-10));
+    --brick-color-secondary-dark-2: hsl(var(--brick-color-palette-purple-11));
+    --brick-color-secondary-dark-1: hsl(var(--brick-color-palette-purple-12));
+    --brick-color-secondary-dark-0: hsl(var(--brick-color-palette-purple-13)); */
+
+    --brick-color-shaded-hsl: 174 4% 50%;
+    --brick-color-danger-shaded-hsl: 358 99% 71%;
+    --brick-color-success-shaded-hsl: 115 46% 52%;
+
+    --brick-color-danger: hsl(348 80% 50%);
+    --brick-color-danger-light: hsl(358 99% 71%);
+    --brick-color-danger-dark: hsl(352 87% 33%);
+
+    --brick-color-warning-light: hsl(52.28 100% 63%);
+    --brick-color-warning: hsl(51.51 100% 46%);
+    --brick-color-warning-dark: hsl(43 100% 42%);
+
+    --brick-color-success: hsl(120 100% 30%);
+    --brick-color-success-light: hsl(115 46% 52%);
+    --brick-color-success-dark: hsl(120 100% 21%);
+}
+
+:where(:root, [data-surface]) {
+    --brick-color-shaded-opacity: .03;
+    --brick-color-shaded-state-opacity: .06;
+    --brick-color-shaded: hsl(var(--brick-color-shaded-hsl) / var(--brick-color-shaded-opacity));
+    --brick-color-shaded-bold: hsl(var(--brick-color-shaded-hsl) / var(--brick-color-shaded-state-opacity));
+    --brick-color-danger-shaded: hsl(var(--brick-color-danger-shaded-hsl) / var(--brick-color-shaded-state-opacity));
+    --brick-color-success-shaded: hsl(var(--brick-color-success-shaded-hsl) / var(--brick-color-shaded-state-opacity));
+}
+
+:where(:root), [data-theme], [data-surface="init"] {
+    --brick-color-background: var(--brick-color-surface-1);
+    --brick-color-background-active: var(--brick-color-surface-2);
+    --brick-color-content: var(--brick-color-content-1);
+    --brick-color-content-active: var(--brick-color-content-3);
+    --brick-color-border: var(--brick-color-accent);
+    --brick-color-border-active: var(--brick-color-accent-bold);
+
+    --brick-color-text-selection: var(--brick-color-primary-surface-3);
+    
+    --brick-color-content-contrast: var(--brick-color-neutral-light-1);
+    --brick-color-content-contrast-active: var(--brick-color-neutral-light-3);
+
+    --brick-color-text-selection-contrast: var(--brick-color-primary-dark-2);
+
+    --brick-link-color: var(--brick-color-primary-accent-bold);
+    --brick-link-color-active: var(--brick-color-primary-content-2);
+
+    --brick-link-color-contrast: var(--brick-color-primary-light-1);
+    --brick-link-color-contrast-active: var(--brick-color-primary-light-2);
+}

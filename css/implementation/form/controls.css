@@ -1,0 +1,119 @@
+/* Special styling for checkbox, switch and radio 
+
+Depends on:
+!! TODO - form, sizes, colors, effects
+*/
+
+:is([type="checkbox"], [type="radio"]) {
+    --_current-surface-color: var(--brick-form-accent-color);
+    border: var(--brick-form-control-border-width) solid var(--_current-surface-color);
+    background-color: transparent;
+    appearance: none;
+    width: var(--brick-form-control-size);
+    height: var(--brick-form-control-size);
+    margin-block-start: calc(var(--brick-form-control-border-width) * -1);
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 0;
+    outline: 0;
+
+    label:has(&),
+    & + label {
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    &[aria-invalid="true"] {
+        --_current-surface-color: var(--brick-form-border-color-invalid);
+    }
+
+    &[aria-invalid="false"] {
+        --_current-surface-color: var(--brick-form-border-color-valid);
+    }
+
+    &:where(:disabled, :readonly) {
+        border-color: var(--brick-form-color-disabled);
+        background-color: var(--brick-form-color-disabled-alt);
+        opacity: var(--brick-form-disabled-opacity);
+    }
+}
+
+[type="radio"] {
+    border-radius: var(--brick-border-rounding-full);
+
+    &:checked {
+        border-width: 0.35em;
+        background-color: var(--brick-form-background-color-highlight);
+    }
+}
+
+[type="checkbox"] {
+    border-radius: var(--brick-form-checkbox-rounding);
+
+    &:is(:checked, :indeterminate) {
+        background-color: var(--brick-form-accent-color);
+    }
+
+    &:not([role="switch"]) {
+        --_icon-color: var(--brick-form-background-color-highlight);
+
+        &:checked {
+            --_icon: var(--brick-icon-check);
+        }
+        &:indeterminate {
+            --_icon: var(--brick-icon-minus);
+        }
+
+        &:is(:checked, :indeterminate)::after {
+            content: "";
+            display: block;
+            width: var(--brick-icon-size);
+            height: var(--brick-icon-size);
+            background-color: var(--_icon-color);
+            mask-repeat: no-repeat;
+            mask-image: var(--_icon);
+            mask-position: right center;
+            mask-size: var(--brick-size-rel) auto;
+            /* margin-top: var(--brick-icon-top-offset); */
+        }
+    }
+
+    &[role="switch"] {
+        --brick-color: var(--brick-switch-color);
+        --_current-surface-color: var(--brick-form-color-disabled-alt);
+        width: calc(var(--brick-form-control-size) + var(--brick-form-switch-distance));
+        height: var(--brick-form-control-size);
+        border: var(--brick-focus-width) solid var(--brick-form-accent-color);
+        border-radius: var(--brick-form-control-size);
+        line-height: var(--brick-form-control-size);
+        background-color: var(--_current-surface-color);
+        border-color: var(--_current-surface-color);
+
+        &::before {
+            display: block;
+            aspect-ratio: 1;
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--brick-form-background-color-highlight);
+            content: "";
+            transition: none var(--brick-transition-duration-fast) var(--brick-transition-switch);
+            transition-property: margin, background-color;
+        }
+
+        &:checked {
+            --_current-surface-color: var(--brick-form-accent-color);
+
+            &::before {
+                margin-inline-start: var(--brick-form-switch-distance);
+            }
+        }
+
+        &[aria-invalid="true"] {
+            --_current-surface-color: var(--brick-form-border-color-invalid);
+        }
+
+        &[aria-invalid="false"] {
+            --_current-surface-color: var(--brick-form-border-color-valid);
+        }
+    }
+}

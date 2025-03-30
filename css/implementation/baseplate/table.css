@@ -1,0 +1,61 @@
+/**
+Table
+
+!!Todo:
+- add active state, for row and cell
+- add hover state, for row and cell
+- add active state for head label -- and sort icon
+- test alignment via data-text -- and make something that allows a column to be aligned if possible?
+*/
+:where(table) {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: 0;
+    margin-block: var(--brick-block-spacing);
+}
+
+:where(th, td) {
+    --_table-background: var(--_background, var(--brick-table-background-color, var(--brick-color-background)));
+    --_table-background-alt: var(--brick-table-background-alt, var(--_table-background));
+    --_table-color: var(--_color, var(--brick-table-content-color, var(--brick-color-content)));
+
+    --_divider-color: var(--brick-table-divider-color, var(--_background-alt, var(--brick-color-surface-3)));
+    --_divider-width: var(--brick-table-divider-width, var(--brick-border-width));
+    --_section-divider-color: var(--brick-table-section-divider-color, var(--_divider-color));
+    --_section-divider-width: var(--brick-table-section-divider-width, var(--brick-border-width-heavy));
+    padding: var(--brick-size-rel-xs) var(--brick-size-rel-md);
+    border-bottom: var(--_divider-width) solid var(--_divider-color);
+    color: var(--_table-color);
+    background-color: var(--_table-background);
+    font-weight: var(--brick-font-weight);
+    text-align: left;
+    text-align: start;
+
+    tbody tr:nth-child(even) & {
+        background-color: var(--_table-background-alt);
+    }
+
+    tbody tr:last-of-type & {
+        border-bottom-width: 0;
+    }
+
+    :is(thead, tfoot) & {
+        font-weight: var(--brick-font-weight-bold);
+        color: var(--brick-table-section-font-color, var(--brick-color-content-active));
+        border-width: var(--_section-divider-width);
+        border-color: var(--_section-divider-color);
+    }
+
+    tfoot & {
+        border-top-style: solid;
+        border-bottom: 0;
+    }
+
+    table[data-style="striped"] & {
+        --_divider-color: transparent;
+        --_section-divider-color: var(--brick-color-accent-subtle);
+        --_section-divider-width: var(--_divider-width);
+        --_table-background-alt: var(--brick-color-shaded);
+    }
+}

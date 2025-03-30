@@ -1,0 +1,268 @@
+/* COLORS
+** Depends on:
+** - theme defaults: colors -- constants: colors
+*/
+
+
+/*****************
+** Define base colors
+*****************/
+
+/* LIGHT MODE */
+:root[data-theme~="light"] {
+    color-scheme: light;
+}
+
+/* When
+- data-theme is not set on the html element, or is empty, or does not contain a theme name
+- data-theme is set to dark higher up, and this element has it set to inverted
+- this element has data-theme set to auto, and user preference is not dark
+- this element has data-theme set to light
+*/
+:where(:root),
+:root[data-theme=""],
+:root:not([data-theme], [data-theme~="dark"], [data-theme~="light"], [data-theme~="auto"]),
+[data-theme~="dark"] [data-theme~="inverted"],
+[data-theme~="auto"],
+[data-theme~="light"] {
+    /* neutral (gray) */
+    --brick-color-surface-1-base: var(--brick-color-neutral-light-0);
+    --brick-color-surface-2-base: var(--brick-color-neutral-light-1);
+    --brick-color-surface-3-base: var(--brick-color-neutral-light-2);
+    --brick-color-accent-1-base: var(--brick-color-neutral-mid-1);
+    --brick-color-accent-2-base: var(--brick-color-neutral-mid-2);
+    --brick-color-accent-3-base: var(--brick-color-neutral-mid-3);
+    --brick-color-content-3-base: var(--brick-color-neutral-dark-3);
+    --brick-color-content-2-base: var(--brick-color-neutral-dark-2);
+    --brick-color-content-1-base: var(--brick-color-neutral-dark-1);
+
+    /* Primary */
+    --brick-color-primary-surface-1-base: var(--brick-color-primary-light-0);
+    --brick-color-primary-surface-2-base: var(--brick-color-primary-light-1);
+    --brick-color-primary-surface-3-base: var(--brick-color-primary-light-2);
+    --brick-color-primary-accent-1-base: var(--brick-color-primary-mid-1);
+    --brick-color-primary-accent-2-base: var(--brick-color-primary-mid-2);
+    --brick-color-primary-accent-3-base: var(--brick-color-primary-mid-3);
+    --brick-color-primary-content-3-base: var(--brick-color-primary-dark-3);
+    --brick-color-primary-content-2-base: var(--brick-color-primary-dark-2);
+    --brick-color-primary-content-1-base: var(--brick-color-primary-dark-1);
+
+    /* Secondary */
+    --brick-color-secondary-surface-1-base: var(--brick-color-secondary-light-0);
+    --brick-color-secondary-surface-2-base: var(--brick-color-secondary-light-1);
+    --brick-color-secondary-surface-3-base: var(--brick-color-secondary-light-2);
+    --brick-color-secondary-accent-1-base: var(--brick-color-secondary-mid-1);
+    --brick-color-secondary-accent-2-base: var(--brick-color-secondary-mid-2);
+    --brick-color-secondary-accent-3-base: var(--brick-color-secondary-mid-3);
+    --brick-color-secondary-content-3-base: var(--brick-color-secondary-dark-3);
+    --brick-color-secondary-content-2-base: var(--brick-color-secondary-dark-2);
+    --brick-color-secondary-content-1-base: var(--brick-color-secondary-dark-1);
+
+    --brick-color-danger-surface: var(--brick-color-danger-light);
+    --brick-color-danger-content: var(--brick-color-danger-dark);
+    --brick-color-warning-surface: var(--brick-color-warning-light);
+    --brick-color-warning-content: var(--brick-color-warning-dark);
+    --brick-color-success-surface: var(--brick-color-success-light);
+    --brick-color-success-content: var(--brick-color-success-dark);
+}
+
+
+/* DARK MODE
+** Set colors for dark mode - mostly just flipping the color order from light mode
+*/
+:root[data-theme~="dark"] {
+    color-scheme: dark;
+}
+
+/* When:
+** - data-theme is set to dark
+** - data-theme is empty or set to light higher up - or auto, if dark mode is not enabled
+*/
+[data-theme~="dark"],
+:is([data-theme=""], [data-theme~="auto"], [data-theme~="light"]) [data-theme="inverted"]
+{
+    /* neutral (gray) */
+    --brick-color-surface-1-base: var(--brick-color-neutral-dark-1);
+    --brick-color-surface-2-base: var(--brick-color-neutral-dark-2);
+    --brick-color-surface-3-base: var(--brick-color-neutral-dark-3);
+    --brick-color-accent-1-base: var(--brick-color-neutral-mid-3);
+    --brick-color-accent-2-base: var(--brick-color-neutral-mid-2);
+    --brick-color-accent-3-base: var(--brick-color-neutral-mid-1);
+    --brick-color-content-3-base: var(--brick-color-neutral-light-3);
+    --brick-color-content-2-base: var(--brick-color-neutral-light-2);
+    --brick-color-content-1-base: var(--brick-color-neutral-light-1);
+
+    /* Primary */
+    --brick-color-primary-surface-1-base: var(--brick-color-primary-dark-0);
+    --brick-color-primary-surface-2-base: var(--brick-color-primary-dark-1);
+    --brick-color-primary-surface-3-base: var(--brick-color-primary-dark-2);
+    --brick-color-primary-accent-1-base: var(--brick-color-primary-mid-3);
+    --brick-color-primary-accent-2-base: var(--brick-color-primary-mid-2);
+    --brick-color-primary-accent-3-base: var(--brick-color-primary-mid-1);
+    --brick-color-primary-content-3-base: var(--brick-color-primary-light-3);
+    --brick-color-primary-content-2-base: var(--brick-color-primary-light-2);
+    --brick-color-primary-content-1-base: var(--brick-color-primary-light-1);
+
+    /* Secondary */
+    --brick-color-secondary-surface-1-base: var(--brick-color-secondary-dark-0);
+    --brick-color-secondary-surface-2-base: var(--brick-color-secondary-dark-1);
+    --brick-color-secondary-surface-3-base: var(--brick-color-secondary-dark-2);
+    --brick-color-secondary-accent-1-base: var(--brick-color-secondary-mid-3);
+    --brick-color-secondary-accent-2-base: var(--brick-color-secondary-mid-2);
+    --brick-color-secondary-accent-3-base: var(--brick-color-secondary-mid-1);
+    --brick-color-secondary-content-3-base: var(--brick-color-secondary-light-3);
+    --brick-color-secondary-content-2-base: var(--brick-color-secondary-light-2);
+    --brick-color-secondary-content-1-base: var(--brick-color-secondary-light-1);
+
+    --brick-color-danger-surface: var(--brick-color-danger-dark);
+    --brick-color-danger-content: var(--brick-color-danger-light);
+    --brick-color-warning-surface: var(--brick-color-warning-dark);
+    --brick-color-warning-content: var(--brick-color-warning-light);
+    --brick-color-success-surface: var(--brick-color-success-dark);
+    --brick-color-success-content: var(--brick-color-success-light);
+
+    --brick-shadow-lightness: var(--brick-shadow-lightness-dark);
+}
+
+
+/* Set color-scheme based on user preference */
+@media only screen and (prefers-color-scheme: light) {
+    :root:is(:not([data-theme]), [data-theme=""], [data-theme~="auto"]) {
+        color-scheme: light;
+    }
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    :root:is(:not([data-theme]), [data-theme=""], [data-theme~="auto"]) {
+        color-scheme: dark;
+    }
+    
+    /* AUTO DARK MODE - duplicate dark theme
+    ** When:
+    ** - data-theme is not set on the root element
+    ** - data-theme is set to auto
+    */
+    :root:where(:not([data-theme]), [data-theme=""]),
+    [data-theme~="auto"] {
+        /* neutral (gray) */
+        --brick-color-surface-1-base: var(--brick-color-neutral-dark-1);
+        --brick-color-surface-2-base: var(--brick-color-neutral-dark-2);
+        --brick-color-surface-3-base: var(--brick-color-neutral-dark-3);
+        --brick-color-accent-1-base: var(--brick-color-neutral-mid-3);
+        --brick-color-accent-2-base: var(--brick-color-neutral-mid-2);
+        --brick-color-accent-3-base: var(--brick-color-neutral-mid-1);
+        --brick-color-content-3-base: var(--brick-color-neutral-light-3);
+        --brick-color-content-2-base: var(--brick-color-neutral-light-2);
+        --brick-color-content-1-base: var(--brick-color-neutral-light-1);
+
+        /* Primary */
+        --brick-color-primary-surface-1-base: var(--brick-color-primary-dark-0);
+        --brick-color-primary-surface-2-base: var(--brick-color-primary-dark-1);
+        --brick-color-primary-surface-3-base: var(--brick-color-primary-dark-2);
+        --brick-color-primary-accent-1-base: var(--brick-color-primary-mid-3);
+        --brick-color-primary-accent-2-base: var(--brick-color-primary-mid-2);
+        --brick-color-primary-accent-3-base: var(--brick-color-primary-mid-1);
+        --brick-color-primary-content-3-base: var(--brick-color-primary-light-3);
+        --brick-color-primary-content-2-base: var(--brick-color-primary-light-2);
+        --brick-color-primary-content-1-base: var(--brick-color-primary-light-1);
+
+        /* Secondary */
+        --brick-color-secondary-surface-1-base: var(--brick-color-secondary-dark-0);
+        --brick-color-secondary-surface-2-base: var(--brick-color-secondary-dark-1);
+        --brick-color-secondary-surface-3-base: var(--brick-color-secondary-dark-2);
+        --brick-color-secondary-accent-1-base: var(--brick-color-secondary-mid-3);
+        --brick-color-secondary-accent-2-base: var(--brick-color-secondary-mid-2);
+        --brick-color-secondary-accent-3-base: var(--brick-color-secondary-mid-1);
+        --brick-color-secondary-content-3-base: var(--brick-color-secondary-light-3);
+        --brick-color-secondary-content-2-base: var(--brick-color-secondary-light-2);
+        --brick-color-secondary-content-1-base: var(--brick-color-secondary-light-1);
+
+        --brick-color-danger-surface: var(--brick-color-danger-dark);
+        --brick-color-danger-content: var(--brick-color-danger-light);
+        --brick-color-warning-surface: var(--brick-color-warning-dark);
+        --brick-color-warning-content: var(--brick-color-warning-light);
+        --brick-color-success-surface: var(--brick-color-success-dark);
+        --brick-color-success-content: var(--brick-color-success-light);
+
+        --brick-shadow-lightness: var(--brick-shadow-lightness-dark);
+    }
+}
+
+
+/******************
+** Define colors for use
+******************/
+
+/* Default values are set here */
+:where(:root, [data-theme]) {
+    /* Text colors used against mid range backgrounds -- always light */
+    --brick-color-content-contrast-1: var(--brick-color-neutral-light-1);
+    --brick-color-content-contrast-2: var(--brick-color-neutral-light-2);
+    --brick-color-content-contrast-3: var(--brick-color-neutral-light-3);
+
+    /* We define all colors as -base, then give them their final name here.
+    ** This is so we can override these down the cascade, and reset them further down.
+    */
+
+    &, &:is([data-theme~="neutral"], [data-theme="reset"], [data-theme="init"]) {
+        /* neutral (gray) */
+        --brick-color-surface-1: var(--brick-color-surface-1-base);
+        --brick-color-surface-2: var(--brick-color-surface-2-base);
+        --brick-color-surface-3: var(--brick-color-surface-3-base);
+        --brick-color-accent-subtle: var(--brick-color-accent-1-base);
+        --brick-color-accent: var(--brick-color-accent-2-base);
+        --brick-color-accent-bold: var(--brick-color-accent-3-base);
+        --brick-color-content-3: var(--brick-color-content-3-base);
+        --brick-color-content-2: var(--brick-color-content-2-base);
+        --brick-color-content-1: var(--brick-color-content-1-base);
+    }
+
+    &:not([data-theme~="secondary"]), &:is([data-theme~="primary"], [data-theme="reset"], [data-theme="init"]) {
+        /* Primary */
+        --brick-color-primary-surface-1: var(--brick-color-primary-surface-1-base);
+        --brick-color-primary-surface-2: var(--brick-color-primary-surface-2-base);
+        --brick-color-primary-surface-3: var(--brick-color-primary-surface-3-base);
+        --brick-color-primary-accent-subtle: var(--brick-color-primary-accent-1-base);
+        --brick-color-primary-accent: var(--brick-color-primary-accent-2-base);
+        --brick-color-primary-accent-bold: var(--brick-color-primary-accent-3-base);
+        --brick-color-primary-content-3: var(--brick-color-primary-content-3-base);
+        --brick-color-primary-content-2: var(--brick-color-primary-content-2-base);
+        --brick-color-primary-content-1: var(--brick-color-primary-content-1-base);
+
+        /* Secondary */
+        --brick-color-secondary-surface-1: var(--brick-color-secondary-surface-1-base);
+        --brick-color-secondary-surface-2: var(--brick-color-secondary-surface-2-base);
+        --brick-color-secondary-surface-3: var(--brick-color-secondary-surface-3-base);
+        --brick-color-secondary-accent-subtle: var(--brick-color-secondary-accent-1-base);
+        --brick-color-secondary-accent: var(--brick-color-secondary-accent-2-base);
+        --brick-color-secondary-accent-bold: var(--brick-color-secondary-accent-3-base);
+        --brick-color-secondary-content-3: var(--brick-color-secondary-content-3-base);
+        --brick-color-secondary-content-2: var(--brick-color-secondary-content-2-base);
+        --brick-color-secondary-content-1: var(--brick-color-secondary-content-1-base);
+    }
+}
+
+/* Variation - flip secondary and primary colors somewhere on the page */
+[data-theme~="secondary"] {
+    /* Primary uses secondary color */
+    --brick-color-primary-surface-1: var(--brick-color-secondary-surface-1-base);
+    --brick-color-primary-surface-2: var(--brick-color-secondary-surface-2-base);
+    --brick-color-primary-surface-3: var(--brick-color-secondary-surface-3-base);
+    --brick-color-primary-accent-subtle: var(--brick-color-secondary-accent-1-base);
+    --brick-color-primary-accent: var(--brick-color-secondary-accent-2-base);
+    --brick-color-primary-accent-bold: var(--brick-color-secondary-accent-3-base);
+    --brick-color-primary-content-3: var(--brick-color-secondary-content-3-base);
+    --brick-color-primary-content-2: var(--brick-color-secondary-content-2-base);
+    --brick-color-primary-content-1: var(--brick-color-secondary-content-1-base);
+
+    /* Secondary uses primary color */
+    --brick-color-secondary-surface-1: var(--brick-color-primary-surface-1-base);
+    --brick-color-secondary-surface-2: var(--brick-color-primary-surface-2-base);
+    --brick-color-secondary-surface-3: var(--brick-color-primary-surface-3-base);
+    --brick-color-secondary-accent-subtle: var(--brick-color-primary-accent-1-base);
+    --brick-color-secondary-accent: var(--brick-color-primary-accent-2-base);
+    --brick-color-secondary-accent-bold: var(--brick-color-primary-accent-3-base);
+    --brick-color-secondary-content-3: var(--brick-color-primary-content-3-base);
+    --brick-color-secondary-content-2: var(--brick-color-primary-content-2-base);
+    --brick-color-secondary-content-1: var(--brick-color-primary-content-1-base);
+}

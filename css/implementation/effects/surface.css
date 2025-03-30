@@ -1,0 +1,267 @@
+/* Modify elements where data-surface has been applied, to follow the surface props
+
+Depends on:
+fundamentals and theme - colors, effects
+*/
+:where([data-surface]:not([data-surface=""])) {
+    --brick-color-border: var(--brick-color-background);
+    --brick-color-border-active: var(--brick-color-background-active);
+    background-color: var(--brick-color-background, transparent);
+    color: var(--brick-color-content);
+    border-color: var(--brick-color-border, transparent);
+
+    /* Set the surface to an accent (mid range) color.
+    These do not respond to 'contrast', as they are in the middle
+    */
+    &:not([data-surface~="1"], [data-surface~="2"], [data-surface~="3"]) {
+        /* !!FIXME Link color gets messed up in some cases
+        - eg. outer surface is primary, inner is 3, inner has a link.
+        This becomes light, also in light mode, causing light on light.
+        This is because --brick-link-color and --brick-link-color-active do not
+        get set again, so they are inherited from the primary surface,
+        where they are always light */
+
+        &[data-surface~="primary"] {
+            --brick-color-background: var(--brick-color-primary-accent);
+            --brick-color-background-active: var(--brick-color-primary-accent-bold);
+
+            &[data-surface~="bold"] {
+                --brick-color-background: var(--brick-color-primary-accent-bold);
+                --brick-color-background-active: var(--brick-color-primary-accent);
+            }
+
+            &[data-surface~="subtle"] {
+                --brick-color-background: var(--brick-color-primary-accent-subtle);
+                --brick-color-background-active: var(--brick-color-primary-accent);
+            }
+        }
+
+        &[data-surface~="secondary"] {
+            --brick-color-background: var(--brick-color-secondary-accent);
+            --brick-color-background-active: var(--brick-color-secondary-accent-bold);
+
+            &[data-surface~="bold"] {
+                --brick-color-background: var(--brick-color-secondary-accent-bold);
+                --brick-color-background-active: var(--brick-color-secondary-accent);
+            }
+
+            &[data-surface~="subtle"] {
+                --brick-color-background: var(--brick-color-secondary-accent-subtle);
+                --brick-color-background-active: var(--brick-color-secondary-accent);
+            }
+        }
+
+        &[data-surface~="neutral"] {
+            --brick-color-background: var(--brick-color-accent);
+            --brick-color-background-active: var(--brick-color-accent-bold);
+
+            &[data-surface~="bold"] {
+                --brick-color-background: var(--brick-color-accent-bold);
+                --brick-color-background-active: var(--brick-color-accent);
+            }
+
+            &[data-surface~="subtle"] {
+                --brick-color-background: var(--brick-color-accent-subtle);
+                --brick-color-background-active: var(--brick-color-accent);
+            }
+        }
+
+        &:not([data-surface~="contrast"], [data-style~="outline"], [data-surface="init"]) {
+            --brick-color-shaded-opacity: .2;
+
+            --brick-color-content: var(--brick-color-content-contrast);
+            --brick-color-content-active: var(--brick-color-content-contrast-active);
+            --brick-color-text-selection: var(--brick-color-text-selection-contrast);
+            --brick-link-color: var(--brick-link-color-contrast);
+            --brick-link-color-active: var(--brick-link-color-contrast-active);
+        
+            --brick-color-border: var(--brick-color-background);
+            --brick-color-border-active: var(--brick-color-background-active);
+
+            --brick-button-border-color: var(--brick-color-content);
+            --brick-button-border-color-active: var(--brick-color-content-active);
+
+            --brick-color-headings-small: var(--brick-color-content-contrast-active);
+            --brick-color-headings-big: var(--brick-color-content-contrast-active);
+
+            --brick-blockquote-border-color: var(--brick-color-content-active);
+            --brick-hr-color: var(--brick-color-content-active);
+
+            --brick-form-accent-color: var(--brick-color-content-active);
+            --brick-form-accent-color-bold: var(--brick-color-content);
+            --brick-form-border-color: var(--brick-color-content-active);
+            --brick-form-background-color-highlight: var(--brick-color-background);
+            --brick-form-background-color-disabled: var(--brick-color-background-active);
+        }
+    }
+}
+
+/* Change the background color to a surface step, optionally with primary or secondary coloring */
+[data-surface~="1"] {
+    &, &[data-surface~="neutral"] {
+        --brick-color-background: var(--brick-color-surface-1);
+        --brick-color-background-active: var(--brick-color-surface-2);
+    }
+
+    &[data-surface~="primary"] {
+        --brick-color-background: var(--brick-color-primary-surface-1);
+        --brick-color-background-active: var(--brick-color-primary-surface-2);
+    }
+
+    &[data-surface~="secondary"] {
+        --brick-color-background: var(--brick-color-secondary-surface-1);
+        --brick-color-background-active: var(--brick-color-secondary-surface-2);
+    }
+
+    &[data-surface~="contrast"] {
+        &, &[data-surface~="neutral"] {
+            --brick-color-background: var(--brick-color-content-1);
+            --brick-color-background-active: var(--brick-color-content-2);
+        }
+
+        &[data-surface~="primary"] {
+            --brick-color-background: var(--brick-color-primary-content-1);
+            --brick-color-background-active: var(--brick-color-primary-content-2);
+        }
+
+        &[data-surface~="secondary"] {
+            --brick-color-background: var(--brick-color-secondary-content-1);
+            --brick-color-background-active: var(--brick-color-secondary-content-2);
+        }
+    }
+}
+
+[data-surface~="2"] {
+    &, &[data-surface~="neutral"] {
+        --brick-color-background: var(--brick-color-surface-2);
+        --brick-color-background-active: var(--brick-color-surface-3);
+    }
+
+    &[data-surface~="primary"] {
+        --brick-color-background: var(--brick-color-primary-surface-2);
+        --brick-color-background-active: var(--brick-color-primary-surface-3);
+    }
+
+    &[data-surface~="secondary"] {
+        --brick-color-background: var(--brick-color-secondary-surface-2);
+        --brick-color-background-active: var(--brick-color-secondary-surface-3);
+    }
+
+    &[data-surface~="contrast"] {
+        &, &[data-surface~="neutral"] {
+            --brick-color-background: var(--brick-color-content-2);
+            --brick-color-background-active: var(--brick-color-content-3);
+        }
+
+        &[data-surface~="primary"] {
+            --brick-color-background: var(--brick-color-primary-content-2);
+            --brick-color-background-active: var(--brick-color-primary-content-3);
+        }
+
+        &[data-surface~="secondary"] {
+            --brick-color-background: var(--brick-color-secondary-content-2);
+            --brick-color-background-active: var(--brick-color-secondary-content-3);
+        }
+    }
+}
+
+[data-surface~="3"] {
+    &, &[data-surface~="neutral"] {
+        --brick-color-background: var(--brick-color-surface-3);
+        --brick-color-background-active: var(--brick-color-surface-2);
+    }
+
+    &[data-surface~="primary"] {
+        --brick-color-background: var(--brick-color-primary-surface-3);
+        --brick-color-background-active: var(--brick-color-primary-surface-2);
+    }
+
+    &[data-surface~="secondary"] {
+        --brick-color-background: var(--brick-color-secondary-surface-3);
+        --brick-color-background-active: var(--brick-color-secondary-surface-2);
+    }
+
+    &[data-surface~="contrast"] {
+        &, &[data-surface~="neutral"] {
+            --brick-color-background: var(--brick-color-content-3);
+            --brick-color-background-active: var(--brick-color-content-2);
+        }
+
+        &[data-surface~="primary"] {
+            --brick-color-background: var(--brick-color-primary-content-3);
+            --brick-color-background-active: var(--brick-color-primary-content-2);
+        }
+
+        &[data-surface~="secondary"] {
+            --brick-color-background: var(--brick-color-secondary-content-3);
+            --brick-color-background-active: var(--brick-color-secondary-content-2);
+        }
+    }
+}
+
+/* Set content color to the opposite of the surface color */
+:is([data-surface~="1"], [data-surface~="2"], [data-surface~="3"]) {
+    --brick-color-content: var(--brick-color-content-1);
+    --brick-color-content-active: var(--brick-color-content-3);
+    --brick-color-text-selection: var(--brick-color-primary-surface-3);
+
+    &[data-surface~="contrast"] {
+        --brick-color-content: var(--brick-color-surface-1);
+        --brick-color-content-active: var(--brick-color-surface-2);
+        --brick-color-text-selection: var(--brick-color-primary-content-3);
+    }
+}
+
+[data-surface~="shaded"] {
+    --brick-color-background: var(--brick-color-shaded);
+    --brick-color-background-active: var(--brick-color-surface-2);
+}
+
+
+/* Force content (text) color to be light when the background is an accent (mid range) color */
+/* :is(
+    [data-surface~="primary"],
+    [data-surface~="secondary"],
+    [data-surface~="neutral"]
+    ):not(
+        :is(
+            [data-surface~="1"],
+            [data-surface~="2"],
+            [data-surface~="3"],
+        ):not(
+            [data-surface~="contrast"]
+        )
+    ):not(
+        [data-style~="outline"]
+    ) {
+    --brick-color-content: var(--brick-color-content-contrast);
+    --brick-color-content-active: var(--brick-color-content-contrast-active);
+    --brick-color-text-selection: var(--brick-color-text-selection-contrast);
+    --brick-link-color: var(--brick-link-color-contrast);
+    --brick-link-color-active: var(--brick-link-color-contrast-active);
+
+    --brick-color-border: var(--brick-color-background);
+    --brick-color-border-active: var(--brick-color-background-active);
+} */
+
+[data-surface~="transparent"] {
+    background-color: transparent;
+}
+/* Consider adding transparency steps
+(requires colors to hsl, and background to be passed through a custom property) */
+
+[data-style~="outline"] {
+    --brick-active-style-surface: transparent;
+    --brick-active-style-content: var(--brick-color-background);
+    --brick-active-style-border-width: var(--brick-outline-width);
+    background-color: var(--brick-active-style-surface);
+    color: var(--brick-active-style-content);
+    border-color: var(--brick-active-style-content);
+    border-width: var(--brick-active-style-border-width);
+
+    &[data-surface~="shaded"] {
+        --brick-active-style-surface: var(--brick-color-background);
+        --brick-active-style-content: var(--brick-color-content);
+    }
+}
+

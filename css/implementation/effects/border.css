@@ -1,0 +1,55 @@
+
+/* Set element border styling
+
+Depends on:
+Fundamentals and theme - effects
+
+!!TODO: add color. Handle data-border default, when no existing border is present
+*/
+:is([data-border~="reset"], [data-border~="init"]) &,
+&:is([data-border~="reset"], [data-border~="init"]) {
+    border-radius: var(--brick-border-radius);
+    border-width: var(--brick-border-width);
+}
+
+[data-border~="round"] {
+    border-radius: var(--brick-border-rounding-full);
+}
+
+[data-border~="square"] {
+    border-radius: var(--brick-border-rounding-none);
+}
+
+[data-border~="barely"] {
+    border-radius: var(--brick-border-rounding-barely);
+}
+
+[data-border~="less"] {
+    border-radius: var(--brick-border-rounding-less);
+}
+
+[data-border~="more"] {
+    border-radius: var(--brick-border-rounding-more);
+}
+
+[data-border~="borderless"] {
+    border-width: 0;
+}
+
+[data-border~="thin"] {
+    border-width: var(--brick-border-width-thin);
+}
+
+[data-border~="regular"] {
+    border-radius: var(--brick-border-radius-regular);
+    border-width: var(--brick-border-width-regular);
+}
+
+[data-border~="heavy"] {
+    border-width: var(--brick-border-width-heavy);
+}
+
+/* [data-border] {
+    border: var(--brick-border-width) solid var(--brick-color-border, var(--brick-color-content));
+} */
+

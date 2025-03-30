@@ -1,0 +1,111 @@
+/* CARD
+
+Depends on? !! TODO
+
+*/
+:is(.cards > *, .card) {
+    --_card-spacing-inline: var(--brick-card-spacing-inline, var(--brick-component-spacing-inline));
+    --_card-spacing-block: var(--brick-card-spacing-block, var(--brick-component-spacing-block));
+    --_card-spacing-block-inner: var(--brick-card-spacing-block-inner, var(--_card-spacing-block));
+    --_card-counter-margin-inline: calc(var(--_card-spacing-inline) * -1);
+    --_card-counter-margin-block: calc(var(--_card-spacing-block) * -1);
+    
+    --_card-rounding: var(--brick-card-border-rounding, var(--brick-border-rounding));
+    --_card-border-width: var(--brick-active-style-border-width, var(--brick-card-border-width, 0));
+    --_card-divider-width: var(--brick-card-divider-width, var(--_card-border-width));
+
+    --_card-background: var(--brick-active-style-surface, var(--brick-card-background-color, var(--brick-color-surface-2)));
+    --_card-background-alt: var(--brick-active-style-surface, var(--brick-card-background-color-alt, var(--brick-color-surface-3)));
+    --_card-color: var(--brick-card-content-color, var(--brick-color-content-1));
+    --_card-color-alt: var(--brick-card-content-color-alt, var(--brick-color-content-3));
+    --_card-border-color: var(--brick-card-border-color, var(--_card-background));
+    --_card-divider-color: var(--brick-card-divider-color, var(--_card-border-color));
+
+    padding: var(--_card-spacing-block) var(--_card-spacing-inline);
+    background-color: var(--_card-background);
+    color: var(--_card-color);
+    border: var(--_card-border-width) solid var(--_card-border-color);
+    border-radius: var(--_card-rounding);
+
+    :where(&) {
+        box-shadow: var(--brick-card-box-shadow, var(--brick-shadow-none));
+    }
+ 
+    &[data-style~="outline"] {
+        --_card-border-color: var(--_card-color-alt);
+    }
+
+    &[data-surface]:not([data-surface=""]) {
+        --_card-background: var(--brick-active-style-surface, var(--brick-color-background));
+        --_card-background-alt: var(--brick-active-style-surface, var(--brick-color-background-active));
+        --_card-color: var(--brick-active-style-content, var(--brick-color-content));
+        --_card-color-alt: var(--brick-active-style-content, var(--_card-color));
+        --_card-border-color: var(--brick-active-style-content, var(--brick-color-border));
+    }
+
+    &:last-child,
+    &[data-layout] > :not(header, footer, summary) {
+        margin-block-end: 0;
+    }
+
+
+    /* !! Define elsewhere, maybe extend here */
+    /* [data-size="s"] &,
+    &[data-size="s"] {
+        --_card-spacing-inline: var(--brick-size-rel-s);
+        --_card-spacing-block: var(--brick-size-rel-xxs);
+        --_card-spacing-block-inner: var(--brick-size-rel-xs);
+        gap: var(--brick-size-rel-xs);
+    }
+
+    [data-size="l"] &,
+    &[data-size="l"] {
+        --_card-spacing-block: var(--brick-size-rel-l);
+        --_card-spacing-inline: var(--brick-size-rel-xl);
+        gap: var(--brick-size-rel-m);
+    } */
+
+
+
+    & > :is(header, footer) {
+        margin-inline: var(--_card-counter-margin-inline);
+        padding: var(--_card-spacing-block-inner) var(--_card-spacing-inline);
+        background-color: var(--_card-background-alt);
+        border: 0 solid var(--_card-divider-color);
+    }
+
+    & > header {
+        border-bottom-width: var(--_card-divider-width);
+        
+        &:first-child {
+            margin-block-start: var(--_card-counter-margin-block);
+            margin-block-end: var(--_card-spacing-block-inner);
+            border-top-right-radius: var(--_card-rounding);
+            border-top-left-radius: var(--_card-rounding);
+        }
+
+        & :first-child {
+            margin-block-start: 0;
+        }
+    }
+    
+    & > footer {
+        margin-block-start: var(--_card-spacing-block);
+        margin-block-end: var(--_card-counter-margin-block);
+        border-top-width: var(--_card-divider-width);
+
+        &:last-child {
+            border-bottom-right-radius: var(--_card-rounding);
+            border-bottom-left-radius: var(--_card-rounding);
+        }
+    }
+}
+
+[data-grid] > .card, [data-grid].cards > * {
+    height: 100%;
+    margin: 0;
+
+    & > * + footer {
+        margin-block-end: auto;
+    }
+}

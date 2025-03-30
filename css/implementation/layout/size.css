@@ -1,0 +1,164 @@
+/* Size modifier.
+Depends on fundamentals + theme sizes.
+
+Scale an element and its children to a given size step.
+Set it to 'auto' to scale depending on screen size.
+Set it to 'init' or 'reset' to set a child back to the
+    original size, if the parent has the size adjusted.
+Set it to 'fluid' to use the main fluid size.
+*/
+
+[data-size="auto"],
+[data-size="init"],
+[data-size="reset"] {
+    font-size: var(--brick-root-size);
+}
+
+[data-size="fluid"] {
+    font-size: var(--brick-size-fluid);
+}
+
+[data-size~="xxxs"] {
+    font-size: var(--brick-size-rel-xxxs);
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-xxxs);
+    }
+}
+
+[data-size~="xxs"] {
+    font-size: var(--brick-size-rel-xxs);
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-xxs);
+    }
+}
+
+[data-size~="xs"] {
+    font-size: var(--brick-size-rel-xs);
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-xs);
+    }
+}
+
+[data-size~="sm"] {
+    font-size: var(--brick-size-rel-sm);
+
+    &[data-size~="fluid"] {
+        font-size: var(--brick-size-fluid-sm);
+    }
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-sm);
+    }
+}
+
+[data-size~="smaller"],
+[data-size~="md-sm"] {
+    font-size: var(--brick-size-rel-md-sm);
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-md-sm);
+    }
+}
+
+[data-size~="regular"],
+[data-size~="md"] {
+    font-size: var(--brick-size-rel-md);
+
+    &[data-size~="fluid"] {
+        font-size: var(--brick-size-fluid-md);
+    }
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-md);
+    }
+}
+
+[data-size~="larger"],
+[data-size~="md-lg"] {
+    font-size: var(--brick-size-rel-md-lg);
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-md-lg);
+    }
+}
+
+[data-size~="lg"] {
+    font-size: var(--brick-size-rel-lg);
+
+    &[data-size~="fluid"] {
+        font-size: var(--brick-size-fluid-lg);
+    }
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-lg);
+    }
+}
+
+[data-size~="xl"] {
+    font-size: var(--brick-size-rel-xl);
+
+    &[data-size~="fluid"] {
+        font-size: var(--brick-size-fluid-xl);
+    }
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-xl);
+    }
+}
+
+[data-size~="xxl"] {
+    font-size: var(--brick-size-rel-xxl);
+
+    &[data-size~="fluid"] {
+        font-size: var(--brick-size-fluid-xxl);
+    }
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-xxl);
+    }
+}
+
+[data-size~="xxxl"] {
+    font-size: var(--brick-size-rel-xxxl);
+
+    &[data-size~="absolute"] {
+        font-size: var(--brick-size-xxxl);
+    }
+}
+
+/* Make the element sizes larger for bigger screens.
+It would be nice to have this happens responsively,
+instead of handheld numbers and breakpoints.
+*/
+@media (min-width: 576px) {
+    [data-size="auto"] {
+        font-size: calc(var(--brick-root-size) * 1.025);
+    }
+}
+
+@media (min-width: 768px) {
+    [data-size="auto"] {
+        font-size: calc(var(--brick-root-size) * 1.075);
+    }
+}
+
+@media (min-width: 1024px) {
+    [data-size="auto"] {
+        font-size: calc(var(--brick-root-size) * 1.1);
+    }
+}
+
+@media (min-width: 1280px) {
+    [data-size="auto"] {
+        font-size: calc(var(--brick-root-size) * 1.125);
+    }
+}
+
+@media (min-width: 1536px) {
+    [data-size="auto"] {
+        font-size: calc(var(--brick-root-size) * 1.175);
+    }
+}

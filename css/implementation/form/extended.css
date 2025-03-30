@@ -1,0 +1,173 @@
+/* Styling for special form input elements - color, file, range, etc.
+
+Unfortunately, vendor specific selectors cannot be combined
+(as each browser ignores the block if a prefix for another browser is found),
+leading to duplicated styling.
+
+Depends on:
+!!TODO
+*/
+
+/* Input type: color */
+[type="color"] {
+    padding-inline: var(--brick-form-padding-block);
+
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    &::-moz-focus-inner {
+        padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+        border: 0;
+        border-radius: calc(var(--brick-form-border-rounding) / 2);
+    }
+
+    &::-moz-color-swatch {
+        border: 0;
+        border-radius: calc(var(--brick-form-border-rounding) / 2);
+    }
+}
+
+/* file input */
+[type="file"] {
+    padding: 0;
+    border-width: 0;
+    color: var(--brick-form-content-color);
+    margin-left: calc(var(--brick-outline-width) * -1);
+    padding-block: var(--brick-form-padding-block);
+    padding-inline-end: var(--brick-form-padding-inline);
+    border: 0;
+    border-radius: 0;
+    background: none;
+
+    &::file-selector-button {
+        margin-inline-end: var(--brick-form-padding-inline);
+        padding: var(--brick-form-padding-block) var(--brick-form-padding-inline);
+    }
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+:is(button, [type="submit"], [type="button"], [role="button"]).secondary,
+[type="file"]::file-selector-button,
+[type="reset"] {
+    --brick-background-color: var(--brick-secondary-background);
+    --brick-border-color: var(--brick-secondary-border);
+    --brick-color: var(--brick-secondary-inverse);
+    cursor: pointer;
+}
+
+/*
+Input type: range
+*/
+[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: var(--brick-form-control-size);
+    background: none;
+    padding: 0;
+    border-width: 0;
+
+    &:active:is(::-webkit-slider-thumb, ::-moz-range-thumb) {
+        transform: scale(1.25);
+    }
+
+    &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: calc(var(--brick-form-control-size) / 3);
+        border-radius: var(--brick-form-border-rounding);
+        background-color: var(--brick-form-range-track-color);
+        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        transition-property: var(--brick-control-transition-properties, none);
+    }
+
+    &::-moz-range-track {
+        width: 100%;
+        height: calc(var(--brick-form-control-size) / 3);
+        border-radius: var(--brick-form-border-rounding);
+        background-color: var(--brick-form-range-track-color);
+        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        transition-property: var(--brick-control-transition-properties, none);
+    }
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: var(--brick-form-control-size);
+        height: var(--brick-form-control-size);
+        margin-top: -0.4375rem;
+        border: var(--brick-form-border-width) solid var(--brick-form-range-thumb-border-color);
+        border-radius: 50%;
+        background-color: var(--brick-form-range-thumb-color);
+        box-shadow: var(--brick-form-range-thumb-shadow);
+        cursor: pointer;
+        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        transition-property: var(--brick-control-transition-properties, none);
+    }
+    &::-moz-range-thumb {
+        appearance: none;
+        width: var(--brick-form-control-size);
+        height: var(--brick-form-control-size);
+        margin-top: -0.4375rem;
+        border: var(--brick-form-border-width) solid var(--brick-form-range-thumb-border-color);
+        border-radius: 50%;
+        background-color: var(--brick-form-range-thumb-color);
+        box-shadow: var(--brick-form-range-thumb-shadow);
+        cursor: pointer;
+        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        transition-property: var(--brick-control-transition-properties, none);
+    }
+
+    &:not(:disabled):is(:active, :focus-within, :focus) {
+        --brick-form-range-thumb-shadow: var(--brick-focus-shadow);
+        --brick-form-range-thumb-border-color: var(--brick-form-range-thumb-color);
+    }
+
+    &:disabled {
+        --brick-form-range-track-color: var(--brick-form-background-color-disabled);
+        --brick-form-range-thumb-color: var(--brick-form-color-disabled-alt);
+    }
+}
+
+/* details[open]>summary:not([role]):not(:focus) {
+    color: var(--brick-accordion-open-summary-color);
+}
+
+*/
+
+[data-component~="validated-input"] {
+    display: inherit;
+    position: relative;
+    --_icon: var(--brick-icon-minus);
+
+    &::before {
+        position: absolute;
+        right: var(--brick-icon-size);
+        bottom: calc((var(--brick-form-input-height) - var(--brick-icon-size)) / 2);
+    }
+
+    &[data-style="anchor-top"]::before {
+        bottom: inherit;
+        /* top: calc(var(--brick-icon-size) / 2); */
+        top: calc((var(--brick-form-input-height) - var(--brick-icon-size)) / 2);
+    }
+
+    & > :is(input, select, checkbox, radio) {
+        padding-inline-end: calc(var(--brick-icon-size) + var(--brick-size-rel-xs));
+    }
+
+    &:is([data-state~="valid"], :has([aria-invalid="false"])) {
+        --_icon: var(--brick-icon-check);
+        --_icon-color: var(--brick-color-success);
+    }
+
+    &:is([data-state~="invalid"], :has([aria-invalid="true"])) {
+        --_icon: var(--brick-icon-error);
+        --_icon-color: var(--brick-color-danger);
+    }
+}

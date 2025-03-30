@@ -1,0 +1,79 @@
+/**
+** Layout - container
+** Control the width of this element and its children
+** Depends on: sizes (constants and defaults)
+
+May be set to xs, sm, md, lg, xl or full - follows common breakpoints.
+Set 'start' to align it to the inline start (left).
+Set 'end' to align it to the inline end (right).
+Set 'no-padding' to omit inline padding.
+*/
+
+[data-container],
+[data-container~="full"] {
+    width: 100%;
+    margin-inline: auto;
+    --_inline-padding: var(--brick-size-lg);
+    --_max-width: 100vw;
+    max-width: calc(var(--_max-width) - (var(--_inline-padding) * 2));
+    padding-inline: var(--_inline-padding);
+
+    :where(& > *) {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    [data-container]:not([data-container~="full"]),
+    [data-container~="xs"] {
+        --_max-width: 576px;
+        --_inline-padding: var(--brick-size-lg);
+    }
+}
+@media (min-width: 768px) {
+    [data-container]:not([data-container~="full"], [data-container~="xs"]) {
+        --_max-width: 768px;
+        --_inline-padding: var(--brick-size-xl);
+    }
+}
+@media (min-width: 1024px) {
+    [data-container]:not([data-container~="full"], [data-container~="xs"], [data-container~="sm"]) {
+        --_max-width: 1024px;
+    }
+}
+@media (min-width: 1280px) {
+    [data-container]:not(
+            [data-container~="full"],
+            [data-container~="xs"],
+            [data-container~="sm"],
+            [data-container~="md"]
+        ) {
+        --_max-width: 1280px;
+        --_inline-padding: var(--brick-size-xxl);
+    }
+}
+@media (min-width: 1536px) {
+    [data-container~="xl"],
+    [data-container]:not(
+            [data-container~="full"],
+            [data-container~="xs"],
+            [data-container~="sm"],
+            [data-container~="md"],
+            [data-container~="lg"]
+        ) {
+        --_max-width: 1536px;
+    }
+}
+
+[data-container~="start"] {
+    margin-inline-start: 0;
+}
+
+[data-container~="end"] {
+    margin-inline-end: 0;
+}
+
+[data-container~="no-padding"],
+[data-container] > [data-container] {
+    --_inline-padding: 0;
+}

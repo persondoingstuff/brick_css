@@ -1,0 +1,156 @@
+/**
+** Layout - columns
+** Display child elements as columns
+** Depends on: sizes (constants and defaults)
+*/
+
+[data-columns="auto"],
+[data-columns] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+    gap: var(--brick-size-rel-lg);
+
+    & > * {
+        min-width: 0;
+        width: fit-content;
+    }
+
+    & > [data-column~="span-2"] {
+        grid-column: span 2;
+    }
+
+    & > [data-column~="span-3"] {
+        grid-column: span 3;
+    }
+}
+
+[data-columns~="fluid"] {
+    display: flex;
+    flex-direction: row;
+
+    & > * {
+        width: 100%;
+    }
+
+    & > [data-column~="very-short"] {
+        width: var(--brick-line-length-fluid-very-short);
+    }
+
+    & > [data-column~="short"] {
+        width: var(--brick-line-length-fluid-short);
+    }
+
+    & > [data-column~="regular"] {
+        width: var(--brick-line-length-fluid-regular);
+    }
+
+    & > [data-column~="long"] {
+        width: var(--brick-line-length-fluid-long);
+    }
+}
+
+[data-columns~="fluid"],
+[data-columns~="adaptive"] > :is([data-column~="floats"], [data-column~="sinks"]) {
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+@media (max-width: 768px) {
+    [data-columns="auto"],
+    [data-columns] {
+        grid-template-columns: 1fr;
+    }
+
+    :is(
+    [data-columns~="fluid"],
+    [data-columns~="adaptive"]):not([data-columns~="narrow-wrap"]) {
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+/* 
+        & > :is([data-column~="floats"], [data-column~="sinks"]) {
+            flex-grow: 1;
+            flex-basis: 100%;
+        } */
+
+        & > [data-column] {
+            width: 100%;
+        }
+    }
+
+    [data-column~="floats"] {
+        order: 0;
+    }
+
+    [data-column~="sinks"] {
+        order: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    [data-columns~="narrow-wrap"]:is([data-columns~="fluid"], [data-columns~="adaptive"]) {
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+
+        /* & > :is([data-column~="floats"], [data-column~="sinks"]) {
+            flex-grow: 1;
+            flex-basis: 100%;
+        } */
+
+        & > [data-column] {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    [data-columns~="wide-wrap"]:is([data-columns~="fluid"], [data-columns~="adaptive"]) {
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+
+        /* & > :is([data-column~="floats"], [data-column~="sinks"]) {
+            flex-grow: 1;
+            flex-basis: 100%;
+        } */
+
+        & > [data-column] {
+            width: 100%;
+        }
+    }
+}
+
+[data-columns~="2"] {
+    grid-template-columns: repeat(2, minmax(0%, 1fr));
+}
+
+[data-columns~="3"] {
+    grid-template-columns: repeat(3, minmax(0%, 1fr));
+}
+
+[data-columns~="4"] {
+    grid-template-columns: repeat(4, minmax(0%, 1fr));
+}
+
+[data-columns~="6"] {
+    grid-template-columns: repeat(6, minmax(0%, 1fr));
+}
+
+[data-column~="center"],
+:where([data-columns~="spread"] > *) {
+    text-align: center;
+    justify-self: center;
+}
+
+[data-column~="start"],
+:where([data-columns~="spread"] > :first-child) {
+    text-align: start;
+    justify-self: start;
+}
+
+[data-column~="end"],
+:where([data-columns~="spread"] > :last-child) {
+    text-align: end;
+    justify-self: end;
+}

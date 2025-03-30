@@ -1,0 +1,44 @@
+/* Depends on:
+** constants - sizes
+*/
+:root {
+    --brick-opacity-transparent: 0;
+    --brick-opacity-less: 0.25;
+    --brick-opacity-semi: 0.5;
+    --brick-opacity-more: 0.75;
+    --brick-opacity-mostly: 0.9;
+    --brick-opacity-opaque: 1;
+    
+    --brick-transition-duration-very-fast: .075s;
+    --brick-transition-duration-fast: .125s;
+    --brick-transition-duration-mid: .2s;
+    --brick-transition-duration-slow: .3s;
+    --brick-transition-duration-very-slow: .4s;
+    --brick-transition-glide: cubic-bezier(0.25, 0, 0.5, 1); /* From Open-Props: --ease-1*/
+    --brick-transition-switch: cubic-bezier(0.9, 0, 0.1, 1); /* From Open-Props: --ease-in-out-5*/
+    --brick-transition-pull: cubic-bezier(0.7, 0, 1, 1); /* From Open-Props: --ease-in-3/*/
+    --brick-transition-push: cubic-bezier(0, 0, 0.75, 1); /* From Open-Props: --ease-out-1*/
+
+    /* Rename to just filter?? !!TODO*/
+    --brick-backdrop-filter-off: unset;
+    --brick-backdrop-filter-subtle: blur(0.1);
+    --brick-backdrop-filter-bold: blur(0.375rem);
+
+    --brick-border-rounding-none: 0;
+    --brick-border-rounding-barely: var(--brick-size-xxxs);
+    --brick-border-rounding-less: var(--brick-size-xs);
+    --brick-border-rounding-regular: var(--brick-size-md);
+    --brick-border-rounding-more: var(--brick-size-xxl);
+    --brick-border-rounding-full: 1e5px;
+
+    --brick-border-width-none: 0;
+    --brick-border-width-thin: 1px;
+    --brick-border-width-regular: var(--brick-size-xxxs);
+    --brick-border-width-heavy: var(--brick-size-xxs);
+
+    --brick-layer-behind: -1;
+    --brick-layer-1: 0;
+    --brick-layer-2: 1;
+    --brick-layer-3: 10;
+    --brick-layer-front: 100;
+}

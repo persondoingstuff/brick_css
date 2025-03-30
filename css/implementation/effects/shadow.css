@@ -1,0 +1,36 @@
+/* Set element shadow
+
+Depends on:
+Fundamentals and theme - effects
+*/
+[data-shadow] {
+    --_shadow: var(--brick-shadow);
+    
+    &, &:is(:hover) {
+        box-shadow: var(--_shadow);
+    }
+}
+
+[data-shadow~="none"] {
+    --_shadow: none;
+}
+
+[data-shadow~="xs"] {
+    --_shadow: var(--brick-shadow-xs);
+}
+
+[data-shadow~="sm"] {
+    --_shadow: var(--brick-shadow-sm);
+}
+
+[data-shadow~="lg"] {
+    --_shadow: var(--brick-shadow-lg);
+}
+
+[data-shadow~="xl"] {
+    --_shadow: var(--brick-shadow-xl);
+}
+
+[data-shadow~="xxl"] {
+    --_shadow: var(--brick-shadow-xl);
+}

@@ -1,0 +1,39 @@
+/* Box shadows from Open Props */
+
+:root, [data-theme] {
+    --brick-shadow-hue: 220;
+    --brick-shadow-lightness-light: 15%;
+    --brick-shadow-lightness-dark: 40%;
+    --brick-shadow-lightness: var(--brick-shadow-lightness-light);
+    --brick-shadow-color: var(--brick-shadow-hue) 3% var(--brick-shadow-lightness);
+    --brick-shadow-strength: 1%;
+
+    --brick-shadow-none: 0 0 0 rgba(0, 0, 0, 0);
+    --brick-shadow-xs: 0 1px 2px -1px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 20%));
+    --brick-shadow-sm: 0 3px 5px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 3%)),
+        0 7px 14px -5px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 5%));
+    --brick-shadow-md: 0 -1px 3px 0 hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 2%)),
+        0 1px 2px -5px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 2%)),
+        0 2px 5px -5px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 4%)),
+        0 4px 12px -5px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 5%)),
+        0 12px 15px -5px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 7%));
+    --brick-shadow-lg: 0 -2px 5px 0 hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 2%)),
+        0 1px 1px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 3%)),
+        0 2px 2px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 3%)),
+        0 5px 5px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 4%)),
+        0 9px 9px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 5%)),
+        0 16px 16px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 6%));
+    --brick-shadow-xl: 0 -1px 2px 0 hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 2%)),
+        0 2px 1px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 3%)),
+        0 5px 5px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 3%)),
+        0 10px 10px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 4%)),
+        0 20px 20px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 5%)),
+        0 40px 40px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 7%));
+    --brick-shadow-xxl: 0 -1px 2px 0 hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 2%)),
+        0 3px 2px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 3%)),
+        0 7px 5px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 3%)),
+        0 12px 10px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 4%)),
+        0 22px 18px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 5%)),
+        0 41px 33px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 6%)),
+        0 100px 80px -2px hsl(var(--brick-shadow-color) / calc(var(--brick-shadow-strength) + 7%));
+}

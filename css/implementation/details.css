@@ -1,0 +1,274 @@
+/*
+The <details> element is used to create
+- basic accordions with text style summary
+    - optionally combined with card
+    - Can also be styled as "underlined" or "blockquote"
+- button accordions
+- dropdowns (these are also made using <input>
+
+- The icon is by default a rotating chevron.
+  Setting data-style="plus" uses plus and minus icons instead
+
+Accordions can be styled using data-surface
+
+data-style="dropdown" can also be applied to other elements,
+to create non-details dropdowns.
+
+Dropdowns are by default on top with absolute positioning.
+Combine with 'inline' to instead place the content along the
+surrounding elements, displacing them when opening and closing.
+
+*/
+
+details {
+    --_acc-background: var(--brick-active-style-surface, var(--brick-accordion-background-color, transparent));
+    --_acc-background-alt: var(
+        --brick-active-style-surface,
+        var(--brick-accordion-background-color-active, var(--_acc-background))
+    );
+    --_acc-color: var(--brick-active-style-content, var(--brick-accordion-content-color, var(--brick-color-content)));
+    --_acc-color-alt: var(
+        --brick-active-style-content,
+        var(--brick-accordion-content-color-alt, var(--brick-content-color-active))
+    );
+    --_acc-border-color: var(--brick-active-style-content, var(--brick-accordion-border-color, var(--_acc-background)));
+    --_acc-border-color-alt: var(
+        --brick-active-style-content,
+        var(--brick-accordion-border-color, var(--_acc-background-alt))
+    );
+
+    --_acc-border-width: var(--brick-accordion-border-width, 0);
+    --_acc-spacing-inline: var(
+        --_button-padding-inline,
+        var(--_card-spacing-inline, var(--brick-component-spacing-inline))
+    );
+    --_acc-spacing-block: var(--_button-padding-block, var(--_card-spacing-block, var(--brick-component-spacing-block)));
+    --_acc-counter-margin-inline: calc(var(--_acc-spacing-inline) * -1);
+    --_acc-counter-margin-block: calc(var(--_acc-spacing-block) * -1);
+    /* If this is also a card, that radius wins: */
+    --_acc-border-radius: var(--_card-rounding, var(--brick-accordion-rounding, var(--brick-border-rounding-barely)));
+
+    --_acc-icon: var(--brick-icon-chevron);
+
+    padding: var(--_acc-spacing-block) var(--_acc-spacing-inline);
+    display: block;
+    margin-block-end: var(--brick-block-spacing);
+    background-color: var(--_acc-background);
+    color: var(--_acc-color);
+    border: var(--_acc-border-width) solid var(--_acc-border-color);
+    border-radius: var(--_acc-border-radius);
+
+    &[data-surface]:not([data-surface=""]) {
+        --_acc-background: var(--brick-color-background);
+        --_acc-background-alt: var(--brick-color-background-active);
+        --_acc-color: var(--brick-color-content);
+        --_acc-color-alt: var(--brick-color-content-active);
+        --_acc-border-color: var(--brick-color-border);
+        --_acc-border-color-alt: var(--brick-color-border-active);
+    }
+
+    /* Remove additional margin if we are inside a data-layout element or a form */
+    :is([data-layout], form, li) > & {
+        margin-block-end: 0;
+    }
+
+    /* If the contents are flex or grid, and the element is not open,
+    the gap may still appear
+    */
+    &:not([open]) {
+        gap: 0;
+    }
+
+    &:has(summary[role="button"]) {
+        padding: 0;
+    }
+
+    & :where(summary) {
+        --_icon: var(--_acc-icon);
+
+        line-height: var(--brick-line-height-inline);
+        list-style-type: none;
+        cursor: pointer;
+        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        transition-property: var(--brick-control-transition-properties, none);
+
+        &:not([role="button"]) {
+            border-radius: var(--_acc-border-radius);
+            margin: var(--_acc-counter-margin-block) var(--_acc-counter-margin-inline);
+            padding: var(--_acc-spacing-block) var(--_acc-spacing-inline);
+        }
+
+        & + :not(header) {
+            margin-block-start: var(--_acc-spacing-block);
+        }
+
+        &:is([data-icon-style~="end"], :not([data-icon-style~="after"]))::after {
+            margin-inline-start: auto; /* !!TODO Make configurable via a var */
+        }
+
+        &:is(:focus, :focus-visible, :active) {
+            outline: none;
+            box-shadow: var(--brick-focus-shadow), var(--_shadow, var(--brick-shadow-none));
+        }
+
+        [dir="rtl"] & {
+            text-align: right;
+
+            &::after {
+                float: left;
+                background-position: left center;
+            }
+        }
+
+        &::marker {
+            display: none;
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::-moz-list-bullet {
+            list-style-type: none;
+        }
+    }
+
+    &[open] {
+        border-color: var(--_acc-border-color);
+
+        & > summary {
+            margin-block-end: 0;
+            --_icon-transform: rotate(90deg);
+
+            &:not([role]) {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                background-color: var(--_acc-background-alt);
+            }
+        }
+
+        &[data-style~="outline"] summary,
+        summary[data-style~="outline"] {
+            background-color: transparent;
+            border-bottom: var(--brick-outline-width) solid var(--_acc-border-color);
+        }
+
+        :where(& > :last-child) {
+            margin-block-end: 0;
+        }
+    }
+
+    &[data-style~="underlined"] {
+        --_divider-color: var(--brick-table-divider-color, var(--brick-color-primary-content-3));
+        --_divider-width: var(--brick-table-divider-width, var(--brick-outline-width));
+
+        &[open],
+        & summary {
+            border-bottom: var(--_divider-width) solid var(--_divider-color);
+        }
+    }
+
+    &[data-style~="blockquote"] {
+        --_border-color: var(--brick-blockquote-border-color, var(--brick-color-border-active));
+        --_border-width: var(--brick-blockquote-border-width, var(--brick-border-width-heavy));
+        border-inline-start: var(--_border-width) solid var(--_border-color);
+    }
+
+    &[data-style~="plus"] {
+        --_acc-icon: var(--brick-icon-plus);
+
+        &[open] {
+            --_acc-icon: var(--brick-icon-minus);
+
+            & summary {
+                --_icon-transform: none;
+            }
+        }
+    }
+}
+
+/* Defined outside, so dropdown styling can be used without the details element */
+[data-style~="dropdown"] {
+    position: relative;
+    padding: 0;
+    border-radius: var(--brick-form-border-rounding);
+
+    & > summary {
+        border-radius: var(--brick-form-border-rounding);
+        margin: 0;
+        padding: var(--brick-control-spacing-block) var(--brick-control-spacing-inline);
+    }
+
+    & > ul {
+        white-space: nowrap;
+    }
+
+    & > :not(summary) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* min-width: fit-content; */
+        max-width: 100%;
+        margin: 0;
+        margin-block-start: calc(var(--brick-focus-width) + var(--brick-form-border-width));
+        padding: 0;
+        border: var(--brick-form-border-width) solid var(--brick-form-border-color);
+        border-radius: var(--brick-form-border-rounding);
+        background-color: var(--brick-form-background-color-active);
+        color: var(--brick-form-content-color);
+        overflow: hidden;
+        opacity: 0;
+        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        transition-property: opacity, transform;
+
+        & > * {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 0;
+            padding: var(--brick-form-padding-block) var(--brick-form-padding-inline);
+
+            & label {
+                width: 100%;
+            }
+        }
+
+        & li {
+            list-style: none;
+
+            &:is(:hover, :focus, :active, :focus-within) {
+                background-color: var(--brick-form-background-color);
+            }
+
+            &:has(a) {
+                padding: 0;
+            }
+
+            & a {
+                width: 100%;
+                display: inline-block;
+                padding: var(--brick-form-padding-block) var(--brick-form-padding-inline);
+            }
+        }
+    }
+
+    &:not([data-style~="inline"]) > :not(summary) {
+        z-index: var(--brick-layer-2);
+        position: absolute;
+        left: 0;
+        top: 100%;
+        box-shadow: var(--brick-dropdown-shadow, var(--brick-shadow-xl));
+    }
+
+    &:is(details[open]) > summary:not([role]) {
+        background-color: var(--brick-form-background-color-active);
+        border-bottom-left-radius: var(--brick-form-border-rounding);
+        border-bottom-right-radius: var(--brick-form-border-rounding);
+    }
+
+    &:is(details[open], :not(hidden)) {
+        & > :not(summary) {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+    }
+}

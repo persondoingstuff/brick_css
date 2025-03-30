@@ -1,0 +1,18 @@
+/* Depends on:
+** fundamentals - effects, shadows, colors
+** theme - colors
+*/
+
+:root {
+    --brick-transition: all var(--brick-transition-duration-mid) var(--brick-transition-switch);
+    --brick-shadow: var(--brick-shadow-md);
+    --brick-border-rounding: var(--brick-border-rounding-regular);
+    --brick-border-width: var(--brick-border-width-regular);
+    --brick-outline-width: var(--brick-border-width-regular);
+    /* --brick-scrollbar-width: 0; */
+    
+    --brick-focus-width: .15em;
+    --brick-focus-shadow: 0 0 0 var(--brick-focus-width) var(--brick-focus-color);
+    --brick-focus-color: var(--brick-color-primary-surface-3);
+    /* --brick-focus-color: var(--brick-color-content-active); */
+}

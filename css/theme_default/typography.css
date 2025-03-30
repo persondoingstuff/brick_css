@@ -1,0 +1,109 @@
+/* Depends on:
+** fundamentals - typography, sizes, colors
+**
+** Colors are defined at the end, in a separate section
+*/
+:root {
+    --brick-font-size: var(--brick-size-rel-md);
+    --brick-font-weight: var(--brick-font-weight-regular);
+    --brick-line-height: var(--brick-line-height-regular);
+    --brick-line-length: var(--brick-line-length-regular);
+
+    /* Font family*/
+    --brick-font-family-sans-serif: var(--brick-font-system-ui), var(--brick-font-family-emoji);
+    --brick-font-family-serif: var(--brick-font-transitional), var(--brick-font-family-emoji);
+    --brick-font-family-monospace: var(--brick-font-monospace-code), var(--brick-font-family-emoji);
+    
+    --brick-font-main: var(--brick-font-family-sans-serif);
+    --brick-font-alt: var(--brick-font-family-serif);
+    
+    /* Headings */
+    --brick-font-weight-headings: var(--brick-font-weight-bold);
+    --brick-line-height-headings: var(--brick-line-height-tight);
+    --brick-line-length-headings: var(--brick-line-length-short);
+    --brick-margin-before-headings: var(--brick-size-rel-md);
+
+    --brick-font-size-h1: var(--brick-size-fluid-xxl);
+    --brick-font-size-h2: var(--brick-size-fluid-xl);
+    --brick-font-size-h3: var(--brick-size-fluid-lg);
+    --brick-font-size-h4: var(--brick-size-xl);
+    --brick-font-size-h5: var(--brick-size-lg);
+    --brick-font-size-h6: var(--brick-size-md-lg);
+}
+
+/* Colors */
+:where(:root, [data-theme], [data-surface]) {
+    --brick-color-headings-big: var(--brick-color-content-2);
+    --brick-color-headings-small: var(--brick-color-content-3);
+
+    /* Various elements */
+    --brick-mark-background-color: var(--brick-color-warning-surface);
+    --brick-mark-color: var(--brick-color-content-active);
+    --brick-code-background-color: var(--brick-color-surface-accent-subtle);
+    --brick-code-color: var(--brick-color-secondary-2);
+    --brick-ins-color: var(--brick-color-success-content);
+    --brick-del-color: var(--brick-color-danger-content);
+}
+
+/*
+Additional properties can be set to override defaults.
+
+# List
+--brick-list-style - defaults to 'square'
+
+# Links
+--brick-text-underline-offset - defaults to .1em
+
+# Horizontal rule
+--brick-hr-spacing - defaults to double of --brick-typography-block-spacing
+--brick-hr-color - defaults to --brick-color-accent-subtle
+--brick-hr-thickness - defaults to --brick-border-width
+--brick-hr-width - defaults to--brick-line-length-very-short
+
+# Blockquote
+--brick-blockquote-spacing-block - defaults to --brick-typography-block-spacing
+--brick-blockquote-spacing-inline - defaults to double of --brick-typography-block-spacing
+--brick-blockquote-border-width - defaults to --brick-border-width
+--brick-blockquote-border-color - defaults to --brick-color-primary-accent-3 !!
+--brick-blockquote-footer-color - defaults to --brick-color-surface-2
+
+# Headings    
+--brick-font-heading - defaults to --brick-font-main
+
+--brick-line-height-h1
+--brick-line-height-h2
+--brick-line-height-h3
+--brick-line-height-h4
+--brick-line-height-h5
+--brick-line-height-h6
+    - defaults to --brick-line-height-headings
+
+--brick-font-weight-h1
+--brick-font-weight-h2
+--brick-font-weight-h3
+--brick-font-weight-h4
+--brick-font-weight-h5
+--brick-font-weight-h6
+    - defaults to --brick-font-weight-headings
+
+--brick-margin-before-h1
+--brick-margin-before-h2
+--brick-margin-before-h3
+--brick-margin-before-h4
+--brick-margin-before-h5
+--brick-margin-before-h6
+    - defaults to --brick-margin-before-headings
+
+--brick-font-color-h1
+--brick-font-color-h2
+    - defaults to --brick-color-headings-big
+--brick-font-color-h3
+--brick-font-color-h4
+--brick-font-color-h5
+--brick-font-color-h6
+    - defaults to --brick-color-headings-small
+
+# kbd
+--brick-kbd-background-color - defaults to --brick-color-content-active
+--brick-kbd-color - defaults to --brick-color-background-active
+*/

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* Import global properties*/
+@import "./fundamentals/sizes.css";
+@import "./fundamentals/colors.css";
+@import "./fundamentals/typography.css";
+@import "./fundamentals/effects.css";
+@import "./fundamentals/shadows_complex.css";
+@import "./fundamentals/icons/icons_essentials.css";
+@import "./fundamentals/icons/icons_general.css";
+@import "./fundamentals/icons/icons_application.css";
+@import "./fundamentals/icons/icons_social.css";
+
+/* Import theme defaults */
+@import "./theme_default/sizes.css";
+@import "./theme_default/colors.css";
+@import "./theme_default/effects.css";
+@import "./theme_default/typography.css";
+@import "./theme_default/components.css";
+@import "./theme_default/form.css";
+
+/* Import style implementation */
+@import "./implementation/map_colors.css";
+
+@import "./implementation/baseplate/general.css";
+@import "./implementation/baseplate/link-button.css";
+@import "./implementation/baseplate/media.css";
+@import "./implementation/baseplate/table.css";
+
+@import "./implementation/layout/_base.css";
+@import "./implementation/typography/_base.css";
+
+@import "./implementation/form/general.css";
+@import "./implementation/form/controls.css";
+@import "./implementation/form/extended.css";
+
+
+
+/* Modifiers */
+@import "./implementation/layout/blocks.css";
+@import "./implementation/layout/size.css";
+@import "./implementation/layout/container.css";
+@import "./implementation/layout/columns.css";
+@import "./implementation/layout/grid.css";
+@import "./implementation/layout/positioning.css";
+@import "./implementation/layout/layout.css";
+
+@import "./implementation/typography/text.css";
+@import "./implementation/effects/surface.css";
+@import "./implementation/effects/border.css";
+@import "./implementation/effects/shadow.css";
+
+
+@import "./implementation/icons.css";
+@import "./implementation/details.css";
+@import "./implementation/card.css";
+
