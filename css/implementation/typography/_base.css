@@ -93,9 +93,12 @@ blockquote {
 
 /* HEADINGS */
 :where(h1, h2, h3, h4, h5, h6) {
-    margin-block-end: var(--brick-size-rel-xs);
+    --_heading-weight: var(--brick-font-weight-headings, var(--brick-font-weight-bold));
+    --_heading-height: var(--brick-line-height-headings, var(--brick-line-height-tight));
+    --_heading-before: var(--brick-margin-before-headings, var(--brick-size-rel-md));
+    margin-block-end: var(--brick-margin-after-headings, var(--brick-size-rel-xs));
     font-family: var(--brick-font-heading, var(--brick-font-main));
-    max-inline-size: var(--brick-line-length-headings);
+    max-inline-size: var(--brick-line-length-headings, var(--brick-line-length-short));
     max-width: 100%;
 
     :is(header, [data-layout]) > & {
@@ -108,50 +111,50 @@ blockquote {
 }
 
 :where(h1) {
-    font-size: var(--brick-font-size-h1);
-    line-height: var(--brick-line-height-h1, var(--brick-line-height-headings));
-    font-weight: var(--brick-font-height-h1, var(--brick-font-weight-headings));
-    margin-block-start: var(--brick-margin-before-h1, var(--brick-margin-before-headings));
+    font-size: var(--brick-font-size-h1, var(--brick-size-fluid-xxl));
+    line-height: var(--brick-line-height-h1, var(--_heading-height));
+    font-weight: var(--brick-font-height-h1, var(--_heading-weight));
+    margin-block-start: var(--brick-margin-before-h1, var(--_heading-before));
     color: var(--brick-font-color-h1, var(--brick-color-headings-big));
 }
 
 :where(h2) {
-    font-size: var(--brick-font-size-h2);
-    line-height: var(--brick-line-height-h2, var(--brick-line-height-headings));
-    font-weight: var(--brick-font-height-h2, var(--brick-font-weight-headings));
-    margin-block-start: var(--brick-margin-before-h2, var(--brick-margin-before-headings));
+    font-size: var(--brick-font-size-h2, var(--brick-size-fluid-xl));
+    line-height: var(--brick-line-height-h2, var(--_heading-height));
+    font-weight: var(--brick-font-height-h2, var(--_heading-weight));
+    margin-block-start: var(--brick-margin-before-h2, var(--_heading-before));
     color: var(--brick-font-color-h2, var(--brick-color-headings-big));
 }
 
 :where(h3) {
-    font-size: var(--brick-font-size-h3);
-    line-height: var(--brick-line-height-h3, var(--brick-line-height-headings));
-    font-weight: var(--brick-font-height-h3, var(--brick-font-weight-headings));
-    margin-block-start: var(--brick-margin-before-h3, var(--brick-margin-before-headings));
+    font-size: var(--brick-font-size-h3, var(--brick-size-fluid-lg));
+    line-height: var(--brick-line-height-h3, var(--_heading-height));
+    font-weight: var(--brick-font-height-h3, var(--_heading-weight));
+    margin-block-start: var(--brick-margin-before-h3, var(--_heading-before));
     color: var(--brick-font-color-h3, var(--brick-color-headings-small));
 }
 
 :where(h4) {
-    font-size: var(--brick-font-size-h4);
-    line-height: var(--brick-line-height-h4, var(--brick-line-height-headings));
-    font-weight: var(--brick-font-height-h4, var(--brick-font-weight-headings));
-    margin-block-start: var(--brick-margin-before-h4, var(--brick-margin-before-headings));
+    font-size: var(--brick-font-size-h4, var(--brick-size-xl));
+    line-height: var(--brick-line-height-h4, var(--_heading-height));
+    font-weight: var(--brick-font-height-h4, var(--_heading-weight));
+    margin-block-start: var(--brick-margin-before-h4, var(--_heading-before));
     color: var(--brick-font-color-h4, var(--brick-color-headings-small));
 }
 
 :where(h5) {
-    font-size: var(--brick-font-size-h5);
-    line-height: var(--brick-line-height-h5, var(--brick-line-height-headings));
-    font-weight: var(--brick-font-height-h5, var(--brick-font-weight-headings));
-    margin-block-start: var(--brick-margin-before-h5, var(--brick-margin-before-headings));
+    font-size: var(--brick-font-size-h5, var(--brick-size-lg));
+    line-height: var(--brick-line-height-h5, var(--_heading-height));
+    font-weight: var(--brick-font-height-h5, var(--_heading-weight));
+    margin-block-start: var(--brick-margin-before-h5, var(--_heading-before));
     color: var(--brick-font-color-h5, var(--brick-color-headings-small));
 }
 
 :where(h6) {
-    font-size: var(--brick-font-size-h6);
-    line-height: var(--brick-line-height-h6, var(--brick-line-height-headings));
-    font-weight: var(--brick-font-height-h6, var(--brick-font-weight-headings));
-    margin-block-start: var(--brick-margin-before-h6, var(--brick-margin-before-headings));
+    font-size: var(--brick-font-size-h6, var(--brick-size-md-lg));
+    line-height: var(--brick-line-height-h6, var(--_heading-height));
+    font-weight: var(--brick-font-height-h6, var(--_heading-weight));
+    margin-block-start: var(--brick-margin-before-h6, var(--_heading-before));
     color: var(--brick-font-color-h6, var(--brick-color-headings-small));
 }
 
@@ -170,9 +173,9 @@ hgroup {
 
     & > p {
         color: var(--brick-font-color-h5, var(--brick-color-headings-small));
-        font-size: var(--brick-font-size-h5);
-        line-height: var(--brick-line-height-h5, var(--brick-line-height-headings));
-        max-inline-size: var(--brick-line-length-headings);
+        font-size: var(--brick-font-size-h5, var(--brick-size-lg));
+        line-height: var(--brick-line-height-h5, var(--brick-line-height-headings, var(--brick-line-height-tight)));
+        max-inline-size: var(--brick-line-length-headings, var(--brick-line-length-short));
     }
 }
 
@@ -186,9 +189,9 @@ samp {
     font-size: var(--brick-size-rel-md-sm);
     font-family: var(--brick-font-family-monospace);
     font-weight: var(--brick-font-weight);
-    color: var(--brick-color-content-active);
+    color: var(--brick-code-color, var(--brick-color-content-active));
     line-height: initial;
-    --_background-color: var(--brick-color-shaded-bold); 
+    --_background-color: var(--brick-code-background-color, var(--brick-color-shaded-bold)); 
     background-color: var(--_background-color);
     outline: var(--brick-size-rel-xxs) solid var(--_background-color);
     padding-inline: var(--brick-size-xxxs);
@@ -247,12 +250,13 @@ small {
 }
 
 mark {
-    background-color: var(--brick-mark-background-color);
-    color: var(--brick-mark-color);
+    --_mark-bg: var(--brick-mark-background-color, var(--brick-color-warning-surface));
+    background-color: var(--_mark-bg);
+    color: var(--brick-mark-color, var(--brick-color-content-active));
     border-radius: var(--brick-border-rounding-barely);
     vertical-align: baseline;
 
-    outline: var(--brick-size-rel-xxs) solid var(--brick-mark-background-color);
+    outline: var(--brick-size-rel-xxs) solid var(--_mark-bg);
     padding-inline: var(--brick-size-xxxs);
     margin-inline: var(--brick-size-xxs);
 }
@@ -264,10 +268,10 @@ abbr[title] {
 }
 
 ins {
-    color: var(--brick-ins-color);
+    color: var(--brick-ins-color, var(--brick-color-success-content));
     text-decoration: none;
 }
 
 del {
-    color: var(--brick-del-color);
+    color: var(--brick-del-color, var(--brick-color-danger-content));
 }

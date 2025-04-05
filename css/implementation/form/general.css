@@ -13,6 +13,12 @@
     overflow: visible;
 }
 
+/* Set default width */
+:where(form) :not(button, [type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]) {
+    width: var(--brick-form-element-width);
+    max-width: 100%;
+}
+
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
     height: auto;
@@ -39,13 +45,6 @@ form {
         margin: 0;
         margin-block-start: var(--brick-form-block-spacing);
     }
-}
-
-
-/* Set default width */
-:where(form) :not(button, [type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]) {
-    width: var(--brick-form-element-width);
-    max-width: 100%;
 }
 
 fieldset {
@@ -92,7 +91,7 @@ label {
     --_current-border-color: var(--brick-form-border-color);
     /* The line height as rem, plus padding and border width*/
     border: var(--brick-form-border-width) solid var(--_current-border-color);
-    border-radius: var(--brick-form-border-rounding);
+    border-radius: var(--brick-control-border-rounding);
     outline: none;
     box-shadow: none;
     background-color: var(--brick-form-background-color);

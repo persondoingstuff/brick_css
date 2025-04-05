@@ -8,18 +8,18 @@ Depends on:
 /* LINK */
 :where(a:not([role="button"])),
 [role="link"] {
-    --_link-decoration: var(--brick-link-decoration, underline);
-    --_link-decoration-offset: var(--brick-text-underline-offset, var(--brick-size-rel-xxs));
-    --_link-decoration-thickness: var(--brick-link-decoration-thickness, from-font);
-    --_link-background-color: var(--brick-link-background-color, transparent);
-    --_link-background-color-active: var(--brick-link-background-color-active, var(--_link-background-color));
     --_link-text-color: var(--brick-link-color);
     --_link-text-color-active: var(--brick-link-color-active);
+    --_link-background-color: var(--brick-link-background-color, transparent);
+    --_link-background-color-active: var(--brick-link-background-color-active, var(--_link-background-color));
     --_link-decoration-color: var(--brick-link-decoration-color, var(--brick-link-color));
     --_link-decoration-color-active: var(--brick-link-decoration-color-active, var(--brick-link-color-active));
+    --_link-decoration: var(--brick-link-decoration, underline);
+    --_link-decoration-offset: var(--brick-link-underline-offset, var(--brick-size-rel-xxs));
+    --_link-decoration-thickness: var(--brick-link-decoration-thickness, from-font);
 
-    background-color: var(--_link-background-color);
     color: var(--_link-text-color);
+    background-color: var(--_link-background-color);
     font-weight: var(--brick-link-font-weight, var(--brick-font-weight));
     text-decoration-style: solid;
     text-decoration-line: var(--_link-decoration);
@@ -28,8 +28,7 @@ Depends on:
     text-decoration-thickness: var(--_link-decoration-thickness);
     
     outline: none;
-    transition: none var(--brick-link-transition-duration, 0) var(--brick-link-transition-mode, linear);
-    transition-property: var(--brick-link-transition-properties, none);
+    transition: var(--brick-link-transition-properties, none) var(--brick-link-transition-duration, 0) var(--brick-link-transition-mode, var(--brick-transition-mode));
 
     /* [data-surface]:not([data-surface=""], [data-surface="init"]) & {
         --_link-text-color: var(--brick-color-primary-content-2);
@@ -56,7 +55,7 @@ Depends on:
         --_link-text-color-active: var(--_link-text-color);
         --_link-decoration-thickness: var(--brick-border-width-regular);
         --_link-decoration-offset: var(--brick-size-rel-xs);
-        --brick-link-font-weight: var(--brick-font-weight-bold);
+        font-weight: var(--brick-font-weight-bold); /*--brick-link-font-weight*/
         padding-inline: var(--brick-size-rel-xxs);
     }
 
@@ -64,26 +63,7 @@ Depends on:
 
 
 
-/* BUTTON
-
-button background/color hierarchy
-
-- fallback
-	- Normal: primary, brick-color-content-contrast
-	- Active: primary-bold, normal color
-- default
-	- Follows pref, falls back to fallback
-- surface [not 1,2,3]
-	- Normal: surface, brick-color-content-contrast
-	- Active: surface alt, normal color
-- surface [1,2,3]
-	- Normal: surface, brick-color-content
-	- Active: surface alt, normal color
-- surface [outline]
-	- Normal: transparent, surface (also border)
-	- Active: transparent, surface alt (also border)
-
-*/
+/* BUTTONS */
 
 :where(a[role="button"]) {
     display: inline-block;
@@ -95,9 +75,9 @@ button background/color hierarchy
        [type="button"],
        [type="file"]::file-selector-button,
        [role="button"]) {
-    --_shadow: var(--brick-button-box-shadow, var(--brick-shadow-none));
-    --_shadow-active: var(--brick-button-box-shadow-active, var(--_shadow));
-    --_radius: var(--brick-button-border-rounding, var(--brick-border-rounding));
+    --_shadow: var(--brick-button-shadow, var(--brick-shadow-none));
+    --_shadow-active: var(--brick-button-shadow-active, var(--_shadow));
+    --_radius: var(--brick-button-border-rounding, var(--brick-control-border-rounding));
     
     --_button-color: var(--brick-button-text-color, var(--brick-color-content-contrast));
     --_button-color-active: var(--brick-button-text-color-active, var(--_button-color));
@@ -118,8 +98,7 @@ button background/color hierarchy
     line-height: var(--brick-line-height-tight);
     font-size: var(--brick-font-size);
     font-weight: var(--brick-button-text-weight, var(--brick-font-weight-regular));
-    transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
-    transition-property: var(--brick-control-transition-properties, none);
+    transition: var(--brick-control-transition-properties, none) var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
     appearance: button;
     margin: 0;
     overflow: visible;

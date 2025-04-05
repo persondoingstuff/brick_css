@@ -14,28 +14,28 @@
 }
 
 [data-grid~="xs"] {
-    --_grid-min-size: 12;
-    --_grid-min-pct: 15;
+    --brick-grid-min-size: 12;
+    --brick-grid-min-pct: 15;
 }
 
 [data-grid~="sm"] {
-    --_grid-min-size: 15;
-    --_grid-min-pct: 18;
+    --brick-grid-min-size: 15;
+    --brick-grid-min-pct: 18;
 }
 
 [data-grid~="md"] {
-    --_grid-min-size: 18;
-    --_grid-min-pct: 20;
+    --brick-grid-min-size: 18;
+    --brick-grid-min-pct: 20;
 }
 
 [data-grid~="lg"] {
-    --_grid-min-size: 24;
-    --_grid-min-pct: 25;
+    --brick-grid-min-size: 24;
+    --brick-grid-min-pct: 25;
 }
 
 [data-grid~="xl"] {
-    --_grid-min-size: 30;
-    --_grid-min-pct: 33;
+    --brick-grid-min-size: 30;
+    --brick-grid-min-pct: 33;
 }
 
 [data-grid~="expand"] {

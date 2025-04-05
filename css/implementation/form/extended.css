@@ -11,6 +11,7 @@ Depends on:
 /* Input type: color */
 [type="color"] {
     padding-inline: var(--brick-form-padding-block);
+    --_radius: calc(var(--brick-control-border-rounding) / 2);
 
     &::-webkit-color-swatch-wrapper {
         padding: 0;
@@ -22,22 +23,22 @@ Depends on:
 
     &::-webkit-color-swatch {
         border: 0;
-        border-radius: calc(var(--brick-form-border-rounding) / 2);
+        border-radius: var(--_radius);
     }
 
     &::-moz-color-swatch {
         border: 0;
-        border-radius: calc(var(--brick-form-border-rounding) / 2);
+        border-radius: var(--_radius);
     }
 }
 
 /* file input */
 [type="file"] {
-    padding: 0;
     border-width: 0;
     color: var(--brick-form-content-color);
     margin-left: calc(var(--brick-border-width) * -1);
     padding-block: var(--brick-form-padding-block);
+    padding-inline-start: 0;
     padding-inline-end: var(--brick-form-padding-inline);
     border: 0;
     border-radius: 0;
@@ -54,7 +55,8 @@ Depends on:
     font: inherit;
 }
 
-:is(button, [type="submit"], [type="button"], [role="button"]).secondary,
+/* !!FIXME this is all wrong */
+:is(button, [type="submit"], [type="button"], [role="button"]),
 [type="file"]::file-selector-button,
 [type="reset"] {
     --brick-background-color: var(--brick-secondary-background);
@@ -74,33 +76,28 @@ Input type: range
     padding: 0;
     border-width: 0;
     --_thumb-shadow: var(--brick-form-range-thumb-shadow, none);
-    --_thumb-border-color: var(--brick-form-range-thumb-border-color, var(--brick-form-background-color));
+    --_thumb-border-color: var(--brick-form-range-thumb-border-color, var(--brick-color-background));
     --_thumb_border: var(--brick-form-border-width) solid var(--_thumb-border-color);
     --_thumb-color: var(--brick-form-range-thumb-color, var(--brick-form-accent-color-bold));
-    --_range-transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+    --_range-transition: var(--brick-control-transition-properties, none) var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
     --_track-height: calc(var(--brick-form-control-size) / 3);
     --_track-color: var(--brick-form-range-track-color, var(--brick-form-accent-color));
-
-    &:active:is(::-webkit-slider-thumb, ::-moz-range-thumb) {
-        transform: scale(1.25);
-    }
+    --_thumb-scale: var(--brick-form-range-thumb-scale, 1.1);
 
     &::-webkit-slider-runnable-track {
         width: 100%;
         height: var(--_track-height);
-        border-radius: var(--brick-form-border-rounding);
+        border-radius: var(--brick-control-border-rounding);
         background-color: var(--_track-color);
         transition: var(--_range-transition);
-        transition-property: var(--brick-control-transition-properties, none);
     }
 
     &::-moz-range-track {
         width: 100%;
         height: var(--_track-height);
-        border-radius: var(--brick-form-border-rounding);
+        border-radius: var(--brick-control-border-rounding);
         background-color: var(--_track-color);
         transition: var(--_range-transition);
-        transition-property: var(--brick-control-transition-properties, none);
     }
 
     &::-webkit-slider-thumb {
@@ -108,28 +105,36 @@ Input type: range
         appearance: none;
         width: var(--brick-form-control-size);
         height: var(--brick-form-control-size);
-        margin-top: -0.4375rem; /* !! magic number */
+        margin-top: calc(var(--_track-height) * -1);
         border: var(--_thumb_border);
         border-radius: 50%;
         background-color: var(--_thumb-color);
         box-shadow: var(--_thumb-shadow);
         cursor: pointer;
         transition: var(--_range-transition);
-        transition-property: var(--brick-control-transition-properties, none);
     }
 
     &::-moz-range-thumb {
         appearance: none;
         width: var(--brick-form-control-size);
         height: var(--brick-form-control-size);
-        margin-top: -0.4375rem;
+        margin-top: calc(var(--_track-height) * -1);
         border: var(--_thumb_border);
         border-radius: 50%;
         background-color: var(--_thumb-color);
         box-shadow: var(--_thumb-shadow);
         cursor: pointer;
         transition: var(--_range-transition);
-        transition-property: var(--brick-control-transition-properties, none);
+    }
+
+    &:active {
+        &::-webkit-slider-thumb {
+            transform: scale(var(--_thumb-scale));
+        }
+
+        &::-moz-range-thumb {
+            transform: scale(var(--_thumb-scale));
+        }
     }
 
     &:not(:disabled):is(:active, :focus-within, :focus) {

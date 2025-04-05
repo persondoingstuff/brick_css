@@ -191,10 +191,10 @@ details {
 [data-style~="dropdown"] {
     position: relative;
     padding: 0;
-    border-radius: var(--brick-form-border-rounding);
+    border-radius: var(--brick-control-border-rounding);
 
     & > summary {
-        border-radius: var(--brick-form-border-rounding);
+        border-radius: var(--brick-control-border-rounding);
         margin: 0;
         padding: var(--brick-control-spacing-block) var(--brick-control-spacing-inline);
     }
@@ -213,7 +213,7 @@ details {
         margin-block-start: calc(var(--brick-focus-width) + var(--brick-form-border-width));
         padding: 0;
         border: var(--brick-form-border-width) solid var(--brick-form-border-color);
-        border-radius: var(--brick-form-border-rounding);
+        border-radius: var(--brick-control-border-rounding);
         background-color: var(--brick-form-background-color-active);
         color: var(--brick-form-content-color);
         overflow: hidden;
@@ -261,8 +261,8 @@ details {
 
     &:is(details[open]) > summary:not([role]) {
         background-color: var(--brick-form-background-color-active);
-        border-bottom-left-radius: var(--brick-form-border-rounding);
-        border-bottom-right-radius: var(--brick-form-border-rounding);
+        border-bottom-left-radius: var(--brick-control-border-rounding);
+        border-bottom-right-radius: var(--brick-control-border-rounding);
     }
 
     &:is(details[open], :not(hidden)) {

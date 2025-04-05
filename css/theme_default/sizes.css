@@ -7,7 +7,6 @@
     --brick-size-rel: var(--brick-size-rel-md);
 
     --brick-block-spacing: var(--brick-block-spacing-regular);
-
     --brick-typography-block-spacing: var(--brick-block-spacing-tight);
 
     --brick-component-spacing-inline: var(--brick-size-rel-lg);

@@ -4,3 +4,5 @@
 - Choose between 'init' and 'reset' instead of having both
 - Improve organization. There are some assorted files that are in the wrong place
 - Make a general definition of control and component, and standardize when standard control styling is used
+- Standardize between 'alt' and 'active' -- 'alt' is most generally usable and precise
+- General button styling does not work for [type="file"]::file-selector-button

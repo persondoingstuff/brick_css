@@ -26,7 +26,7 @@
     --brick-form-color-invalid: var(--brick-color-danger);
     --brick-form-color-invalid-alt: var(--brick-color-danger-content);
 
-    --brick-form-border-rounding: var(--brick-border-rounding-less);
+    --brick-control-border-rounding: var(--brick-border-rounding-less);
     --brick-form-border-width: var(--brick-border-width-thin);
     --brick-form-border-color: var(--brick-color-accent-subtle);
     --brick-form-border-color-valid: var(--brick-form-color-valid);
@@ -71,7 +71,7 @@
 
 
     Form
-    --brick-form-border-rounding --brick-border-rounding
+    --brick-control-border-rounding --brick-border-rounding
     --brick-form-border-width --brick-border-width
     --brick-form-border-color --brick-color-border
     --brick-form-background-color --brick-color-background
