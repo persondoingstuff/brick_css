@@ -27,6 +27,12 @@ img {
     max-width: 100%;
     height: auto;
     border-style: none;
+
+    /* Prevent stretching by default,
+    by hiding parts of the image if necessary.
+    !!TODO - Add helpers to modify behavior. Also add aspect radio options
+    */
+    object-fit: cover;
 }
 
 :where(svg:not([fill])) {
@@ -41,9 +47,6 @@ canvas {
     display: inline-block;
 }
 
-/**
- * Figure
- */
 figure {
     display: block;
     margin: 0;
@@ -53,4 +56,35 @@ figure {
         padding: var(--brick-size-rel-xs) 0;
         color: var(--brick-color-content-active);
     }
+}
+
+
+/* !!FIXME Move this somewhere else */
+[data-media~="round"],
+[data-media~="square"] {
+    aspect-ratio: 1/1;
+}
+
+[data-media~="square"] {
+    border-radius: 0;
+}
+
+[data-media~="round"] {
+    border-radius: 50%;
+}
+
+[data-media~="4-3"] {
+    aspect-ratio: 4/3;
+}
+
+[data-media~="16-9"] {
+    aspect-ratio: 16/9;
+}
+
+[data-media~="cover"] {
+    object-fit: cover;
+}
+
+[data-media~="contain"] {
+    object-fit: contain;
 }

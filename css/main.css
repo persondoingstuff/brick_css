@@ -27,7 +27,6 @@
 @import "./implementation/baseplate/media.css";
 @import "./implementation/baseplate/table.css";
 
-@import "./implementation/layout/_base.css";
 @import "./implementation/typography/_base.css";
 
 @import "./implementation/form/general.css";

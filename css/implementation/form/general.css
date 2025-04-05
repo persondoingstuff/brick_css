@@ -4,7 +4,7 @@
     );
 }
 
-:where(input, optgroup, select, textarea):not([type="button"], [type="submit"], [type="reset"]) {
+:where(input:not([type="button"], [type="submit"], [type="reset"]), optgroup, select, textarea) {
     margin: 0;
     font-size: var(--brick-font-size);
     line-height: var(--brick-line-height);
@@ -34,12 +34,13 @@
 /* STRUCTURE AND LABELS */
 form {
     padding-block: var(--brick-form-block-spacing);
+
+    & > * {
+        margin: 0;
+        margin-block-start: var(--brick-form-block-spacing);
+    }
 }
 
-:where(form) > * {
-    margin: 0;
-    margin-block-start: var(--brick-form-block-spacing);
-}
 
 /* Set default width */
 :where(form) :not(button, [type="button"], [type="reset"], [type="submit"], [type="checkbox"], [type="radio"]) {

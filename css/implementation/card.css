@@ -26,6 +26,8 @@ Depends on? !! TODO
     color: var(--_card-color);
     border: var(--_card-border-width) solid var(--_card-border-color);
     border-radius: var(--_card-rounding);
+    overflow-wrap: break-word;
+    min-width: 0;
 
     :where(&) {
         box-shadow: var(--brick-card-box-shadow, var(--brick-shadow-none));

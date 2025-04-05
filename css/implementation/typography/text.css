@@ -140,11 +140,19 @@
     letter-spacing: var(--brick-letter-spacing-very-loose);
 }
 
+
+[data-text~="truncate"] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /*
 ** TEXT COLOR
 */
 
 /* Set text to regular text colors */
+/* !!TODO Consider renaming to data-content, for consistency? */
 
 [data-text-color~="1"] {
     color: var(--brick-color-content-1);
