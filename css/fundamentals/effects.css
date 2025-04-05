@@ -25,16 +25,16 @@
     --brick-backdrop-filter-bold: blur(0.375rem);
 
     --brick-border-rounding-none: 0;
-    --brick-border-rounding-barely: var(--brick-size-xxxs);
-    --brick-border-rounding-less: var(--brick-size-xs);
-    --brick-border-rounding-regular: var(--brick-size-md);
-    --brick-border-rounding-more: var(--brick-size-xxl);
+    --brick-border-rounding-barely: var(--brick-size-rel-xxxs);
+    --brick-border-rounding-less: var(--brick-size-rel-xs);
+    --brick-border-rounding-regular: var(--brick-size-rel-md);
+    --brick-border-rounding-more: var(--brick-size-rel-xxl);
     --brick-border-rounding-full: 1e5px;
 
     --brick-border-width-none: 0;
     --brick-border-width-thin: 1px;
-    --brick-border-width-regular: var(--brick-size-xxxs);
-    --brick-border-width-heavy: var(--brick-size-xxs);
+    --brick-border-width-regular: var(--brick-size-rel-xxxs);
+    --brick-border-width-heavy: var(--brick-size-rel-xxs);
 
     --brick-layer-behind: -1;
     --brick-layer-1: 0;

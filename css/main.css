@@ -24,7 +24,6 @@
 
 @import "./implementation/baseplate/general.css";
 @import "./implementation/baseplate/link-button.css";
-@import "./implementation/baseplate/media.css";
 @import "./implementation/baseplate/table.css";
 
 @import "./implementation/typography/_base.css";
@@ -49,7 +48,7 @@
 @import "./implementation/effects/border.css";
 @import "./implementation/effects/shadow.css";
 
-
+/* Move these files: */
 @import "./implementation/icons.css";
 @import "./implementation/details.css";
 @import "./implementation/card.css";

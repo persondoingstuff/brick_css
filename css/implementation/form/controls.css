@@ -48,7 +48,7 @@ Depends on:
 }
 
 [type="checkbox"] {
-    border-radius: var(--brick-form-checkbox-rounding);
+    border-radius: var(--brick-form-checkbox-rounding, var(--brick-size-rel-xxs));
 
     &:is(:checked, :indeterminate) {
         background-color: var(--brick-form-accent-color);
@@ -81,7 +81,8 @@ Depends on:
     &[role="switch"] {
         --brick-color: var(--brick-switch-color);
         --_current-surface-color: var(--brick-form-color-disabled-alt);
-        width: calc(var(--brick-form-control-size) + var(--brick-form-switch-distance));
+        --_distance: var(--brick-form-switch-distance, var(--brick-size-rel-md));
+        width: calc(var(--brick-form-control-size) + var(--_distance));
         height: var(--brick-form-control-size);
         border: var(--brick-focus-width) solid var(--brick-form-accent-color);
         border-radius: var(--brick-form-control-size);
@@ -104,7 +105,7 @@ Depends on:
             --_current-surface-color: var(--brick-form-accent-color);
 
             &::before {
-                margin-inline-start: var(--brick-form-switch-distance);
+                margin-inline-start: var(--_distance);
             }
         }
 

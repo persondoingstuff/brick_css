@@ -150,7 +150,7 @@ details {
         &[data-style~="outline"] summary,
         summary[data-style~="outline"] {
             background-color: transparent;
-            border-bottom: var(--brick-outline-width) solid var(--_acc-border-color);
+            border-bottom: var(--brick-active-style-border-width, var(--brick-outline-width, var(--brick-border-width))) solid var(--_acc-border-color);
         }
 
         :where(& > :last-child) {
@@ -160,7 +160,7 @@ details {
 
     &[data-style~="underlined"] {
         --_divider-color: var(--brick-table-divider-color, var(--brick-color-primary-content-3));
-        --_divider-width: var(--brick-table-divider-width, var(--brick-outline-width));
+        --_divider-width: var(--brick-table-divider-width, var(--brick-border-width));
 
         &[open],
         & summary {

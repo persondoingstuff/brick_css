@@ -36,27 +36,10 @@
 
     --brick-form-disabled-opacity: var(--brick-opacity-semi);
     --brick-form-element-width: var(--brick-line-length-full);
-    --brick-form-multiselect-max-height: 20ch;
 
     --brick-form-control-size: var(--brick-size-rel-lg);
-    --brick-form-control-border-width: var(--brick-size-rel-xxxs);
-    --brick-form-checkbox-rounding: var(--brick-size-rel-xxs);
-    --brick-form-switch-distance: var(--brick-size-rel-md);
-    --brick-form-range-track-color: var(--brick-form-accent-color);
-    --brick-form-range-thumb-color: var(--brick-form-accent-color-bold);
-    --brick-form-range-thumb-shadow: none;
-    --brick-form-range-thumb-border-color: var(--brick-form-background-color);
-
-    --brick-form-label-content-color: var(--brick-form-content-color);
-    --brick-form-label-font-weight: var(--brick-font-weight);
-    --brick-form-label-font-size: var(--brick-font-size);
-    --brick-form-label-text-transform: none;
-
-    --brick-form-legend-content-color: var(--brick-form-content-color);
-    --brick-form-legend-font-weight: var(--brick-font-weight-bold);
-    --brick-form-legend-font-size: var(--brick-size-rel-md-lg);
-    --brick-form-legend-text-transform: none;
-
+    --brick-form-control-border-width: var(--brick-border-width);
+    
     --brick-form-placeholder-color: var(--brick-color-content-active);
     --brick-form-placeholder-font-weight: var(--brick-font-weight);
     --brick-form-placeholder-font-size: var(--brick-font-size);
@@ -64,4 +47,40 @@
     --brick-form-placeholder-opacity-inactive: var(--brick-opacity-more);
 
     /* !! Add transition */
+
+    /* Implied properties
+    --brick-form-multiselect-max-height - defaults to 20ch;
+
+    --brick-form-checkbox-rounding - defaults to --brick-size-rel-xxs
+    --brick-form-switch-distance - defaults to --brick-size-rel-md
+
+    --brick-form-legend-text-transform - defaults to none
+    --brick-form-legend-font-size - defaults to--brick-size-rel-md-lg
+    --brick-form-legend-content-color - defaults to --brick-form-content-color
+    --brick-form-legend-font-weight - defaults to --brick-font-weight-bold
+    
+    --brick-form-label-text-transform - defaults to none
+    --brick-form-label-font-size - defaults to --brick-font-size
+    --brick-form-label-font-weight - defaults to --brick-font-weight
+    --brick-form-label-content-color - defaults to --brick-form-content-color
+
+    --brick-form-range-thumb-shadow - defaults to none
+    --brick-form-range-thumb-border-color - defaults to --brick-form-background-color
+    --brick-form-range-thumb-color - defaults to --brick-form-accent-color-bold
+    --brick-form-range-track-color - defaults to --brick-form-accent-color
+
+
+    Form
+    --brick-form-border-rounding --brick-border-rounding
+    --brick-form-border-width --brick-border-width
+    --brick-form-border-color --brick-color-border
+    --brick-form-background-color --brick-color-background
+    --brick-form-background-color-active --brick-color-background-active
+    --brick-form-content-color --brick-color-content
+    --brick-form-placeholder-color --brick-color-accent
+    --brick-form-border-color-valid - 
+    --brick-form-border-color-valid-active - 
+    --brick-form-border-color-invalid - 
+    --brick-form-border-color-invalid-active - 
+    */
 }

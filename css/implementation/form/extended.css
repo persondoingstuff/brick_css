@@ -36,7 +36,7 @@ Depends on:
     padding: 0;
     border-width: 0;
     color: var(--brick-form-content-color);
-    margin-left: calc(var(--brick-outline-width) * -1);
+    margin-left: calc(var(--brick-border-width) * -1);
     padding-block: var(--brick-form-padding-block);
     padding-inline-end: var(--brick-form-padding-inline);
     border: 0;
@@ -73,6 +73,13 @@ Input type: range
     background: none;
     padding: 0;
     border-width: 0;
+    --_thumb-shadow: var(--brick-form-range-thumb-shadow, none);
+    --_thumb-border-color: var(--brick-form-range-thumb-border-color, var(--brick-form-background-color));
+    --_thumb_border: var(--brick-form-border-width) solid var(--_thumb-border-color);
+    --_thumb-color: var(--brick-form-range-thumb-color, var(--brick-form-accent-color-bold));
+    --_range-transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+    --_track-height: calc(var(--brick-form-control-size) / 3);
+    --_track-color: var(--brick-form-range-track-color, var(--brick-form-accent-color));
 
     &:active:is(::-webkit-slider-thumb, ::-moz-range-thumb) {
         transform: scale(1.25);
@@ -80,57 +87,59 @@ Input type: range
 
     &::-webkit-slider-runnable-track {
         width: 100%;
-        height: calc(var(--brick-form-control-size) / 3);
+        height: var(--_track-height);
         border-radius: var(--brick-form-border-rounding);
-        background-color: var(--brick-form-range-track-color);
-        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        background-color: var(--_track-color);
+        transition: var(--_range-transition);
         transition-property: var(--brick-control-transition-properties, none);
     }
 
     &::-moz-range-track {
         width: 100%;
-        height: calc(var(--brick-form-control-size) / 3);
+        height: var(--_track-height);
         border-radius: var(--brick-form-border-rounding);
-        background-color: var(--brick-form-range-track-color);
-        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        background-color: var(--_track-color);
+        transition: var(--_range-transition);
         transition-property: var(--brick-control-transition-properties, none);
     }
+
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
         width: var(--brick-form-control-size);
         height: var(--brick-form-control-size);
-        margin-top: -0.4375rem;
-        border: var(--brick-form-border-width) solid var(--brick-form-range-thumb-border-color);
+        margin-top: -0.4375rem; /* !! magic number */
+        border: var(--_thumb_border);
         border-radius: 50%;
-        background-color: var(--brick-form-range-thumb-color);
-        box-shadow: var(--brick-form-range-thumb-shadow);
+        background-color: var(--_thumb-color);
+        box-shadow: var(--_thumb-shadow);
         cursor: pointer;
-        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        transition: var(--_range-transition);
         transition-property: var(--brick-control-transition-properties, none);
     }
+
     &::-moz-range-thumb {
         appearance: none;
         width: var(--brick-form-control-size);
         height: var(--brick-form-control-size);
         margin-top: -0.4375rem;
-        border: var(--brick-form-border-width) solid var(--brick-form-range-thumb-border-color);
+        border: var(--_thumb_border);
         border-radius: 50%;
-        background-color: var(--brick-form-range-thumb-color);
-        box-shadow: var(--brick-form-range-thumb-shadow);
+        background-color: var(--_thumb-color);
+        box-shadow: var(--_thumb-shadow);
         cursor: pointer;
-        transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+        transition: var(--_range-transition);
         transition-property: var(--brick-control-transition-properties, none);
     }
 
     &:not(:disabled):is(:active, :focus-within, :focus) {
-        --brick-form-range-thumb-shadow: var(--brick-focus-shadow);
-        --brick-form-range-thumb-border-color: var(--brick-form-range-thumb-color);
+        --_thumb-shadow: var(--brick-focus-shadow);
+        --_thumb-border-color: var(--_thumb-color);
     }
 
     &:disabled {
-        --brick-form-range-track-color: var(--brick-form-background-color-disabled);
-        --brick-form-range-thumb-color: var(--brick-form-color-disabled-alt);
+        --_track-color: var(--brick-form-background-color-disabled);
+        --_thumb-color: var(--brick-form-color-disabled-alt);
     }
 }
 

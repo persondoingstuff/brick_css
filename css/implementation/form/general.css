@@ -57,20 +57,20 @@ legend {
     display: block;
     padding: 0;
     margin-block-start: var(--brick-form-block-spacing);
-    color: var(--brick-form-legend-content-color);
-    font-size: var(--brick-form-legend-font-size);
-    font-weight: var(--brick-form-legend-font-weight);
-    text-transform: var(--brick-form-legend-text-transform);
+    color: var(--brick-form-legend-content-color, var(--brick-form-content-color));
+    font-size: var(--brick-form-legend-font-size, var(--brick-size-rel-md-lg));
+    font-weight: var(--brick-form-legend-font-weight, var(--brick-font-weight-bold));
+    text-transform: var(--brick-form-legend-text-transform, none);
     white-space: normal;
 }
 
 label {
     display: block;
     margin-block-start: var(--brick-form-block-spacing);
-    color: var(--brick-form-label-content-color);
-    font-size: var(--brick-form-label-font-size);
-    font-weight: var(--brick-form-label-font-weight);
-    text-transform: var(--brick-form-label-text-transform);
+    color: var(--brick-form-label-content-color, var(--brick-form-content-color));
+    font-size: var(--brick-form-label-font-size, var(--brick-font-size));
+    font-weight: var(--brick-form-label-font-weight, var(--brick-font-weight));
+    text-transform: var(--brick-form-label-text-transform, none);
 
     & > :first-child {
         margin-inline-start: 0;
@@ -211,7 +211,7 @@ select {
     }
 
     &[multiple] {
-        max-height: var(--brick-form-multiselect-max-height);
+        max-height: var(--brick-form-multiselect-max-height, 20ch);
         overflow-y: auto;
 
         & option:checked {

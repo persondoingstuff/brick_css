@@ -253,7 +253,7 @@ fundamentals and theme - colors, effects
 [data-style~="outline"] {
     --brick-active-style-surface: transparent;
     --brick-active-style-content: var(--brick-color-background);
-    --brick-active-style-border-width: var(--brick-outline-width);
+    --brick-active-style-border-width: var(--brick-outline-width, var(--brick-border-width));
     background-color: var(--brick-active-style-surface);
     color: var(--brick-active-style-content);
     border-color: var(--brick-active-style-content);

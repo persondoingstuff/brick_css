@@ -2,19 +2,6 @@
 
 # Optional properties
 
-Link:
---brick-link-font-weight - defaults to --brick-font-weight
---brick-link-decoration - defaults to underline 
---brick-link-decoration-active - defaults to same as --brick-link-decoration
---brick-link-decoration-offset - defaults to --brick-size-rel-xxs
---brick-link-decoration-offset-active - defaults to same as --brick-link-decoration-offset
---brick-link-decoration-thickness - defaults to from-font
---brick-link-decoration-thickness-active - defaults to same as --brick-link-decoration-thickness
---brick-link-decoration-color - defaults to --brick-link-color
---brick-link-decoration-color-active - defaults to --brick-link-color-active
---brick-link-background-color - defaults to transparent
---brick-link-background-color-active - defaults to --brick-link-background-color
-
 Button:
 --brick-button-box-shadow - defaults to --brick-shadow-xs
 --brick-button-box-shadow-active - defaults to --brick-button-box-shadow
@@ -53,20 +40,6 @@ Table
 --brick-accordion-divider-color - defaults to --brick-accordion-border-color
 --brick-accordion-divider-width - defaults to --brick-accordion-border-width
 
-Form
---brick-form-border-rounding --brick-border-rounding
---brick-form-border-width --brick-border-width
---brick-form-border-color --brick-color-border
---brick-form-background-color --brick-color-background
---brick-form-background-color-active --brick-color-background-active
---brick-form-content-color --brick-color-content
---brick-form-label-font-weight --brick-font-weight
---brick-form-label-content-color --brick-form-content-color
---brick-form-placeholder-color --brick-color-accent
---brick-form-border-color-valid - 
---brick-form-border-color-valid-active - 
---brick-form-border-color-invalid - 
---brick-form-border-color-invalid-active - 
 */
 
 /* Depends on:
@@ -82,6 +55,7 @@ Form
     
     /* Button */
     --brick-button-border-rounding: var(--brick-border-rounding-less);
+
     --brick-control-transition-properties: background-color, border-color, color, box-shadow, border-width;
     --brick-control-transition-duration: var(--brick-transition-duration-very-fast);
     --brick-control-transition-mode: var(--brick-transition-pull);

@@ -123,3 +123,57 @@ Are they the best version they can be?
     position: absolute;
     white-space: nowrap;
 }
+
+
+/*
+Embedded content, images, figures, svg etc.
+*/
+
+:where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+}
+
+:where(audio, video) {
+    display: inline-block;
+}
+
+:where(audio:not([controls])) {
+    display: none;
+    height: 0;
+}
+
+:where(iframe) {
+    border-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+
+    /* Prevent stretching by default, by hiding parts of the image if necessary. */
+    object-fit: cover;
+}
+
+:where(svg:not([fill])) {
+    fill: currentColor;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+canvas {
+    display: inline-block;
+}
+
+figure {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    & figcaption {
+        padding: var(--brick-size-rel-xs) 0;
+        color: var(--brick-color-content-active);
+    }
+}

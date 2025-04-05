@@ -79,3 +79,43 @@ sizes, effects
 [data-layer="front"] {
     z-index: var(--brick-layer-front);
 }
+
+
+/* Control display of figures, images, videos, etc. */
+:where([data-media]) {
+    /* Fallback background color in case media is not loaded */
+    background-color: var(--brick-color-shaded-bold);
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+[data-media~="round"],
+[data-media~="square"] {
+    aspect-ratio: 1/1;
+}
+
+[data-media~="square"] {
+    border-radius: 0;
+}
+
+[data-media~="round"] {
+    border-radius: 50%;
+}
+
+[data-media~="4-3"] {
+    aspect-ratio: 4/3;
+}
+
+[data-media~="16-9"] {
+    aspect-ratio: 16/9;
+}
+
+[data-media~="cover"] {
+    object-fit: cover;
+}
+
+[data-media~="contain"] {
+    object-fit: contain;
+}
+
+

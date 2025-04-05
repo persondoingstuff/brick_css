@@ -1,9 +1,5 @@
 /* Depends on:
 ** fundamentals - sizes
-
---brick-grid-mode - defaults to auto-fill
---brick-grid-min-size - defaults to 18 (em)
---brick-grid-min-pct - defaults to 20 (pct)
 */
 :root, [data-size] {
     --brick-root-size: 16px;
@@ -19,7 +15,4 @@
 
     --brick-control-spacing-inline: var(--brick-size-rel-sm);
     --brick-control-spacing-block: var(--brick-size-rel-xs);
-
-    --brick-grid-min-size: 18;
-    --brick-grid-min-pct: 20;
 }
