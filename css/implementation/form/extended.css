@@ -79,7 +79,8 @@ Input type: range
     --_thumb-border-color: var(--brick-form-range-thumb-border-color, var(--brick-color-background));
     --_thumb_border: var(--brick-form-border-width) solid var(--_thumb-border-color);
     --_thumb-color: var(--brick-form-range-thumb-color, var(--brick-form-accent-color-bold));
-    --_range-transition: var(--brick-control-transition-properties, none) var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+    --_range-transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+    --_range-transition-props: var(--brick-control-transition-properties, none);
     --_track-height: calc(var(--brick-form-control-size) / 3);
     --_track-color: var(--brick-form-range-track-color, var(--brick-form-accent-color));
     --_thumb-scale: var(--brick-form-range-thumb-scale, 1.1);
@@ -90,6 +91,7 @@ Input type: range
         border-radius: var(--brick-control-border-rounding);
         background-color: var(--_track-color);
         transition: var(--_range-transition);
+        transition-property: var(--_range-transition-props);
     }
 
     &::-moz-range-track {
@@ -98,6 +100,7 @@ Input type: range
         border-radius: var(--brick-control-border-rounding);
         background-color: var(--_track-color);
         transition: var(--_range-transition);
+        transition-property: var(--_range-transition-props);
     }
 
     &::-webkit-slider-thumb {
@@ -112,6 +115,7 @@ Input type: range
         box-shadow: var(--_thumb-shadow);
         cursor: pointer;
         transition: var(--_range-transition);
+        transition-property: var(--_range-transition-props);
     }
 
     &::-moz-range-thumb {
@@ -125,6 +129,7 @@ Input type: range
         box-shadow: var(--_thumb-shadow);
         cursor: pointer;
         transition: var(--_range-transition);
+        transition-property: var(--_range-transition-props);
     }
 
     &:active {
@@ -147,12 +152,6 @@ Input type: range
         --_thumb-color: var(--brick-form-color-disabled-alt);
     }
 }
-
-/* details[open]>summary:not([role]):not(:focus) {
-    color: var(--brick-accordion-open-summary-color);
-}
-
-*/
 
 [data-component~="validated-input"] {
     display: inherit;

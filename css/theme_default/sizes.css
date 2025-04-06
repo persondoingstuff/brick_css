@@ -1,7 +1,7 @@
 /* Depends on:
 ** fundamentals - sizes
 */
-:root, [data-size] {
+:root {
     --brick-root-size: 16px;
     --brick-size: var(--brick-size-md);
     --brick-size-rel: var(--brick-size-rel-md);

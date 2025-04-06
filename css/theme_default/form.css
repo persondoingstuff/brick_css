@@ -21,22 +21,24 @@
 
     --brick-form-color-disabled: var(--brick-color-accent);
     --brick-form-color-disabled-alt: var(--brick-color-accent-subtle);
+
+    /* Unused: */
     --brick-form-color-valid: var(--brick-color-success);
     --brick-form-color-valid-alt: var(--brick-color-success-content);
     --brick-form-color-invalid: var(--brick-color-danger);
     --brick-form-color-invalid-alt: var(--brick-color-danger-content);
 
-    --brick-control-border-rounding: var(--brick-border-rounding-less);
-    --brick-form-border-width: var(--brick-border-width-thin);
     --brick-form-border-color: var(--brick-color-accent-subtle);
     --brick-form-border-color-valid: var(--brick-form-color-valid);
     --brick-form-border-color-valid-active: var(--brick-form-color-valid-alt);
     --brick-form-border-color-invalid: var(--brick-form-color-invalid);
     --brick-form-border-color-invalid-active: var(--brick-form-color-invalid-alt);
-
+    
+    --brick-form-border-width: var(--brick-border-width-thin);
     --brick-form-disabled-opacity: var(--brick-opacity-semi);
     --brick-form-element-width: var(--brick-line-length-full);
-
+    
+    --brick-control-border-rounding: var(--brick-border-rounding-less);
     --brick-form-control-size: var(--brick-size-rel-lg);
     --brick-form-control-border-width: var(--brick-border-width);
     
@@ -70,17 +72,5 @@
     --brick-form-range-track-color - defaults to --brick-form-accent-color
 
 
-    Form
-    --brick-control-border-rounding --brick-border-rounding
-    --brick-form-border-width --brick-border-width
-    --brick-form-border-color --brick-color-border
-    --brick-form-background-color --brick-color-background
-    --brick-form-background-color-active --brick-color-background-active
-    --brick-form-content-color --brick-color-content
-    --brick-form-placeholder-color --brick-color-accent
-    --brick-form-border-color-valid - 
-    --brick-form-border-color-valid-active - 
-    --brick-form-border-color-invalid - 
-    --brick-form-border-color-invalid-active - 
     */
 }

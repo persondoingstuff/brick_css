@@ -29,6 +29,7 @@ Depends on? !! TODO
     overflow-wrap: break-word;
     min-width: 0;
 
+    /* Low specificity to enable overriding props */
     :where(&) {
         box-shadow: var(--brick-card-box-shadow, var(--brick-shadow-none));
     }
@@ -103,7 +104,9 @@ Depends on? !! TODO
     }
 }
 
-[data-grid] > .card, [data-grid].cards > * {
+[data-grid] > .card,
+[data-grid].cards > *,
+:is(.cards > *, .card)[data-style~="extend"] {
     height: 100%;
     margin: 0;
 

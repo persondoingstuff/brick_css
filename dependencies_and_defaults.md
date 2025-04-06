@@ -37,9 +37,9 @@ Additional properties can be set to override defaults.
         * `--brick-font-size-h1` - default to `--brick-size-fluid-xxl`
         * `--brick-font-size-h2` - default to `--brick-size-fluid-xl`
         * `--brick-font-size-h3` - default to `--brick-size-fluid-lg`
-        * `--brick-font-size-h4` - default to `--brick-size-xl`
-        * `--brick-font-size-h5` - default to `--brick-size-lg`
-        * `--brick-font-size-h6` - default to `--brick-size-md-lg`
+        * `--brick-font-size-h4` - default to `--brick-size-rel-xl`
+        * `--brick-font-size-h5` - default to `--brick-size-rel-lg`
+        * `--brick-font-size-h6` - default to `--brick-size-rel-md-lg`
 * List
     * `--brick-list-style` - defaults to `square`
 * Horizontal rule – by default a short centered line with a gray mid tone color. !!TODO support data-surface
@@ -161,3 +161,13 @@ This is the hierarchy for background and text color (from lowest to highest):
 * `--brick-card-divider-color` - defaults to `--brick-card-border-color`
 * `--brick-card-divider-width` - defaults to `--brick-card-border-width`
 * `--brick-card-box-shadow` - defaults to `--brick-shadow-none`
+
+### Accordion / details
+* `--brick-accordion-content-color` - defaults to `--brick-color-content` - overridden by `--brick-active-style-content`
+* `--brick-accordion-content-color-alt` - defaults to `--brick-color-content-active` - overridden by `--brick-active-style-content`
+* `--brick-accordion-background-color` - defaults to `transparent` - overridden by `--brick-active-style-surface`
+* `--brick-accordion-background-color-active` - defaults to same as `--brick-accordion-background-color` - overridden by `--brick-active-style-surface`
+* `--brick-accordion-border-color` - defaults to same as `--brick-accordion-background-color` - overridden by `--brick-active-style-surface`
+* `--brick-accordion-border-color-alt` - defaults to same as `--brick-accordion-background-color-active` - overridden by `--brick-active-style-surface`
+* `--brick-accordion-border-width` - defaults to `0`
+* `--brick-accordion-rounding` - defaults to `--brick-border-rounding-barely` - overridden by `--_card-rounding`

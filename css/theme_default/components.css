@@ -1,20 +1,9 @@
 /*
 
-# Optional properties
+!! 
+Button, Card, Details:
+Add something for default padding?
 
-Button:
-!! Add something for default padding?
-
-Card
-!! Add something for default padding, gap?
-
-
---brick-accordion-content-color
---brick-accordion-background-color
---brick-accordion-summary-color
---brick-accordion-summary-background
---brick-accordion-divider-color - defaults to --brick-accordion-border-color
---brick-accordion-divider-width - defaults to --brick-accordion-border-width
 
 */
 
@@ -22,6 +11,22 @@ Card
 ** fundamentals - effects, sizes, colors
 ** theme - colors
 */
+
+:root {
+    /* Controls */
+    --brick-control-border-rounding: var(--brick-border-rounding-less);
+    --brick-control-transition-properties: background-color, border-color, color, box-shadow, border-width;
+    --brick-control-transition-duration: var(--brick-transition-duration-very-fast);
+    --brick-control-transition-mode: var(--brick-transition-pull);
+
+    /* Icons */
+    --brick-icon-default: var(--brick-icon-chevron);
+    --brick-icon-top-offset: var(--brick-size-rel-xxxs);
+    --brick-icon-size: var(--brick-size-rel-md);
+    --brick-icon-transition-properties: background-color, transform, opacity;
+    --brick-icon-transition-duration: var(--brick-transition-duration-mid);
+    --brick-icon-transition-mode: var(--brick-transition-switch);
+}
 
 :root, [data-theme], [data-surface] {
     /* Theming examples */
@@ -34,17 +39,6 @@ Card
     --brick-card-background-color: var(--brick-color-surface-1);
     */
 
-    /* Controls */
-    --brick-control-border-rounding: var(--brick-border-rounding-less);
-    --brick-control-transition-properties: background-color, border-color, color, box-shadow, border-width;
-    --brick-control-transition-duration: var(--brick-transition-duration-very-fast);
-    --brick-control-transition-mode: var(--brick-transition-pull);
-    
-    --brick-icon-top-offset: var(--brick-size-rel-xxxs);
-    --brick-icon-size: var(--brick-size-rel-md);
-    --brick-icon-color: var(--brick-color-content-active);
-    --brick-icon-transition-properties: background-color, transform, opacity;
-    --brick-icon-transition-duration: var(--brick-transition-duration-mid);
-    --brick-icon-transition-mode: var(--brick-transition-switch);
 
+    --brick-icon-color: var(--brick-color-content-active);
 }

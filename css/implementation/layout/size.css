@@ -6,6 +6,13 @@ Set it to 'auto' to scale depending on screen size.
 Set it to 'init' or 'reset' to set a child back to the
     original size, if the parent has the size adjusted.
 Set it to 'fluid' to use the main fluid size.
+
+This works by setting the font size. So it will only affect
+elements with relative sizes (em, ch) -- and not absolute
+sizes (rem, px). The rem is set once, on the root, to
+--brick-font-size -- and never changed. The magic of this
+resizing depends on the 'rel' sizes being used.
+
 */
 
 [data-size="auto"],

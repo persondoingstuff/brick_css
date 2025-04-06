@@ -28,7 +28,8 @@ Depends on:
     text-decoration-thickness: var(--_link-decoration-thickness);
     
     outline: none;
-    transition: var(--brick-link-transition-properties, none) var(--brick-link-transition-duration, 0) var(--brick-link-transition-mode, var(--brick-transition-mode));
+    transition: none var(--brick-link-transition-duration, 0) var(--brick-link-transition-mode, var(--brick-transition-mode));
+    transition-property: var(--brick-link-transition-properties, none);
 
     /* [data-surface]:not([data-surface=""], [data-surface="init"]) & {
         --_link-text-color: var(--brick-color-primary-content-2);
@@ -98,7 +99,8 @@ Depends on:
     line-height: var(--brick-line-height-tight);
     font-size: var(--brick-font-size);
     font-weight: var(--brick-button-text-weight, var(--brick-font-weight-regular));
-    transition: var(--brick-control-transition-properties, none) var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+    transition: none var(--brick-control-transition-duration, 0) var(--brick-control-transition-mode, linear);
+    transition-property: var(--brick-control-transition-properties, none);
     appearance: button;
     margin: 0;
     overflow: visible;

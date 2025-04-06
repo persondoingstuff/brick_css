@@ -23,10 +23,9 @@
 @import "./implementation/map_colors.css";
 
 @import "./implementation/baseplate/general.css";
+@import "./implementation/baseplate/typography.css";
 @import "./implementation/baseplate/link-button.css";
 @import "./implementation/baseplate/table.css";
-
-@import "./implementation/typography/_base.css";
 
 @import "./implementation/form/general.css";
 @import "./implementation/form/controls.css";
@@ -43,10 +42,10 @@
 @import "./implementation/layout/positioning.css";
 @import "./implementation/layout/layout.css";
 
-@import "./implementation/typography/text.css";
-@import "./implementation/effects/surface.css";
-@import "./implementation/effects/border.css";
-@import "./implementation/effects/shadow.css";
+@import "./implementation/modifiers/text.css";
+@import "./implementation/modifiers/surface.css";
+@import "./implementation/modifiers/border.css";
+@import "./implementation/modifiers/shadow.css";
 
 /* Move these files: */
 @import "./implementation/icons.css";

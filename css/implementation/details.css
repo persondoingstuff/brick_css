@@ -29,12 +29,12 @@ details {
     --_acc-color: var(--brick-active-style-content, var(--brick-accordion-content-color, var(--brick-color-content)));
     --_acc-color-alt: var(
         --brick-active-style-content,
-        var(--brick-accordion-content-color-alt, var(--brick-content-color-active))
+        var(--brick-accordion-content-color-alt, var(--brick-color-content-active))
     );
     --_acc-border-color: var(--brick-active-style-content, var(--brick-accordion-border-color, var(--_acc-background)));
     --_acc-border-color-alt: var(
         --brick-active-style-content,
-        var(--brick-accordion-border-color, var(--_acc-background-alt))
+        var(--brick-accordion-border-color-alt, var(--_acc-background-alt))
     );
 
     --_acc-border-width: var(--brick-accordion-border-width, 0);

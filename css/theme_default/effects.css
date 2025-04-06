@@ -5,12 +5,17 @@
 
 :root {
     --brick-transition-mode: var(--brick-transition-pull);
+
+    /* !!Not used anywhere: */
     --brick-transition: all var(--brick-transition-duration-mid) var(--brick-transition-mode);
     --brick-shadow: var(--brick-shadow-md);
     --brick-border-rounding: var(--brick-border-rounding-regular);
     --brick-border-width: var(--brick-border-width-regular);
     
     --brick-focus-width: var(--brick-border-width-regular);
+}
+
+:root, [data-theme], [data-surface] {
     --brick-focus-color: var(--brick-color-primary-surface-3);
     /* --brick-focus-color: var(--brick-color-content-active); */
     --brick-focus-shadow: 0 0 0 var(--brick-focus-width) var(--brick-focus-color);

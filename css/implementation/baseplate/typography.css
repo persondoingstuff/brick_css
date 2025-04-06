@@ -135,7 +135,7 @@ blockquote {
 }
 
 :where(h4) {
-    font-size: var(--brick-font-size-h4, var(--brick-size-xl));
+    font-size: var(--brick-font-size-h4, var(--brick-size-rel-xl));
     line-height: var(--brick-line-height-h4, var(--_heading-height));
     font-weight: var(--brick-font-height-h4, var(--_heading-weight));
     margin-block-start: var(--brick-margin-before-h4, var(--_heading-before));
@@ -143,7 +143,7 @@ blockquote {
 }
 
 :where(h5) {
-    font-size: var(--brick-font-size-h5, var(--brick-size-lg));
+    font-size: var(--brick-font-size-h5, var(--brick-size-rel-lg));
     line-height: var(--brick-line-height-h5, var(--_heading-height));
     font-weight: var(--brick-font-height-h5, var(--_heading-weight));
     margin-block-start: var(--brick-margin-before-h5, var(--_heading-before));
@@ -151,7 +151,7 @@ blockquote {
 }
 
 :where(h6) {
-    font-size: var(--brick-font-size-h6, var(--brick-size-md-lg));
+    font-size: var(--brick-font-size-h6, var(--brick-size-rel-md-lg));
     line-height: var(--brick-line-height-h6, var(--_heading-height));
     font-weight: var(--brick-font-height-h6, var(--_heading-weight));
     margin-block-start: var(--brick-margin-before-h6, var(--_heading-before));
@@ -173,7 +173,7 @@ hgroup {
 
     & > p {
         color: var(--brick-font-color-h5, var(--brick-color-headings-small));
-        font-size: var(--brick-font-size-h5, var(--brick-size-lg));
+        font-size: var(--brick-font-size-h5, var(--brick-size-rel-lg));
         line-height: var(--brick-line-height-h5, var(--brick-line-height-headings, var(--brick-line-height-tight)));
         max-inline-size: var(--brick-line-length-headings, var(--brick-line-length-short));
     }

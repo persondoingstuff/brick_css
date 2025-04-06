@@ -6,7 +6,7 @@
     gap: var(--brick-size-rel-xs);
 
     &[data-icon=""] {
-        --_icon: var(--brick-icon-chevron);
+        --_icon: var(--brick-icon-default);
     }
 
     &:not([data-icon-style~="after"], [data-icon-style~="end"], summary:not([data-icon-style~="before"]))::before,
@@ -29,7 +29,6 @@
             margin-inline-start: auto;
         }
     }
-
 
     &[data-icon-style~="small"] {
         --brick-icon-size: var(--brick-size-rel-xs);
