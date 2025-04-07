@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* Import global properties*/
+/* Fundamentals - global properties*/
 @import "./fundamentals/sizes.css";
 @import "./fundamentals/colors.css";
 @import "./fundamentals/typography.css";
@@ -11,7 +11,7 @@
 @import "./fundamentals/icons/icons_application.css";
 @import "./fundamentals/icons/icons_social.css";
 
-/* Import theme defaults */
+/* Theme defaults */
 @import "./theme_default/sizes.css";
 @import "./theme_default/colors.css";
 @import "./theme_default/effects.css";
@@ -22,32 +22,34 @@
 /* Import style implementation */
 @import "./implementation/map_colors.css";
 
+/* Baseplate - apply default styling directly to HTML elements*/
 @import "./implementation/baseplate/general.css";
 @import "./implementation/baseplate/typography.css";
 @import "./implementation/baseplate/link-button.css";
-@import "./implementation/baseplate/table.css";
 @import "./implementation/baseplate/form.css";
 @import "./implementation/baseplate/form-controls.css";
 @import "./implementation/baseplate/form-extended.css";
+@import "./implementation/baseplate/table.css";
+@import "./implementation/baseplate/details.css";
 
-
-/* Modifiers */
-@import "./implementation/layout/blocks.css";
-@import "./implementation/layout/size.css";
-@import "./implementation/layout/container.css";
-@import "./implementation/layout/columns.css";
-@import "./implementation/layout/grid.css";
-@import "./implementation/layout/positioning.css";
-@import "./implementation/layout/layout.css";
-
+/* Modifiers - attributes to modify the styling that are not activated by default */
 @import "./implementation/modifiers/text.css";
 @import "./implementation/modifiers/surface.css";
 @import "./implementation/modifiers/border.css";
 @import "./implementation/modifiers/shadow.css";
+@import "./implementation/modifiers/positioning.css";
+@import "./implementation/modifiers/size.css";
 
+@import "./implementation/layout/blocks.css";
+@import "./implementation/layout/container.css";
+@import "./implementation/layout/columns.css";
+@import "./implementation/layout/grid.css";
+@import "./implementation/layout/layout.css";
+
+
+/* Components - custom page elements that consist of multiple HTML elements and typically use classes */
 @import "./implementation/components/card.css";
 
 /* Move these files: */
 @import "./implementation/icons.css";
-@import "./implementation/details.css";
 

@@ -187,6 +187,7 @@ details {
 }
 
 /* Defined outside, so dropdown styling can be used without the details element */
+/* !! Maybe move this elsewhere. Determine and document which elements this can be used to modify */
 [data-style~="dropdown"] {
     position: relative;
     padding: 0;

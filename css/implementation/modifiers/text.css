@@ -57,40 +57,6 @@
     text-transform: capitalize;
 }
 
-/* Sizes */
-[data-text~="xs"] {
-    font-size: var(--brick-size-xs);
-}
-
-[data-text~="sm"] {
-    font-size: var(--brick-size-sm);
-}
-
-[data-text~="md-"] {
-    font-size: var(--brick-size-md-sm);
-}
-
-[data-text=init], [data-text=reset],
-[data-text~="md"] {
-    font-size: var(--brick-size-md);
-}
-
-[data-text~="md+"] {
-    font-size: var(--brick-size-md-lg);
-}
-
-[data-text~="lg"] {
-    font-size: var(--brick-size-lg);
-}
-
-[data-text~="xl"] {
-    font-size: var(--brick-size-xl);
-}
-
-[data-text~="xxl"] {
-    font-size: var(--brick-size-xxl);
-}
-
 /* Weight */
 [data-text~="thin"] {
     font-weight: var(--brick-font-weight-thin);
@@ -193,38 +159,38 @@
 /* Set text to accent colors */
 
 [data-text-color~="primary"] {
-    color: var(--brick-color-primary);
+    color: var(--brick-color-primary-accent);
 
     &[data-text-color~="bold"] {
-        color: var(--brick-color-primary-bold);
+        color: var(--brick-color-primary-accent-bold);
     }
 
     &[data-text-color~="subtle"] {
-        color: var(--brick-color-primary-subtle);
+        color: var(--brick-color-primary-accent-subtle);
     }
 }
 
 [data-text-color~="secondary"] {
-    color: var(--brick-color-secondary);
+    color: var(--brick-color-secondary-accent);
 
     &[data-text-color~="bold"] {
-        color: var(--brick-color-secondary-bold);
+        color: var(--brick-color-secondary-accent-bold);
     }
 
     &[data-text-color~="subtle"] {
-        color: var(--brick-color-secondary-subtle);
+        color: var(--brick-color-secondary-accent-subtle);
     }
 }
 
 [data-text-color~="neutral"] {
-    color: var(--brick-color-neutral);
+    color: var(--brick-color-accent);
 
     &[data-text-color~="bold"] {
-        color: var(--brick-color-neutral-bold);
+        color: var(--brick-color-accent-bold);
     }
 
     &[data-text-color~="subtle"] {
-        color: var(--brick-color-neutral-subtle);
+        color: var(--brick-color-accent-subtle);
     }
 }
 
