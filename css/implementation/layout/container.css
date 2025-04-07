@@ -1,7 +1,6 @@
-/**
-** Layout - container
-** Control the width of this element and its children
-** Depends on: sizes (constants and defaults)
+/* Layout - container
+Control the width of this element and its children
+Depends on: sizes (constants and defaults)
 
 May be set to xs, sm, md, lg, xl or full - follows common breakpoints.
 Set 'start' to align it to the inline start (left).

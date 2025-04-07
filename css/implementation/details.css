@@ -47,7 +47,6 @@ details {
     --_acc-counter-margin-block: calc(var(--_acc-spacing-block) * -1);
     /* If this is also a card, that radius wins: */
     --_acc-border-radius: var(--_card-rounding, var(--brick-accordion-rounding, var(--brick-border-rounding-barely)));
-
     --_acc-icon: var(--brick-icon-chevron);
 
     padding: var(--_acc-spacing-block) var(--_acc-spacing-inline);

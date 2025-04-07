@@ -1,7 +1,6 @@
-/**
-** Layout - columns
-** Display child elements as columns
-** Depends on: sizes (constants and defaults)
+/* Layout - columns
+Display child elements as columns
+Depends on: sizes (constants and defaults)
 */
 
 [data-columns="auto"],
@@ -61,13 +60,11 @@
         grid-template-columns: 1fr;
     }
 
-    :is(
-    [data-columns~="fluid"],
-    [data-columns~="adaptive"]):not([data-columns~="narrow-wrap"]) {
+    :is([data-columns~="fluid"], [data-columns~="adaptive"]):not([data-columns~="narrow-wrap"]) {
         justify-content: space-between;
         display: flex;
         flex-wrap: wrap;
-/* 
+        /* 
         & > :is([data-column~="floats"], [data-column~="sinks"]) {
             flex-grow: 1;
             flex-basis: 100%;

@@ -171,3 +171,60 @@ This is the hierarchy for background and text color (from lowest to highest):
 * `--brick-accordion-border-color-alt` - defaults to same as `--brick-accordion-background-color-active` - overridden by `--brick-active-style-surface`
 * `--brick-accordion-border-width` - defaults to `0`
 * `--brick-accordion-rounding` - defaults to `--brick-border-rounding-barely` - overridden by `--_card-rounding`
+
+
+---
+
+# Usages
+
+--brick-form-disabled-opacity
+	Used once, in check/radio disabled
+
+--brick-form-element-width
+	Used once, for general form elements
+
+--brick-form-padding-inline
+--brick-form-padding-block
+	Used for general inputs and input height, dropdown details, file and color inputs
+
+--brick-form-border-width
+	Used for dropdown details, range thumb, general inputs and input height
+
+--brick-form-control-border-width
+	Used twice in one selector, for radio/check
+
+--brick-form-control-size
+	Used for check/radio, range
+
+--brick-form-block-spacing + --brick-form-block-spacing-small
+	Used for form itself, legend, label, small
+
+--brick-control-border-rounding
+	Used for dropdown details, button, general inputs, range, color input
+
+--brick-form-color-*
+	disabled + alt: used for check/radio, range, general inputs
+	not used: brick-form-color-valid, brick-form-color-valid-alt, brick-form-color-invalid, brick-form-color-invalid-alt
+		Should they be used for icons, validation text?
+
+--brick-form-border-color*
+	Used for general inputs, check/radio, dropdown details
+	Redefined by surface
+
+--brick-form-content-color + --brick-form-content-color-active
+	Used for dropdown details, file input, general inputs, fallback in legend and label
+
+--brick-form-background-color + --brick-form-background-color-active
+	Used for dropdown details, general inputs, select
+
+--brick-form-background-color-highlight + --brick-form-background-color-disabled
+	Used for check/radio, range, general inputs
+	Redefined by surface
+
+--brick-form-accent*
+	Used for general inputs, range, check/radio
+	Redefined by surface
+
+--brick-form-placeholder-color + --brick-form-placeholder-font-weight + --brick-form-placeholder-font-size + --brick-form-placeholder-opacity*
+	Used for general input, select disabled
+

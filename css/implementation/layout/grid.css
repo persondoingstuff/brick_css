@@ -1,6 +1,5 @@
-/**
-** Layout - grid
-** Depends on: sizes (constants and defaults)
+/* Layout - grid
+Depends on: sizes (constants and defaults)
 */
 
 [data-grid] {

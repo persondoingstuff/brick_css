@@ -1,3 +1,7 @@
+/*
+Basic form elements - inputs, select, textarea, label, fieldset
+*/
+
 :root {
     --brick-form-input-height: calc(
         1rem * var(--brick-line-height) + var(--brick-form-padding-block) * 2 + var(--brick-form-border-width) * 2
@@ -192,7 +196,7 @@ textarea {
     overflow: auto;
     resize: vertical;
     field-sizing: content;
-    min-height: 4em;
+    min-height: var(--brick-form-textarea-height, 4em);
 }
 
 /* Selects, dropdowns */

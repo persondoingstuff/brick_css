@@ -1,7 +1,6 @@
-/**
-** Layout - block
-** Set margin between blocks on the page
-** Depends on: sizes (constants and defaults)
+/* Layout - block
+Set margin between blocks on the page
+Depends on: sizes (constants and defaults)
 
 data-block adds spacing after an element.
 data-blocks adds spacing after each child element.

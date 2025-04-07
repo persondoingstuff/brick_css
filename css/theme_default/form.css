@@ -51,7 +51,8 @@
     /* !! Add transition */
 
     /* Implied properties
-    --brick-form-multiselect-max-height - defaults to 20ch;
+    --brick-form-multiselect-max-height - defaults to 20ch
+    --brick-form-textarea-height - defaults to 4em
 
     --brick-form-checkbox-rounding - defaults to --brick-size-rel-xxs
     --brick-form-switch-distance - defaults to --brick-size-rel-md

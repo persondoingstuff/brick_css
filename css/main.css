@@ -26,11 +26,9 @@
 @import "./implementation/baseplate/typography.css";
 @import "./implementation/baseplate/link-button.css";
 @import "./implementation/baseplate/table.css";
-
-@import "./implementation/form/general.css";
-@import "./implementation/form/controls.css";
-@import "./implementation/form/extended.css";
-
+@import "./implementation/baseplate/form.css";
+@import "./implementation/baseplate/form-controls.css";
+@import "./implementation/baseplate/form-extended.css";
 
 
 /* Modifiers */
@@ -47,8 +45,9 @@
 @import "./implementation/modifiers/border.css";
 @import "./implementation/modifiers/shadow.css";
 
+@import "./implementation/components/card.css";
+
 /* Move these files: */
 @import "./implementation/icons.css";
 @import "./implementation/details.css";
-@import "./implementation/card.css";
 
